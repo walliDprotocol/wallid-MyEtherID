@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ImportForm from './components/ImportForm';
 
 function handleClick(e) {
   e.preventDefault();
@@ -11,12 +12,8 @@ class Import extends Component {
     return (
       <div>
       <h2>Import</h2>
-      <p>Import your IDs</p>
-      <div>
-      <textarea id="importData" className="form-control" rows="10" placeholder="Past here your BlockId Data?" required></textarea>
-      <br></br>
-      <button type="button" className="btn" onClick={handleClick}>Import</button>
-      </div>
+      <p>Import your data provided by ImportID App</p>
+      <div id="import-form-react-component"></div>
       </div>
     );
   }
