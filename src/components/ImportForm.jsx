@@ -41,7 +41,7 @@ class ImportForm extends React.Component {
           <input type="text" name="walletAddress" onChange={this.handleChange} class="form-control" placeholder="Enter wallet address" required/>
         </div>
         <div class="form-group">
-          <label>Password:</label>
+          <label>Private key:</label>
           <input type="password" name="password" onChange={this.handleChange} class="form-control" required />
         </div>
         <div class="form-group">
