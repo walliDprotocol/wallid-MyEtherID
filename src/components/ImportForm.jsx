@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 class ImportForm extends React.Component {
   constructor(props) {
@@ -14,8 +14,6 @@ class ImportForm extends React.Component {
   }
 
   handleChange(event) {
-    const target = event.target;
-    const value = target.type
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -23,9 +21,9 @@ class ImportForm extends React.Component {
 
   handleSubmit(event) {
     alert('Data submited')
-    console.log('WalletAddress' + this.state.walletAddress);
-    console.log('Password' + this.state.password);
-    console.log('Data' + this.state.data);
+    console.log('WalletAddress : ' + this.state.walletAddress);
+    console.log('Password : ' + this.state.password);
+    console.log('Data : ' + this.state.data);
   event.preventDefault();
 }
 
