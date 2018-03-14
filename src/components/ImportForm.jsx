@@ -21,37 +21,37 @@ class ImportForm extends React.Component {
 
   handleSubmit(event) {
     alert('Data submited')
-    console.log('WalletAddress : ' + this.state.walletAddress);
+    console.log('WalletAddress :' + this.state.walletAddress);
     console.log('Password : ' + this.state.password);
-    console.log('Data : ' + this.state.data);
-  event.preventDefault();
-}
+    console.log('Data :' + this.state.data);
+    event.preventDefault();
+  }
 
-render() {
-  return (
-    <form onSubmit={this.handleSubmit}>
-      <div class="form-group">
-        <label>Pick your ID to import:</label>
-        <select class="form-control" required>
-          <option value="grapefruit">Cartão do Cidadão - República Portuguesa</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Wallet Address:</label>
-        <input type="text" name="walletAddress" onChange={this.handleChange} class="form-control" placeholder="Enter wallet address" required/>
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" name="password" onChange={this.handleChange} class="form-control" required />
-      </div>
-      <div class="form-group">
-        <label>ImportID data:</label>
-        <textarea id="importData" name="data" onChange={this.handleChange} class="form-control" rows="5" placeholder="Past here your BlockId Data?" required></textarea>
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
-  );
-}
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit} >
+        <div class="form-group">
+          <label>Pick your Identity:</label>
+          <select class="form-control" required>
+            <option value="grapefruit">Cartão do Cidadão - República Portuguesa</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Wallet Address:</label>
+          <input type="text" name="walletAddress" onChange={this.handleChange} class="form-control" placeholder="Enter wallet address" required/>
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" name="password" onChange={this.handleChange} class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label>ImportID data:</label>
+          <textarea id="importData" name="data" onChange={this.handleChange} class="form-control" rows="5" placeholder="Past here your BlockId Data?" required></textarea>
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
 }
 
 export default ImportForm;
