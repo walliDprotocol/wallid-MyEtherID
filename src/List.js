@@ -2,129 +2,33 @@ import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 // products will be presented by react-bootstrap-table
 var products = [{
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
+  Service: "DemoBank",
+  Entity: "Portuguese Republic",
+  Card: "Cartão de Cidadão",
+  Attributes: "Identity, Address",
+  AccessedIn: "2 Set 2018"
 },
 {
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
+  Service: "CarRENT",
+  Entity: "Portuguese Republic",
+  Card: "Cartão de Cidadão",
+  Attributes: "Identity",
+  AccessedIn: "3 Jan 2018"
 },
 {
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
-},
-{
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
-},
-{
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
-},
-{
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
-},
-{
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
-},
-{
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
-},
-{
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
-},
-{
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
-},
-{
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
-},
-{
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
-},
-{
-  TxHash: "0x238cDa7B...",
-  Block: "1781477",
-  Age: "14 days 2 hrs ago",
-  From: "0x238cDa7B...",
-  To: "0x328cDa7B...",
-  Value: "1 Ether",
-  TxFee: "0.000021"
+  Service: "Hotel Rio",
+  Entity: "CML",
+  Card: "Lisboa VIVA",
+  Attributes: "Lisboa VIVA Pass",
+  AccessedIn: "4 Jan 2018"
 }
 ];
 class List extends Component {
   render() {
     return (
       <div>
-        <h2>List</h2>
-        <p>List  the transactions of your IDs</p>
+        <h2>List the transactions of your identities</h2>
+        <br />
         <BootstrapTable
           data={products}
           hover
@@ -132,13 +36,11 @@ class List extends Component {
           pagination
           search
           >
-          <TableHeaderColumn dataField="TxHash" width='20%' isKey={true}>TxHash</TableHeaderColumn>
-          <TableHeaderColumn dataField="Block" width='10%'>Block</TableHeaderColumn>
-          <TableHeaderColumn dataField="Age" width='10%'>Age</TableHeaderColumn>
-          <TableHeaderColumn dataField="From" width='20%'>From</TableHeaderColumn>
-          <TableHeaderColumn dataField="To" width='20%'>To</TableHeaderColumn>
-          <TableHeaderColumn dataField="Value" width='10%'>Value</TableHeaderColumn>
-          <TableHeaderColumn dataField="TxFee" width='10%'>[TxFee]</TableHeaderColumn>
+          <TableHeaderColumn dataField="Service" width='20%'>Service</TableHeaderColumn>
+          <TableHeaderColumn dataField="Entity" width='20%' isKey={true}>Entity</TableHeaderColumn>
+          <TableHeaderColumn dataField="Card" width='20%'>Card</TableHeaderColumn>
+          <TableHeaderColumn dataField="Attributes" width='20%'>Attributes</TableHeaderColumn>
+          <TableHeaderColumn dataField="AccessedIn" width='20%'>Accessed in</TableHeaderColumn>
         </BootstrapTable>
       </div>
     );

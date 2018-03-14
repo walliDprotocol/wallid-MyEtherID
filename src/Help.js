@@ -4,9 +4,7 @@ class Help extends Component {
   render() {
     return (
       <div>
-        <h2>Help</h2>
-        <p>MyBlockID Help
-        </p>
+        <h2>MyBlockID Help</h2>
       </div>
     );
   }

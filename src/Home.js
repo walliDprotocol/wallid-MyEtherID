@@ -4,8 +4,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h2>Home</h2>
-        <p>Off-chain to On-chain Identity Service</p>
+        <h2>Off-chain to On-chain Identity Service</h2>
       </div>
     );
   }

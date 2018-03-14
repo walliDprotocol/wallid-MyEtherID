@@ -5,8 +5,8 @@ class Import extends Component {
   render() {
     return (
       <div>
-      <h2>Import</h2>
-      <p>Import your data provided by ImportID App</p>
+      <h2>Import MyBlockID identity</h2>
+      <br />
       <ImportForm />
       </div>
     );

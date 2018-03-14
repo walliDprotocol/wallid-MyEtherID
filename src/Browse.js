@@ -2,10 +2,17 @@ import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
 // products will be presented by react-bootstrap-table
-var products = [{
+var products = [
+{
   Entity: "Portuguese Republic",
   Card: "Cartão de Cidadão",
   Attributes: "Identity, Address",
+  CreatedAt: "12 Jan 2018"
+},
+{
+  Entity: "CML",
+  Card: "Lisboa VIVA",
+  Attributes: "Lisboa VIVA pass",
   CreatedAt: "12 Jan 2018"
 }
 ];
@@ -14,8 +21,8 @@ class Browse extends Component {
   render() {
     return (
       <div>
-        <h2>Browse</h2>
-        <p>Browse your IDs</p>
+        <h2>Browse your identities</h2>
+        <br />
         <BootstrapTable
           data={products}
           hover

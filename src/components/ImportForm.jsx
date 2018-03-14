@@ -31,22 +31,22 @@ class ImportForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit} >
         <div class="form-group">
-          <label>Pick your Identity:</label>
+          <label>Choose your identity type:</label>
           <select class="form-control" required>
             <option value="grapefruit">Cartão do Cidadão - República Portuguesa</option>
           </select>
         </div>
         <div class="form-group">
-          <label>Wallet Address:</label>
+          <label>Wallet address:</label>
           <input type="text" name="walletAddress" onChange={this.handleChange} class="form-control" placeholder="Enter wallet address" required/>
         </div>
         <div class="form-group">
-          <label>Private key:</label>
+          <label>Password:</label>
           <input type="password" name="password" onChange={this.handleChange} class="form-control" required />
         </div>
         <div class="form-group">
           <label>ImportID data:</label>
-          <textarea id="importData" name="data" onChange={this.handleChange} class="form-control" rows="5" placeholder="Past here your BlockId Data?" required></textarea>
+          <textarea id="importData" name="data" onChange={this.handleChange} class="form-control" rows="5" placeholder="Paste here your ImportID data provided by ImportID App" required></textarea>
         </div>
         <input type="submit" value="Submit" />
       </form>
