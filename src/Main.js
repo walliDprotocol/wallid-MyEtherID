@@ -15,12 +15,12 @@ class Main extends Component {
     return (
       <HashRouter>
         <div>
-          <h1>MyBlockID</h1>
+          <h1>MyEtherID</h1>
           <ul className="header">
             <li><NavLink exact to="/">Home</NavLink></li>
-            <li><NavLink to="/import">Import</NavLink></li>
-            <li><NavLink to="/browse">Browse</NavLink></li>
-            <li><NavLink to="/list">List</NavLink></li>
+            <li><NavLink to="/import">Store Identity</NavLink></li>
+            <li><NavLink to="/browse">View Identities</NavLink></li>
+            <li><NavLink to="/list">Transactions</NavLink></li>
             <li><NavLink to="/help">Help</NavLink></li>
           </ul>
           <div className="content">

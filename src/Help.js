@@ -4,7 +4,7 @@ class Help extends Component {
   render() {
     return (
       <div>
-        <h2>MyBlockID Help</h2>
+        <h2>MyEtherID Help</h2>
       </div>
     );
   }
