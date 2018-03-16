@@ -7,9 +7,9 @@ class Import extends Component {
       <div>
       <h2>Import MyBlockID identity</h2>
       <br />
-      <p>Encrypt and save  your certified identity on the blockchain and associate it with your ether wallet.</p>
-      <p>If you don’t have an ether wallet, you can create it securely and for free on MyEtherWallet. Create <a href="https://www.myetherwallet.com/">here</a>.</p>
-      <p>What is MyEtherWallet? <a href="https://www.myetherwallet.com/">Press here</a>.</p>
+      <p>Encrypt and save  your certified identity on the blockchain and associate it with your ether wallet.
+      If you don’t have an ether wallet, you can create it securely and for free on MyEtherWallet. Create <a href="https://www.myetherwallet.com/">here</a>.
+      What is MyEtherWallet? <a href="https://www.myetherwallet.com/">Press here</a>.</p>
 
       <br />
       <p>You need to locally generate your ID data from BlockID’s ImportID desktop app. Once you generate it on the app, copy it to respective ID Data section below.</p>
@@ -21,11 +21,21 @@ class Import extends Component {
 
       <br />
       <br />
-      <h4>Start Import MyBlockID identity</h4>
-      <ImportForm />
+        <div class="row">
+        <div class="col-md-12">
+          <br />
+          <h4>Start Importing my BlockID</h4>
+          <br />
+          <ImportForm />
+          <br />
+        </div>
+        </div>
+
+
+
       <br />
       <br />
-      <h4>How To Protect Yourself from loss</h4>
+      <h4>How To Protect Yourself From Loss</h4>
       <p>If you lose your private key or  encryption password, it is gone forever. Don't lose it.</p>
       <ul> - Make a backup of your private key and password. Do NOT just store it on your computer. Print it out on a piece of paper or save it to a USB drive.</ul>
       <ul> - Store this paper or USB drive in a different physical location. A backup is not useful if it is destroyed by a fire or flood along with your laptop.</ul>

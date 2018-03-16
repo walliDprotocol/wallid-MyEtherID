@@ -36,3 +36,47 @@ ul.header li a {
 .active {
   background-color: #9c4dcc;
 }
+.row {
+    padding: 0px;
+}
+
+.row-height {
+    height: 70px;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.col-md-4,.col-md-2 {
+    background-color: #fff;
+}
+
+.col-md-6 {
+}
+
+.col-md-6.color{
+    background-color: #D1C4E9;
+}
+
+.col-md-12 {
+    background-color: #D1C4E9;
+}
+
+.col-md-4 {
+    border-radius: 15px 0 0 15px;
+}
+
+.col-md-2 {
+    border-radius: 0 15px 15px 0;
+}
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}

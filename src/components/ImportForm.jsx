@@ -40,7 +40,7 @@ class ImportForm extends React.Component {
           <label>Ether Wallet Address:</label>
           <input type="text" name="walletAddress" onChange={this.handleChange} class="form-control" placeholder="Enter your wallet address" required/>
         </div>
-        <div class="form-group">
+        {/*<div class="form-group">
           <label>BlockID Encryption Password</label>
           <input type="password" name="password" onChange={this.handleChange} class="form-control" placeholder="Create the password to encrypt and then later decrypt your certified ID attributes" required />
         </div>
@@ -49,11 +49,12 @@ class ImportForm extends React.Component {
           <label>Confirm BlockID Encryption Password:</label>
           <input type="password" name="password" onChange={this.handleChange} class="form-control" placeholder="Create the password to encrypt and later decrypt your certified ID attributes" required />
         </div>
+        */}
         <div class="form-group">
           <label>ID Data:</label>
           <textarea id="importData" name="data" onChange={this.handleChange} class="form-control" rows="5" placeholder="Paste your ID Data provided by BlockID’s Import ID App" required></textarea>
         </div>
-        <input type="submit" value="Connect to metamask - Recommended action" />
+        <input type="submit" value="Connect to metamask" /> Recommended action
         <p><a href="https://metamask.io/">what is Metamask?</a></p>
           <div class="form-group">
             <label>Paste Private Key: Not recommended</label>

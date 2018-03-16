@@ -8,7 +8,7 @@ var products = [
   IDCertificate: "x 509",
   Card: "Cartão de Cidadão",
   Attributes: "Identity, Address",
-  SCaddress: "9h8gj79x",
+  SCaddress: "9h8gj79x9h8gj79x",
   SCDate: " 12 Jan 18"
 },
 {
@@ -16,7 +16,7 @@ var products = [
   IDCertificate: "x 509",
   Card: "Ballot",
   Attributes: "Identity",
-  SCaddress: "8htr1d99",
+  SCaddress: "8htr1d998htr1d99",
   SCDate: "08 Fev 18"
 }
 ];
@@ -28,7 +28,7 @@ class Browse extends Component {
         <h2>Browse your identities</h2>
         <br />
         <div class="form-group">
-          <label>Paste an Ether wallet public address below to check it’s owner certified identities</label>
+          <label>Paste an Ether wallet public address below to check its owner certified identities</label>
           <input type="password" name="password" onChange={this.handleChange} class="form-control" placeholder="Ether wallet public address" required />
         </div>
         <br />
@@ -40,11 +40,11 @@ class Browse extends Component {
           search
           >
           <TableHeaderColumn dataField="Entity" width='20%' isKey={true}>Entity</TableHeaderColumn>
-          <TableHeaderColumn dataField="IDCertificate" width='10%'>ID certificate</TableHeaderColumn>
+          <TableHeaderColumn dataField="IDCertificate" width='10%'>ID Certificate</TableHeaderColumn>
           <TableHeaderColumn dataField="Card" width='10%'>Card</TableHeaderColumn>
           <TableHeaderColumn dataField="Attributes" width='20%'>Attributes</TableHeaderColumn>
-          <TableHeaderColumn dataField="SCaddress" width='20%'>SCaddress</TableHeaderColumn>
-          <TableHeaderColumn dataField="SCDate" width='20%'>SC date</TableHeaderColumn>
+          <TableHeaderColumn dataField="SCaddress" width='20%'>SC Address</TableHeaderColumn>
+          <TableHeaderColumn dataField="SCDate" width='20%'>SC Date</TableHeaderColumn>
         </BootstrapTable>
       </div>
     );

@@ -25,7 +25,7 @@ class List extends Component {
         <h2>List the transactions of your identities</h2>
         <br />
           <div class="form-group">
-            <label>Paste an Ether wallet public address below to check it’s transaction history</label>
+            <label>Paste an Ether wallet public address below to check its transaction history</label>
             <input type="password" name="password" onChange={this.handleChange} class="form-control" placeholder="Ether wallet public address" required />
           </div>
           <br />
@@ -40,8 +40,8 @@ class List extends Component {
           <TableHeaderColumn dataField="Entity" width='20%' isKey={true}>Entity</TableHeaderColumn>
           <TableHeaderColumn dataField="Card" width='20%'>Card</TableHeaderColumn>
           <TableHeaderColumn dataField="Attributes" width='20%'>Attributes</TableHeaderColumn>
-          <TableHeaderColumn dataField="SCaddress" width='10%'>SCaddress</TableHeaderColumn>
-          <TableHeaderColumn dataField="TransactionDate" width='10%'>Transaction date</TableHeaderColumn>
+          <TableHeaderColumn dataField="SCaddress" width='10%'>SC Address</TableHeaderColumn>
+          <TableHeaderColumn dataField="TransactionDate" width='10%'>Transaction Date</TableHeaderColumn>
         </BootstrapTable>
       </div>
     );
