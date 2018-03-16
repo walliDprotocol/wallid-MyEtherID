@@ -52,10 +52,12 @@ ul.header li a {
 }
 
 .col-md-6 {
+  min-height: 400px;
 }
 
 .col-md-6.color{
     background-color: #D1C4E9;
+    min-height: 400px;
 }
 
 .col-md-12 {
@@ -72,11 +74,10 @@ ul.header li a {
 .fill {
     display: flex;
     justify-content: center;
-    align-items: center;
     overflow: hidden
 }
 .fill img {
     flex-shrink: 0;
-    min-width: 100%;
-    min-height: 100%
+    max-width: 400px;
+    max-height: 400px;
 }

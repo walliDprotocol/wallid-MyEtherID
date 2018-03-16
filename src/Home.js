@@ -31,19 +31,18 @@ class Home extends Component {
             </ul>
           <br />
         </div>
-        <div class="col-md-2 row-height">
-        </div>
-        <div class="col-md-4 row-height">
+        <div class="col-md-6 row-height">
           <div className="fill">
-            <img src={require('./myetherid.jpg')} alt="MyEtherID Logo" />
+            <img src={require('./blockchain.png')} alt="MyEtherID Logo" />
           </div>
         </div>
         </div>
 
         <br />
 
-
+        <div class="row">
         <Link to ='/import' ><button>Store My certified ID</button></Link>
+        </div>
       </div>
     );
   }

@@ -36,10 +36,13 @@ class Import extends Component {
       <br />
       <br />
       <h4>How To Protect Yourself From Loss</h4>
-      <p>If you lose your private key or  encryption password, it is gone forever. Don't lose it.</p>
-      <ul> - Make a backup of your private key and password. Do NOT just store it on your computer. Print it out on a piece of paper or save it to a USB drive.</ul>
-      <ul> - Store this paper or USB drive in a different physical location. A backup is not useful if it is destroyed by a fire or flood along with your laptop.</ul>
-      <ul> - Do not store your private key in Dropbox, Google Drive, or other cloud storage. If that account is compromised, your funds will be stolen.</ul>
+      <p>If you lose your private key, it is gone forever. Don't lose it.</p>
+
+        <ul>
+          <li>Make a backup of your private key. Do NOT just store it on your computer. Print it out on a piece of paper or save it to a USB drive.</li>
+          <li>Store this paper or USB drive in a different physical location. A backup is not useful if it is destroyed by a fire or flood along with your laptop.</li>
+          <li>Do not store your private key in Dropbox, Google Drive, or other cloud storage. If that account is compromised, your funds will be stolen.</li>
+        </ul>
 
       </div>
     );
