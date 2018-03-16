@@ -52,6 +52,9 @@ ul.header li a {
 }
 
 .col-md-6 {
+}
+
+.col-md-6.minHeight {
   min-height: 400px;
 }
 

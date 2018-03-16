@@ -31,7 +31,7 @@ class Home extends Component {
             </ul>
           <br />
         </div>
-        <div class="col-md-6 row-height">
+        <div class="col-md-6 row-height minHeight">
           <div className="fill">
             <img src={require('./blockchain.png')} alt="MyEtherID Logo" />
           </div>
