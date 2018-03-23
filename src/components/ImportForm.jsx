@@ -21,7 +21,6 @@ class ImportForm extends React.Component {
       password: '',
       data: '',
       ContractAddress : '0x82209352470b2f22f5a6874790114d5651a75285',
-      key : 'benfica_el_tetra_penta_18',
       ContractInstance : null
     };
 
@@ -59,18 +58,24 @@ class ImportForm extends React.Component {
     console.log('Password : ' + this.state.password);
     console.log('Data :' + this.state.data);
 
-    var obj = JSON.parse(this.state.data);
+    var obj = {};
+    try {
+      obj = JSON.parse(this.state.data);
+      var idAttr = CryptoJS.AES.encrypt(JSON.stringify( obj.id_attributes), this.state.password).toString();
+      var address =  CryptoJS.AES.encrypt( JSON.stringify( obj.address_attributes), this.state.password).toString();
+      console.log('user address ',obj.address_attributes );
 
-    
-    var idAttr = CryptoJS.AES.encrypt(JSON.stringify( obj.id_attributes), this.state.key).toString();
-    var address =  CryptoJS.AES.encrypt( JSON.stringify( obj.address_attributes), this.state.key).toString();
-    console.log('user address ',obj.address_attributes );
+      console.log('Encrypt idAttr ', idAttr  );
 
-    console.log('Encrypt idAttr ', idAttr  );
+      this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
+        console.log('add info result is ', data);
+      });
 
-    this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
-      console.log('add info result is ', data);
-    });
+    }
+    catch(err) {
+      console.log("error",err);
+      alert("ID Data format error")
+    }
 
     event.preventDefault();
   }
@@ -87,36 +92,108 @@ class ImportForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit} >
         <div class="form-group">
-          <label>Identity document:</label>
+          <label>
+            Identity document:
+          </label>
           <select class="form-control" required>
-            <option value="grapefruit">Cartão do Cidadão - República Portuguesa</option>
+            <option value="grapefruit">
+              Cartão do Cidadão - República Portuguesa
+            </option>
           </select>
         </div>
         <div class="form-group">
-          <label>Ether Wallet Address:</label>
-          <input type="text" name="walletAddress" onChange={this.handleChange} class="form-control" placeholder="Enter your wallet address" required/>
-        </div>
-        {/*<div class="form-group">
-          <label>BlockID Encryption Password</label>
-          <input type="password" name="password" onChange={this.handleChange} class="form-control" placeholder="Create the password to encrypt and then later decrypt your certified ID attributes" required />
-          </div>
-          <p><a href="https://blockid.herokuapp.com">What is BlockID Encrytion Password?</a></p>
-          <div class="form-group">
-          <label>Confirm BlockID Encryption Password:</label>
-          <input type="password" name="password" onChange={this.handleChange} class="form-control" placeholder="Create the password to encrypt and later decrypt your certified ID attributes" required />
-          </div>
-          */}
-          <div class="form-group">
-            <label>ID Data:</label>
-            <textarea id="importData" name="data" onChange={this.handleChange} class="form-control" rows="5" placeholder="Paste your ID Data provided by BlockID’s Import ID App" required></textarea>
-          </div>
-          <input type="submit" value="Connect to metamask" /> Recommended action
-            <p><a href="https://metamask.io/">what is Metamask?</a></p>
-            <div class="form-group">
-              <label>Paste Private Key: Not recommended</label>
-              <input type="password" name="password" onChange={this.handleChange} class="form-control" placeholder="Paste Private Key: Not recommended" />
+          <label>
+            BlockID Encryption Password
+          </label>
+          <p>
+            <a href="/">
+              What is BlockID Encrytion Password?
+            </a>
+          </p>
+          <div class="row ">
+            <div class="col-md-6">
+              <input
+                type="password"
+                name="password"
+                onChange={this.handleChange}
+                class="form-control"
+                placeholder="Create the password to encrypt and later decrypt your certified ID attributes"
+                required />
             </div>
-            <input type="submit" value="Submit" />
+            <div class="col-md-6">
+              <input
+                type="password"
+                name="password"
+                onChange={this.handleChange}
+                class="form-control"
+                placeholder="Confirm the password to encrypt and later decrypt your certified ID attributes"
+                required />
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>
+            ID Data:
+          </label>
+          <textarea
+            id="importData"
+            name="data"
+            onChange={this.handleChange}
+            class="form-control"
+            rows="5"
+            placeholder="Paste your ID Data provided by BlockID’s Import ID App"
+            required>
+          </textarea>
+        </div>
+        <p>
+          To submit you can choose between connect with metamask or Paste Private Key
+        </p>
+        <div class="row ">
+          <div class="col-md-1 ">
+          </div>
+          <div class="col-md-4 colorSubmit">
+            <br / >
+              <input
+                type="submit"
+                value="Connect with metamask" /> Recommended action
+                <p>
+                  <a href="https://metamask.io/">
+                    what is Metamask?
+                  </a>
+                </p>
+              </div>
+              <div class="col-md-2 ">
+                <p>or</p>
+              </div>
+              <div class="col-md-4 colorSubmit">
+                <div class="form-group">
+                  <label>
+                    Ether Wallet Address: Not recommended
+                  </label>
+                  <input
+                    type="text"
+                    name="walletAddress"
+                    onChange={this.handleChange}
+                    class="form-control"
+                    placeholder="Enter your wallet address"
+                    />
+                </div>
+                <div class="form-group">
+                  <label>
+                    Paste Private Key: Not recommended
+                  </label>
+                  <input
+                    type="password"
+                    name="password"
+                    onChange={this.handleChange}
+                    class="form-control"
+                    placeholder="Paste Private Key: Not recommended" />
+                </div>
+                <input type="submit" value="Submit" />
+                <p>
+                </p>
+              </div>
+            </div>
           </form>
         );
       }

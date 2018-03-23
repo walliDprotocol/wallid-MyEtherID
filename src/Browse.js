@@ -36,7 +36,6 @@ class Browse extends Component {
   }
 
   expandComponent(row) {
-
     return (
       <BSTable data={ row.expand } />
     );
@@ -47,10 +46,7 @@ class Browse extends Component {
       <div>
         <h2>Browse your identities</h2>
         <br />
-        <div class="form-group">
-          <label>Paste an Ether wallet public address below to check its owner certified identities</label>
-          <input type="password" name="password" onChange={this.handleChange} class="form-control" placeholder="Ether wallet public address" required />
-        </div>
+
         <br />
         <BootstrapTable
           data={products}
@@ -81,8 +77,12 @@ class BSTable extends React.Component {
       data: '',
       ContractAddress : '0x82209352470b2f22f5a6874790114d5651a75285',
       ContractInstance : null,
-      key : 'benfica_el_tetra_penta_18'
+      password: ''
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
     if(window.web3){
       const MyContract = window.web3.eth.contract(BlockIdContract.abi)
       this.state.ContractInstance = MyContract.at(this.state.ContractAddress)
@@ -91,9 +91,18 @@ class BSTable extends React.Component {
         console.log('Count items :  ', data);
         console.log('total items #', data.c[0] );
       });
-
-      this.getInfo();
     }
+  }
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  handleSubmit(event) {
+    this.getInfo()
+    event.preventDefault();
   }
 
   hex2a(hexx) {
@@ -109,32 +118,42 @@ class BSTable extends React.Component {
     this.state.ContractInstance.getInfo( (err, data) => {
       console.log('get Info Result ', data);
       var loadData = [];
+      var dataAttribute = [];
 
-      var bytes =  CryptoJS.AES.decrypt(this.hex2a(data[1]) ,this.state.key);
-      var ret_1 = bytes.toString(CryptoJS.enc.Utf8);
-      var dataAttribute = JSON.parse(ret_1);
-      //console.log(dataAttribute);
-      //console.log(Object.keys(dataAttribute));
-      for(var i in dataAttribute){
-        //console.log(i);
-        //console.log(dataAttribute[i]);
-        loadData.push({ 'item' : i, 'value' : dataAttribute[i]})
+      try {
+        var bytes =  CryptoJS.AES.decrypt(this.hex2a(data[1]) ,this.state.password);
+        var ret_1 = bytes.toString(CryptoJS.enc.Utf8);
+        var dataAttribute = JSON.parse(ret_1);
+        //console.log(dataAttribute);
+        //console.log(Object.keys(dataAttribute));
+        for(var i in dataAttribute){
+          //console.log(i);
+          //console.log(dataAttribute[i]);
+          loadData.push({ 'item' : i, 'value' : dataAttribute[i]})
+        }
+
+        bytes =  CryptoJS.AES.decrypt(this.hex2a(data[2]),this.state.password);
+        var ret_2 = bytes.toString(CryptoJS.enc.Utf8);
+        dataAttribute = JSON.parse(ret_2)
+        //console.log(dataAttribute);
+        //console.log(Object.keys(dataAttribute));
+        for(i in dataAttribute){
+          //console.log(i);
+          //console.log(dataAttribute[i]);
+          loadData.push({ 'item' : i, 'value' : dataAttribute[i]})
+        }
+        this.state.data = loadData
+        this.forceUpdate()
+
+      }
+      catch(err) {
+          console.log("error",err);
+          alert("ID Data format error")
       }
 
-      bytes =  CryptoJS.AES.decrypt(this.hex2a(data[2]),this.state.key);
-      var ret_2 = bytes.toString(CryptoJS.enc.Utf8);
-      dataAttribute = JSON.parse(ret_2)
-      //console.log(dataAttribute);
-      //console.log(Object.keys(dataAttribute));
-      for(i in dataAttribute){
-        //console.log(i);
-        //console.log(dataAttribute[i]);
-        loadData.push({ 'item' : i, 'value' : dataAttribute[i]})
-      }
-      this.state.data = loadData
-      //console.log(this.state.data);
     });
   }
+
   render() {
     if (this.state.data) {
       return (
@@ -145,9 +164,38 @@ class BSTable extends React.Component {
           >
           <TableHeaderColumn dataField="item" width='20%' isKey={true}>Item</TableHeaderColumn>
           <TableHeaderColumn dataField="value" width='10%'>Value</TableHeaderColumn>
-        </BootstrapTable>);
+        </BootstrapTable>
+      );
       } else {
-        return (<p>There is no data to display</p>);
+        return (
+
+            <div>
+              <form onSubmit={this.handleSubmit} >
+                <div class="form-group">
+                  <label>
+                    BlockID Encryption Password
+                  </label>
+                  <p>
+                    <a href="/">
+                      What is BlockID Encrytion Password?
+                    </a>
+                  </p>
+                  <div class="row ">
+                    <div class="col-md-6">
+                      <input
+                        type="password"
+                        name="password"
+                        onChange={this.handleChange}
+                        class="form-control"
+                        placeholder="Enter the password to decrypt your certified ID attributes"
+                        required />
+                    </div>
+                  </div>
+                </div>
+                <input type="submit" value="Submit" />
+                </form>
+            </div>
+      );
       }
     }
   }

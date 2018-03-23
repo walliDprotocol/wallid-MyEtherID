@@ -67,13 +67,15 @@ ul.header li a {
     background-color: #D1C4E9;
 }
 
-.col-md-4 {
-    border-radius: 15px 0 0 15px;
+.col-md-2 {
+  text-align: center;
+  background-color: #D1C4E9;
 }
 
-.col-md-2 {
-    border-radius: 0 15px 15px 0;
+.colorSubmit{
+  background-color: #EDE7F6;
 }
+
 .fill {
     display: flex;
     justify-content: center;
