@@ -148,7 +148,7 @@ class BSTable extends React.Component {
       }
       catch(err) {
           console.log("error",err);
-          alert("ID Data format error")
+          alert("Decrypt fail! Try Again!")
       }
 
     });
