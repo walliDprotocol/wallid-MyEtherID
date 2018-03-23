@@ -1,6 +1,7 @@
 import React from "react";
 import Web3 from 'web3'
-import BlockIdContract from '../blockid/BlockId.js'
+import BlockIdContract from '../blockid/BlockId.js';
+var CryptoJS = require("crypto-js");
 
 window.addEventListener('reload', function () {
   if(typeof web3 !== 'undefined'){
@@ -20,6 +21,7 @@ class ImportForm extends React.Component {
       password: '',
       data: '',
       ContractAddress : '0x82209352470b2f22f5a6874790114d5651a75285',
+      key : 'benfica_el_tetra_penta_18',
       ContractInstance : null
     };
 
@@ -59,9 +61,12 @@ class ImportForm extends React.Component {
 
     var obj = JSON.parse(this.state.data);
 
-    var idAttr = JSON.stringify( obj.id_attributes);
-    var address = JSON.stringify( obj.address_attributes);
+    
+    var idAttr = CryptoJS.AES.encrypt(JSON.stringify( obj.id_attributes), this.state.key).toString();
+    var address =  CryptoJS.AES.encrypt( JSON.stringify( obj.address_attributes), this.state.key).toString();
     console.log('user address ',obj.address_attributes );
+
+    console.log('Encrypt idAttr ', idAttr  );
 
     this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
       console.log('add info result is ', data);

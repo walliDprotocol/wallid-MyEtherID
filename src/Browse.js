@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Web3 from 'web3'
-import BlockIdContract from './blockid/BlockId.js'
+import BlockIdContract from './blockid/BlockId.js';
+var CryptoJS = require("crypto-js");
+
 
 window.addEventListener('reload', function () {
 
@@ -78,7 +80,8 @@ class BSTable extends React.Component {
     this.state = {
       data: '',
       ContractAddress : '0x82209352470b2f22f5a6874790114d5651a75285',
-      ContractInstance : null
+      ContractInstance : null,
+      key : 'benfica_el_tetra_penta_18'
     };
     if(window.web3){
       const MyContract = window.web3.eth.contract(BlockIdContract.abi)
@@ -106,7 +109,10 @@ class BSTable extends React.Component {
     this.state.ContractInstance.getInfo( (err, data) => {
       console.log('get Info Result ', data);
       var loadData = [];
-      var dataAttribute = JSON.parse(this.hex2a(data[1]))
+
+      var bytes =  CryptoJS.AES.decrypt(this.hex2a(data[1]) ,this.state.key);
+      var ret_1 = bytes.toString(CryptoJS.enc.Utf8);
+      var dataAttribute = JSON.parse(ret_1);
       //console.log(dataAttribute);
       //console.log(Object.keys(dataAttribute));
       for(var i in dataAttribute){
@@ -115,7 +121,9 @@ class BSTable extends React.Component {
         loadData.push({ 'item' : i, 'value' : dataAttribute[i]})
       }
 
-      dataAttribute = JSON.parse(this.hex2a(data[2]))
+      bytes =  CryptoJS.AES.decrypt(this.hex2a(data[2]),this.state.key);
+      var ret_2 = bytes.toString(CryptoJS.enc.Utf8);
+      dataAttribute = JSON.parse(ret_2)
       //console.log(dataAttribute);
       //console.log(Object.keys(dataAttribute));
       for(i in dataAttribute){
