@@ -19,6 +19,7 @@ class ImportForm extends React.Component {
     this.state = {
       walletAddress: '',
       password: '',
+      passwordCheck: '',
       data: '',
       ContractAddress : '0x82209352470b2f22f5a6874790114d5651a75285',
       ContractInstance : null
@@ -56,25 +57,31 @@ class ImportForm extends React.Component {
 
     console.log('WalletAddress :' + this.state.walletAddress);
     console.log('Password : ' + this.state.password);
+    console.log('Password Check : ' + this.state.passwordCheck);
     console.log('Data :' + this.state.data);
 
-    var obj = {};
-    try {
-      obj = JSON.parse(this.state.data);
-      var idAttr = CryptoJS.AES.encrypt(JSON.stringify( obj.id_attributes), this.state.password).toString();
-      var address =  CryptoJS.AES.encrypt( JSON.stringify( obj.address_attributes), this.state.password).toString();
-      console.log('user address ',obj.address_attributes );
+    if(this.state.password === this.state.passwordCheck){
+      var obj = {};
+      try {
+        obj = JSON.parse(this.state.data);
+        var idAttr = CryptoJS.AES.encrypt(JSON.stringify( obj.id_attributes), this.state.password).toString();
+        var address =  CryptoJS.AES.encrypt( JSON.stringify( obj.address_attributes), this.state.password).toString();
+        console.log('user address ',obj.address_attributes );
 
-      console.log('Encrypt idAttr ', idAttr  );
+        console.log('Encrypt idAttr ', idAttr  );
 
-      this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
-        console.log('add info result is ', data);
-      });
+        this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
+          console.log('add info result is ', data);
+        });
 
-    }
-    catch(err) {
-      console.log("error",err);
-      alert("ID Data format error")
+      }
+      catch(err) {
+        console.log("error",err);
+        alert("ID Data format error. Please copy all data from ImportID")
+      }
+
+    }else{
+      alert("Password and comfirm password is not the same")
     }
 
     event.preventDefault();
@@ -123,7 +130,7 @@ class ImportForm extends React.Component {
             <div class="col-md-6">
               <input
                 type="password"
-                name="password"
+                name="passwordCheck"
                 onChange={this.handleChange}
                 class="form-control"
                 placeholder="Confirm the password to encrypt and later decrypt your certified ID attributes"

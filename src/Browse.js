@@ -4,7 +4,6 @@ import Web3 from 'web3'
 import BlockIdContract from './blockid/BlockId.js';
 var CryptoJS = require("crypto-js");
 
-
 window.addEventListener('reload', function () {
 
   if(typeof web3 !== 'undefined'){
@@ -123,7 +122,7 @@ class BSTable extends React.Component {
       try {
         var bytes =  CryptoJS.AES.decrypt(this.hex2a(data[1]) ,this.state.password);
         var ret_1 = bytes.toString(CryptoJS.enc.Utf8);
-        var dataAttribute = JSON.parse(ret_1);
+        dataAttribute = JSON.parse(ret_1);
         //console.log(dataAttribute);
         //console.log(Object.keys(dataAttribute));
         for(var i in dataAttribute){
