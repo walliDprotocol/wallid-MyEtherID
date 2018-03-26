@@ -22,8 +22,10 @@ class List extends Component {
   render() {
     return (
       <div>
-        <h2>List the transactions of your identities</h2>
-        <br />
+        <h2>List the transactions of your identities </h2>
+          <br />
+            <p>Check the transaction history at Etherscan, pressing <a href="https://rinkeby.etherscan.io/address/0x82209352470b2f22f5a6874790114d5651a75285">here.</a></p>
+        {/*<br />
           <div class="form-group">
             <label>Paste an Ether wallet public address below to check its transaction history</label>
             <input type="password" name="password" onChange={this.handleChange} class="form-control" placeholder="Ether wallet public address" required />
@@ -42,7 +44,7 @@ class List extends Component {
           <TableHeaderColumn dataField="Attributes" width='15%'>Attributes</TableHeaderColumn>
           <TableHeaderColumn dataField="SCaddress" width='15%'>SC Address</TableHeaderColumn>
           <TableHeaderColumn dataField="TransactionDate" width='15%'>Transaction Date</TableHeaderColumn>
-        </BootstrapTable>
+        </BootstrapTable>*/}
       </div>
     );
   }
