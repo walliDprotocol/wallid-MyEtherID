@@ -153,7 +153,7 @@ class ImportForm extends React.Component {
           </textarea>
         </div>
         <p>
-          To submit you can choose between connect with metamask or Paste Private Key
+          To submit you can choose between connecting with Metamask or using your Private key
         </p>
         <div class="row ">
           <div class="col-md-1 ">

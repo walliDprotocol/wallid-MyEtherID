@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+//import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 // products will be presented by react-bootstrap-table
-var products = [{
+/*var products = [{
   Service: "CrediBank",
   Entity: "Portuguese Republic",
   Card: "Cartão de Cidadão",
@@ -17,7 +17,7 @@ var products = [{
   SCaddress: "8htr1d998htr1d99",
   TransactionDate: "16 Fev 18"
 }
-];
+];*/
 class List extends Component {
   render() {
     return (
