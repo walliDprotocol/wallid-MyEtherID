@@ -69,127 +69,131 @@ class ImportForm extends React.Component {
     //console.log('Password Check : ' + this.state.passwordCheck);
     console.log('Data :' + this.state.data);
 
-      var obj = {};
-      try {
-        obj = JSON.parse(this.state.data);
-        var idAttr = CryptoJS.AES.encrypt(JSON.stringify( obj.id_attributes), this.state.password).toString();
-        var address =  CryptoJS.AES.encrypt( JSON.stringify( obj.address_attributes), this.state.password).toString();
-        console.log('user address ',obj.address_attributes );
-        console.log('Encrypt idAttr ', idAttr  );
+    var obj = {};
+    try {
+      obj = JSON.parse(this.state.data);
+      var idAttr = CryptoJS.AES.encrypt(JSON.stringify( obj.id_attributes), this.state.password).toString();
+      var address =  CryptoJS.AES.encrypt( JSON.stringify( obj.address_attributes), this.state.password).toString();
 
-        this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
-          console.log('add info result is ', data);
-        });
+      console.log('Encrypt idAttr ', idAttr  );
+      console.log('Encrypt address ', address );
 
-      }
-      catch(err) {
-        console.log("error",err);
-        alert("ID Data format error. Please copy all data from ImportID")
-      }
+      this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
+        console.log('add info result is ', data);
+      });
+
+    }
+    catch(err) {
+      alert("ID Data format error. Please copy all data from ImportID")
+    }
 
     return;
   }
 
   handleSubmit(event) {
-        console.log("handleSubmit");
-        if(this.state.password === this.state.passwordCheck){
-        fetch('http://blockid.caixamagica.pt/api/store_blockid', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: this.state.data
-        })
-        .then(this.handleErrors)
-        .then(response => this.handleSucess(response) )
-        .catch(error => console.log(error) );
-      }else{
-        alert("Password and comfirm password is not the same")
+    console.log("handleSubmit");
+    if(this.state.password === this.state.passwordCheck){
+      fetch('https://blockid.caixamagica.pt/api/store_blockid', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: this.state.data
+      })
+      .then(this.handleErrors)
+      .then(response => this.handleSucess(response) )
+      .catch(error => {
+        console.log(error)
+        alert("Store BlockID Fail. Please check the internet connection.")
       }
-    event.preventDefault();
+    );
+  }else{
+    alert("Password and comfirm password is not the same")
   }
+  event.preventDefault();
+}
 
-  /* run after component render */
-  componentDidMount(){
-  }
+/* run after component render */
+componentDidMount(){
+}
 
-  /* run before component render */
-  componentWillMount(){
-  }
+/* run before component render */
+componentWillMount(){
+}
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit} >
-        <div class="form-group">
-          <label>
-            Identity document:
-          </label>
-          <select class="form-control" required>
-            <option value="grapefruit">
-              Cartão do Cidadão - República Portuguesa
-            </option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>
-            BlockID Encryption Password
-          </label>
-          <p>
-            <a href="/">
-              What is BlockID Encrytion Password?
-            </a>
-          </p>
-          <div class="row ">
-            <div class="col-md-6">
-              <input
-                type="password"
-                name="password"
-                onChange={this.handleChange}
-                class="form-control"
-                placeholder="Create the password to encrypt and later decrypt your certified ID attributes"
-                required />
-            </div>
-            <div class="col-md-6">
-              <input
-                type="password"
-                name="passwordCheck"
-                onChange={this.handleChange}
-                class="form-control"
-                placeholder="Confirm the password to encrypt and later decrypt your certified ID attributes"
-                required />
-            </div>
+render() {
+  return (
+    <form onSubmit={this.handleSubmit} >
+      <div class="form-group">
+        <label>
+          Identity document:
+        </label>
+        <select class="form-control" required>
+          <option value="grapefruit">
+            Cartão do Cidadão - República Portuguesa
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>
+          BlockID Encryption Password
+        </label>
+        <p>
+          <a href="/">
+            What is BlockID Encrytion Password?
+          </a>
+        </p>
+        <div class="row ">
+          <div class="col-md-6">
+            <input
+              type="password"
+              name="password"
+              onChange={this.handleChange}
+              class="form-control"
+              placeholder="Create the password to encrypt and later decrypt your certified ID attributes"
+              required />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="password"
+              name="passwordCheck"
+              onChange={this.handleChange}
+              class="form-control"
+              placeholder="Confirm the password to encrypt and later decrypt your certified ID attributes"
+              required />
           </div>
         </div>
-        <div class="form-group">
-          <label>
-            ID Data:
-          </label>
-          <textarea
-            id="importData"
-            name="data"
-            onChange={this.handleChange}
-            class="form-control"
-            rows="5"
-            placeholder="Paste your ID Data provided by BlockID’s Import ID App"
-            required>
-          </textarea>
+      </div>
+      <div class="form-group">
+        <label>
+          ID Data:
+        </label>
+        <textarea
+          id="importData"
+          name="data"
+          onChange={this.handleChange}
+          class="form-control"
+          rows="5"
+          placeholder="Paste your ID Data provided by BlockID’s Import ID App"
+          required>
+        </textarea>
+      </div>
+      <p>
+        To submit connect with Metamask
+      </p>
+      <div class="form-group">
+        <input
+          type="submit"
+          value="Connect with metamask" /> Recommended action
+          <p>
+            <a href="https://metamask.io/">
+              what is Metamask?
+            </a>
+          </p>
         </div>
-        <p>
-          To submit connect with Metamask
-        </p>
-        <div class="form-group">
-              <input
-                type="submit"
-                value="Connect with metamask" /> Recommended action
-                <p>
-                  <a href="https://metamask.io/">
-                    what is Metamask?
-                  </a>
-                </p>
-              </div>
-          </form>
-        );
-      }
-    }
+      </form>
+    );
+  }
+}
 
-    export default ImportForm;
+export default ImportForm;
