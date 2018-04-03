@@ -80,7 +80,7 @@ class ImportForm extends React.Component {
         this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
           console.log('add info result is ', data);
         });
-        
+
       }
       catch(err) {
         console.log("error",err);
@@ -175,13 +175,9 @@ class ImportForm extends React.Component {
           </textarea>
         </div>
         <p>
-          To submit you can choose between connecting with Metamask or using your Private key
+          To submit connect with Metamask
         </p>
-        <div class="row ">
-          <div class="col-md-1 ">
-          </div>
-          <div class="col-md-4 colorSubmit">
-            <br / >
+        <div class="form-group">
               <input
                 type="submit"
                 value="Connect with metamask" /> Recommended action
@@ -191,38 +187,6 @@ class ImportForm extends React.Component {
                   </a>
                 </p>
               </div>
-              <div class="col-md-2 ">
-                <p>or</p>
-              </div>
-              <div class="col-md-4 colorSubmit">
-                <div class="form-group">
-                  <label>
-                    Ether Wallet Address: Not recommended
-                  </label>
-                  <input
-                    type="text"
-                    name="walletAddress"
-                    onChange={this.handleChange}
-                    class="form-control"
-                    placeholder="Enter your wallet address"
-                    />
-                </div>
-                <div class="form-group">
-                  <label>
-                    Paste Private Key: Not recommended
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    onChange={this.handleChange}
-                    class="form-control"
-                    placeholder="Paste Private Key: Not recommended" />
-                </div>
-                <input type="submit" value="Submit" />
-                <p>
-                </p>
-              </div>
-            </div>
           </form>
         );
       }

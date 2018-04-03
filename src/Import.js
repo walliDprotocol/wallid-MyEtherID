@@ -5,12 +5,7 @@ class Import extends Component {
   render() {
     return (
       <div>
-      <h2>Import your BlockID Identity</h2>
-      <br />
-      <p>Encrypt and save  your certified identity on the blockchain and associate it with your ether wallet.
-      If you don’t have an ether wallet, you can create it securely and for free on MyEtherWallet.com. Create <a href="https://www.myetherwallet.com/">here</a>.</p>
-      <p><a href="https://www.myetherwallet.com">What is MyEtherWallet?</a></p>
-
+      <h2>Store your BlockID on the blockchain</h2>
       <br />
       <p>You need to locally generate your ID data from BlockID’s ImportID desktop app. Once you generate it on the app, copy it to respective ID Data section below.</p>
       <p><a href="https://blockid.herokuapp.com">What is BlockID?</a></p>
@@ -24,7 +19,6 @@ class Import extends Component {
         <div class="row">
         <div class="col-md-12">
           <br />
-          <h4>Store your BlockID on the blockchain</h4>
           <br />
           <ImportForm />
           <br />

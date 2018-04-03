@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import {
-  Link
-} from 'react-router-dom';
 
 class Home extends Component {
   render() {
@@ -37,12 +34,20 @@ class Home extends Component {
           </div>
         </div>
         </div>
-
         <br />
+          <h2>Store your BlockID Identity</h2>
+          <br />
+          <p>Encrypt and save  your certified identity on the blockchain and associate it with your ether wallet.
+          If you don’t have an ether wallet, you can create it securely and for free on MyEtherWallet.com. Create <a href="https://www.myetherwallet.com/">here</a>.</p>
+          <p><a href="https://www.myetherwallet.com">What is MyEtherWallet?</a></p>
 
-        <div class="row">
-        <Link to ='/import' ><button>Store My certified ID</button></Link>
-        </div>
+          <br />
+          <p>You need to locally generate your ID data from BlockID’s ImportID desktop app. Once you generate it on the app, copy it to respective ID Data section below.</p>
+          <p><a href="https://blockid.herokuapp.com">What is BlockID?</a></p>
+          <p><a href="https://blockid.herokuapp.com">What is my ID Data?</a></p>
+
+          <br />
+          <p>If you haven’t installed Import ID on your computer, you can download it for free. <a href="https://blockid.herokuapp.com">Download here</a>.</p>
       </div>
     );
   }
