@@ -53,37 +53,59 @@ class ImportForm extends React.Component {
     });
   }
 
-  handleSubmit(event) {
-
+  handleErrors(response) {
+    console.log("handleErrors");
+    if (!response.ok) {
+      console.log("response",response);
+      alert("ID Data format error. Please copy all data from ImportID")
+      throw Error(response.statusText);
+    }
+    return response;
+  }
+  handleSucess(response) {
+    console.log("handleSucess");
     console.log('WalletAddress :' + this.state.walletAddress);
-    console.log('Password : ' + this.state.password);
-    console.log('Password Check : ' + this.state.passwordCheck);
+    //console.log('Password : ' + this.state.password);
+    //console.log('Password Check : ' + this.state.passwordCheck);
     console.log('Data :' + this.state.data);
 
-    if(this.state.password === this.state.passwordCheck){
       var obj = {};
       try {
         obj = JSON.parse(this.state.data);
         var idAttr = CryptoJS.AES.encrypt(JSON.stringify( obj.id_attributes), this.state.password).toString();
         var address =  CryptoJS.AES.encrypt( JSON.stringify( obj.address_attributes), this.state.password).toString();
         console.log('user address ',obj.address_attributes );
-
         console.log('Encrypt idAttr ', idAttr  );
 
         this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
           console.log('add info result is ', data);
         });
-
+        
       }
       catch(err) {
         console.log("error",err);
         alert("ID Data format error. Please copy all data from ImportID")
       }
 
-    }else{
-      alert("Password and comfirm password is not the same")
-    }
+    return;
+  }
 
+  handleSubmit(event) {
+        console.log("handleSubmit");
+        if(this.state.password === this.state.passwordCheck){
+        fetch('http://blockid.caixamagica.pt/api/store_blockid', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: this.state.data
+        })
+        .then(this.handleErrors)
+        .then(response => this.handleSucess(response) )
+        .catch(error => console.log(error) );
+      }else{
+        alert("Password and comfirm password is not the same")
+      }
     event.preventDefault();
   }
 
