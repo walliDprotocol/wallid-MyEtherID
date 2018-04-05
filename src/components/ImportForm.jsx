@@ -116,7 +116,7 @@ class ImportForm extends React.Component {
   handleSubmit(event) {
     console.log("handleSubmit");
     if(this.state.password === this.state.passwordCheck){
-      fetch('https://blockid.caixamagica.pt/api/store_blockid', {
+      fetch('https://blockid.caixamagica.pt/api/store', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
