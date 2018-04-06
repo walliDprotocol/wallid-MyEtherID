@@ -116,20 +116,22 @@ class ImportForm extends React.Component {
   handleSubmit(event) {
     console.log("handleSubmit");
     if(this.state.password === this.state.passwordCheck){
-      fetch('https://blockid.caixamagica.pt/api/store', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: this.state.data
-      })
-      .then(this.handleErrors)
-      .then(response => this.handleSucess(response) )
-      .catch(error => {
-        console.log(error)
-        alert("Store BlockID Fail. Please check the internet connection.")
-      }
-    );
+      this.handleSucess()
+    //   fetch('https://blockid.caixamagica.pt/api/store', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: this.state.data
+    //   })
+    //   .then(this.handleErrors)
+    //   .then(response => this.handleSucess(response) )
+    //   .catch(error => {
+    //     console.log(error)
+    //     alert("Store BlockID Fail. Please check the internet connection.")
+    //
+    //   }
+    // );
   }else{
     alert("Password and comfirm password is not the same")
   }
