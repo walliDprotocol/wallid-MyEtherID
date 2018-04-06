@@ -45,7 +45,10 @@ class Browse extends Component {
       <div>
         <h2>Browse your identities</h2>
         <br />
-
+        <p>Decrypt your Identity Smart Contract addresses and check your certified ID attributes.
+Make sure you are logged in metamask to ensure your safety accessing your ether wallet.</p>
+<p>Remember decryption is only possible your with your IDKey and we don’t have any access to your data
+</p>
         <br />
         <BootstrapTable
           data={products}

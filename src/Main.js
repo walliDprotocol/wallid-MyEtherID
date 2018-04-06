@@ -19,7 +19,7 @@ class Main extends Component {
               <img src={require('./myetherid_topo.jpg')} alt="MyEtherID Logo"/>
             </div>
           <ul className="header">
-            <li><NavLink exact to="/">Home</NavLink></li>
+            <li><NavLink exact to="/">Home Page</NavLink></li>
             <li><NavLink to="/import">Store Identity</NavLink></li>
             <li><NavLink to="/browse">View Identities</NavLink></li>
             <li><NavLink to="/list">Transactions</NavLink></li>

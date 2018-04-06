@@ -160,7 +160,7 @@ render() {
               </option>
             </select>
           </div>
-          <div class="form-group">
+          {/*<div class="form-group">
             <label>
               BlockID Encryption Password
             </label>
@@ -189,7 +189,7 @@ render() {
                   required />
               </div>
             </div>
-          </div>
+          </div>*/}
           <div class="form-group">
             <label>
               ID Data:
@@ -210,12 +210,7 @@ render() {
           <div class="form-group">
             <input
               type="submit"
-              value="Connect with metamask" /> Recommended action
-              <p>
-                <a href="https://metamask.io/">
-                  what is Metamask?
-                </a>
-              </p>
+              value="Connect with metamask" />
             </div>
           </form>
         );
@@ -223,7 +218,7 @@ render() {
     return (
       <div>
         <h2>
-          Step 2 - Select your identity type
+          Select your identity type
         </h2>
         <form onSubmit={this.handleSubmit} >
           <div class="form-group">
@@ -237,10 +232,7 @@ render() {
             </select>
           </div>
           <p>
-            To prove your identity connect with metamask.
-          </p>
-          <p>
-            User logged out? Please login your account at metamask and try again!!
+            Login to your metamask to associate your ether wallet and refresh the page
           </p>
           <p>
             <a href="https://metamask.io/">
@@ -255,7 +247,7 @@ render() {
     return (
       <div>
         <h2>
-          Step 2 - Select your identity type
+          Select your identity type
         </h2>
         <form onSubmit={this.handleSubmit} >
           <div class="form-group">
@@ -269,24 +261,16 @@ render() {
             </select>
           </div>
           <p>
-            No MetaMask detected.
+            Don’t have memaskt plug in installed?
           </p>
           <p>
-            To prove your identity connect with metamask.
-          </p>
-          <p>
-            <a href="https://blockid.herokuapp.com">
-              What is BlockID?
+            <a href="https://metamask.io/">
+            Download metamask here
             </a>
           </p>
           <p>
             <a href="https://metamask.io/">
               What is Metamask?
-            </a>
-          </p>
-          <p>
-            <a href="https://metamask.io/">
-              Download Metamask?
             </a>
           </p>
         </form>

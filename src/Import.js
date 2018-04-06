@@ -5,12 +5,13 @@ class Import extends Component {
   render() {
     return (
       <div>
-      <h2>Store your BlockID on the blockchain</h2>
+      <h2>Store your Identity on the Blockchain</h2>
       <br />
-      <p>You need to locally generate your ID data from BlockID’s ImportID desktop app. Once you generate it on the app, copy it to respective ID Data section below.</p>
-      <p><a href="https://blockid.herokuapp.com">What is BlockID?</a></p>
-      <p><a href="https://blockid.herokuapp.com">What is my ID Data?</a></p>
-
+      <p>Encrypt your ID attributes onto a smart contract address and store them on your ether wallet.</p>
+      <p>First, You need to extract your attributes from your Identity Document and locally generate your ID data from BlockID’s ImportID desktop app. Once you generate it on the app, copy it to respective ID Data section below.</p>
+        <p><a href="https://blockid.herokuapp.com">What is ImportID?</a></p>
+        <p><a href="https://blockid.herokuapp.com">What is my ID Data?</a></p>
+        <p><a href="https://blockid.herokuapp.com">What is BlockID?</a></p>
       <br />
       <p>If you haven’t installed Import ID on your computer, you can download it for free <a href="https://blockid.herokuapp.com">here</a>.</p>
 

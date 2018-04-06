@@ -22,9 +22,9 @@ class List extends Component {
   render() {
     return (
       <div>
-        <h2>List the transactions of your identities </h2>
+        <h2>Check your ID Transactions </h2>
           <br />
-            <p>Check the transaction history at Etherscan, pressing <a href="https://rinkeby.etherscan.io/address/0x82209352470b2f22f5a6874790114d5651a75285">here.</a></p>
+            <p>Confirm the history of your id transactions through your smart contract address. You can check it at Etherscan, pressingg <a href="https://rinkeby.etherscan.io/address/0x82209352470b2f22f5a6874790114d5651a75285">here.</a></p>
         {/*<br />
           <div class="form-group">
             <label>Paste an Ether wallet public address below to check its transaction history</label>
