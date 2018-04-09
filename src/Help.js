@@ -19,7 +19,6 @@ class Help extends Component {
           <p><a href="https://blockid.herokuapp.com">What is metamask?</a></p>
           <p><a href="https://blockid.herokuapp.com">Download ImportID</a></p>
           <p><a href="https://blockid.herokuapp.com">What is ID Data?</a></p>
-          <p><a href="https://blockid.herokuapp.com">What is IDKey?</a></p>
           <p><a href="https://blockid.herokuapp.com">What happens if i lose my keys?</a></p>
           <p><a href="https://blockid.herokuapp.com">Is it safe to store my ID attributes on the Blockchain?</a></p>
           <p><a href="https://blockid.herokuapp.com">How can i trade my attributes and keep my privacy?</a></p>

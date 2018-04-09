@@ -47,7 +47,7 @@ class Browse extends Component {
         <br />
         <p>Decrypt your Identity Smart Contract addresses and check your certified ID attributes.
 Make sure you are logged in metamask to ensure your safety accessing your ether wallet.</p>
-<p>Remember decryption is only possible your with your IDKey and we don’t have any access to your data
+<p>Remember decryption is only possible your with your wallet private key through metamask association and we don’t have any access to your data
 </p>
         <br />
         <BootstrapTable
