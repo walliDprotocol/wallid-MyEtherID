@@ -93,8 +93,31 @@ class BSTable extends React.Component {
         console.log('Count items :  ', data);
         console.log('total items #', data.c[0] );
       });
+      this.checkMetamaskUser()
     }
   }
+
+  checkMetamaskUser() {
+   var self = this
+
+   window.web3.eth.getAccounts(function(err, accounts){
+
+     if (err != null) {
+       console.error("An error occurred: "+err);
+       self.state.isUserLogged = 0;
+     }
+     else if (accounts.length === 0) {
+       console.log("User is not logged in to MetaMask");
+       self.state.isUserLogged = 0;
+       alert('User logged out? Please login your account at metamask and try again!')
+     }
+     else {
+       console.log("User is logged in to MetaMask");
+       self.state.isUserLogged = 1;
+     }
+     self.forceUpdate()
+   });
+ }
 
   handleChange(event) {
     this.setState({
@@ -169,35 +192,53 @@ class BSTable extends React.Component {
         </BootstrapTable>
       );
       } else {
-        return (
-
-            <div>
-              <form onSubmit={this.handleSubmit} >
-                {/*<div class="form-group">
-                  <label>
-                    BlockID Encryption Password
-                  </label>
+        if(this.state.isUserLogged){
+          return (
+              <div>
+                <form onSubmit={this.handleSubmit} >
+                  {/*<div class="form-group">
+                    <label>
+                      BlockID Encryption Password
+                    </label>
+                    <p>
+                      <a href="/">
+                        What is BlockID Encrytion Password?
+                      </a>
+                    </p>
+                    {/*<div class="row ">
+                      <div class="col-md-6">
+                        <input
+                          type="password"
+                          name="password"
+                          onChange={this.handleChange}
+                          class="form-control"
+                          placeholder="Enter the password to decrypt your certified ID attributes"
+                          required />
+                      </div>
+                    </div>
+                  </div>*/}
+                  <input type="submit" value="View ID" />
+                  </form>
+              </div>
+        );
+        }else{
+          return (
+              <div>
+                <p>User logged out? Please login your account at metamask and try again!</p>
                   <p>
-                    <a href="/">
-                      What is BlockID Encrytion Password?
+                    <a href="https://metamask.io/">
+                    Download metamask here
                     </a>
                   </p>
-                  {/*<div class="row ">
-                    <div class="col-md-6">
-                      <input
-                        type="password"
-                        name="password"
-                        onChange={this.handleChange}
-                        class="form-control"
-                        placeholder="Enter the password to decrypt your certified ID attributes"
-                        required />
-                    </div>
-                  </div>
-                </div>*/}
-                <input type="submit" value="Submit" />
-                </form>
-            </div>
-      );
+                  <p>
+                    <a href="https://metamask.io/">
+                      What is Metamask?
+                    </a>
+                  </p>
+              </div>
+        );
+        }
+
       }
     }
   }

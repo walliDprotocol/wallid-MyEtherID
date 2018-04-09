@@ -236,6 +236,11 @@ render() {
           </p>
           <p>
             <a href="https://metamask.io/">
+            Download metamask here
+            </a>
+          </p>
+          <p>
+            <a href="https://metamask.io/">
               What is Metamask?
             </a>
           </p>
