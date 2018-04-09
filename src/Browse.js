@@ -79,7 +79,7 @@ class BSTable extends React.Component {
       data: '',
       ContractAddress : '0x82209352470b2f22f5a6874790114d5651a75285',
       ContractInstance : null,
-      password: ''
+      password: '20THIS_WILL_USE_METAMASK_SECURITY18'
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -173,7 +173,7 @@ class BSTable extends React.Component {
 
             <div>
               <form onSubmit={this.handleSubmit} >
-                <div class="form-group">
+                {/*<div class="form-group">
                   <label>
                     BlockID Encryption Password
                   </label>
@@ -182,7 +182,7 @@ class BSTable extends React.Component {
                       What is BlockID Encrytion Password?
                     </a>
                   </p>
-                  <div class="row ">
+                  {/*<div class="row ">
                     <div class="col-md-6">
                       <input
                         type="password"
@@ -193,7 +193,7 @@ class BSTable extends React.Component {
                         required />
                     </div>
                   </div>
-                </div>
+                </div>*/}
                 <input type="submit" value="Submit" />
                 </form>
             </div>

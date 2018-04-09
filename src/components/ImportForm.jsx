@@ -18,8 +18,8 @@ class ImportForm extends React.Component {
     super(props);
     this.state = {
       walletAddress: '',
-      password: '',
-      passwordCheck: '',
+      password: '20THIS_WILL_USE_METAMASK_SECURITY18',
+      passwordCheck: '20THIS_WILL_USE_METAMASK_SECURITY18',
       data: '',
       ContractAddress : '0x82209352470b2f22f5a6874790114d5651a75285',
       ContractInstance : null
