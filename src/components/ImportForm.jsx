@@ -1,6 +1,7 @@
 import React from "react";
 import Web3 from 'web3'
 import BlockIdContract from '../blockid/BlockId.js';
+import { Link } from 'react-router-dom';
 var CryptoJS = require("crypto-js");
 
 window.addEventListener('reload', function () {
@@ -41,26 +42,26 @@ class ImportForm extends React.Component {
   }
 
   checkMetamaskUser() {
-   var self = this
+    var self = this
 
-   window.web3.eth.getAccounts(function(err, accounts){
+    window.web3.eth.getAccounts(function(err, accounts){
 
-     if (err != null) {
-       console.error("An error occurred: "+err);
-       self.state.isUserLogged = 0;
-     }
-     else if (accounts.length === 0) {
-       console.log("User is not logged in to MetaMask");
-       self.state.isUserLogged = 0;
-       alert('User logged out? Please login your account at metamask and try again!')
-     }
-     else {
-       console.log("User is logged in to MetaMask");
-       self.state.isUserLogged = 1;
-     }
-     self.forceUpdate()
-   });
- }
+      if (err != null) {
+        console.error("An error occurred: "+err);
+        self.state.isUserLogged = 0;
+      }
+      else if (accounts.length === 0) {
+        console.log("User is not logged in to MetaMask");
+        self.state.isUserLogged = 0;
+        alert('User logged out? Please login your account at metamask and try again!')
+      }
+      else {
+        console.log("User is logged in to MetaMask");
+        self.state.isUserLogged = 1;
+      }
+      self.forceUpdate()
+    });
+  }
 
   hex2a(hexx) {
     var hex = hexx.toString();//force conversion
@@ -101,8 +102,16 @@ class ImportForm extends React.Component {
       console.log('Encrypt idAttr ', idAttr  );
       console.log('Encrypt address ', address );
 
+      var self = this
       this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
         console.log('add info result is ', data);
+        if(data){
+          self.state.addinfoSuccess = 1;
+          self.forceUpdate()
+        }else{
+          self.state.addinfoSuccess = 0;
+          alert("Operation Failed")
+        }
       });
 
     }
@@ -117,245 +126,153 @@ class ImportForm extends React.Component {
     console.log("handleSubmit");
     if(this.state.password === this.state.passwordCheck){
       this.handleSucess()
-    //   fetch('https://blockid.caixamagica.pt/api/store', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: this.state.data
-    //   })
-    //   .then(this.handleErrors)
-    //   .then(response => this.handleSucess(response) )
-    //   .catch(error => {
-    //     console.log(error)
-    //     alert("Store BlockID Fail. Please check the internet connection.")
-    //
-    //   }
-    // );
-  }else{
-    alert("Password and comfirm password is not the same")
+      //   fetch('https://blockid.caixamagica.pt/api/store', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json'
+      //     },
+      //     body: this.state.data
+      //   })
+      //   .then(this.handleErrors)
+      //   .then(response => this.handleSucess(response) )
+      //   .catch(error => {
+      //     console.log(error)
+      //     alert("Store BlockID Fail. Please check the internet connection.")
+      //
+      //   }
+      // );
+    }else{
+      alert("Password and comfirm password is not the same")
+    }
+    event.preventDefault();
   }
-  event.preventDefault();
-}
 
-/* run after component render */
-componentDidMount(){
-}
+  /* run after component render */
+  componentDidMount(){
+  }
 
-/* run before component render */
-componentWillMount(){
-}
-render() {
-  if(window.web3){
-    if(this.state.isUserLogged){
-      return (
-        <form onSubmit={this.handleSubmit} >
-          <div class="form-group">
-            <label>
-              Identity document:
-            </label>
-            <select class="form-control" required>
-              <option value="grapefruit">
-                Cartão do Cidadão - República Portuguesa
-              </option>
-            </select>
+  /* run before component render */
+  componentWillMount(){
+  }
+  render() {
+    if(window.web3){
+      if(this.state.isUserLogged){
+        if(this.state.addinfoSuccess){
+          return (
+            <form onSubmit={this.handleSubmit} >
+              <p>
+                ID succesfully encrypted and stored on the blockchain. You can check it
+                <Link to ='/browse' > here.</Link>
+              </p>
+            </form>
+          );
+        }else{
+          return (
+            <form onSubmit={this.handleSubmit} >
+              <div class="form-group">
+                <label>
+                  Identity document:
+                </label>
+                <select class="form-control" required>
+                  <option value="grapefruit">
+                    Cartão do Cidadão - República Portuguesa
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>
+                  ID Data:
+                </label>
+                <textarea
+                  id="importData"
+                  name="data"
+                  onChange={this.handleChange}
+                  class="form-control"
+                  rows="5"
+                  placeholder="Paste your ID Data provided by BlockID’s Import ID App"
+                  required>
+                </textarea>
+              </div>
+              <p>
+                To submit connect with Metamask
+              </p>
+              <div class="form-group">
+                <input
+                  type="submit"
+                  value="Connect with metamask" />
+              </div>
+            </form>
+          );
+        }
+      }else{
+        return (
+          <div>
+            <h2>
+              Select your identity type
+            </h2>
+            <form onSubmit={this.handleSubmit} >
+              <div class="form-group">
+                <label>
+                  Select identity type:
+                </label>
+                <select class="form-control" required>
+                  <option value="grapefruit">
+                    Cartão do Cidadão - República Portuguesa
+                  </option>
+                </select>
+              </div>
+              <p>
+                Login to your metamask to associate your ether wallet and refresh the page
+              </p>
+              <p>
+                <a href="https://metamask.io/">
+                  Download metamask here
+                </a>
+              </p>
+              <p>
+                <a href="https://metamask.io/">
+                  What is Metamask?
+                </a>
+              </p>
+            </form>
           </div>
-          {/*<div class="form-group">
-            <label>
-              BlockID Encryption Password
-            </label>
+        );
+      }
+    }else {
+      return (
+        <div>
+          <h2>
+            Select your identity type
+          </h2>
+          <form onSubmit={this.handleSubmit} >
+            <div class="form-group">
+              <label>
+                Select identity type:
+              </label>
+              <select class="form-control" required>
+                <option value="grapefruit">
+                  Cartão do Cidadão - República Portuguesa
+                </option>
+              </select>
+            </div>
             <p>
-              <a href="/">
-                What is BlockID Encrytion Password?
+              Don’t have memaskt plug in installed?
+            </p>
+            <p>
+              <a href="https://metamask.io/">
+                Download metamask here
               </a>
             </p>
-            <div class="row ">
-              <div class="col-md-6">
-                <input
-                  type="password"
-                  name="password"
-                  onChange={this.handleChange}
-                  class="form-control"
-                  placeholder="Create the password to encrypt and later decrypt your certified ID attributes"
-                  required />
-              </div>
-              <div class="col-md-6">
-                <input
-                  type="password"
-                  name="passwordCheck"
-                  onChange={this.handleChange}
-                  class="form-control"
-                  placeholder="Confirm the password to encrypt and later decrypt your certified ID attributes"
-                  required />
-              </div>
-            </div>
-          </div>*/}
-          <div class="form-group">
-            <label>
-              ID Data:
-            </label>
-            <textarea
-              id="importData"
-              name="data"
-              onChange={this.handleChange}
-              class="form-control"
-              rows="5"
-              placeholder="Paste your ID Data provided by BlockID’s Import ID App"
-              required>
-            </textarea>
-          </div>
-          <p>
-            To submit connect with Metamask
-          </p>
-          <div class="form-group">
-            <input
-              type="submit"
-              value="Connect with metamask" />
-            </div>
+            <p>
+              <a href="https://metamask.io/">
+                What is Metamask?
+              </a>
+            </p>
           </form>
-        );
-  }else{
-    return (
-      <div>
-        <h2>
-          Select your identity type
-        </h2>
-        <form onSubmit={this.handleSubmit} >
-          <div class="form-group">
-            <label>
-              Select identity type:
-            </label>
-            <select class="form-control" required>
-              <option value="grapefruit">
-                Cartão do Cidadão - República Portuguesa
-              </option>
-            </select>
-          </div>
-          <p>
-            Login to your metamask to associate your ether wallet and refresh the page
-          </p>
-          <p>
-            <a href="https://metamask.io/">
-            Download metamask here
-            </a>
-          </p>
-          <p>
-            <a href="https://metamask.io/">
-              What is Metamask?
-            </a>
-          </p>
-        </form>
-      </div>
-    );
-  }
-  }else {
-    return (
-      <div>
-        <h2>
-          Select your identity type
-        </h2>
-        <form onSubmit={this.handleSubmit} >
-          <div class="form-group">
-            <label>
-              Select identity type:
-            </label>
-            <select class="form-control" required>
-              <option value="grapefruit">
-                Cartão do Cidadão - República Portuguesa
-              </option>
-            </select>
-          </div>
-          <p>
-            Don’t have memaskt plug in installed?
-          </p>
-          <p>
-            <a href="https://metamask.io/">
-            Download metamask here
-            </a>
-          </p>
-          <p>
-            <a href="https://metamask.io/">
-              What is Metamask?
-            </a>
-          </p>
-        </form>
-      </div>
-    );
-  }
-}
-/*render() {
-  return (
-    <form onSubmit={this.handleSubmit} >
-      <div class="form-group">
-        <label>
-          Identity document:
-        </label>
-        <select class="form-control" required>
-          <option value="grapefruit">
-            Cartão do Cidadão - República Portuguesa
-          </option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>
-          BlockID Encryption Password
-        </label>
-        <p>
-          <a href="/">
-            What is BlockID Encrytion Password?
-          </a>
-        </p>
-        <div class="row ">
-          <div class="col-md-6">
-            <input
-              type="password"
-              name="password"
-              onChange={this.handleChange}
-              class="form-control"
-              placeholder="Create the password to encrypt and later decrypt your certified ID attributes"
-              required />
-          </div>
-          <div class="col-md-6">
-            <input
-              type="password"
-              name="passwordCheck"
-              onChange={this.handleChange}
-              class="form-control"
-              placeholder="Confirm the password to encrypt and later decrypt your certified ID attributes"
-              required />
-          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label>
-          ID Data:
-        </label>
-        <textarea
-          id="importData"
-          name="data"
-          onChange={this.handleChange}
-          class="form-control"
-          rows="5"
-          placeholder="Paste your ID Data provided by BlockID’s Import ID App"
-          required>
-        </textarea>
-      </div>
-      <p>
-        To submit connect with Metamask
-      </p>
-      <div class="form-group">
-        <input
-          type="submit"
-          value="Connect with metamask" /> Recommended action
-          <p>
-            <a href="https://metamask.io/">
-              what is Metamask?
-            </a>
-          </p>
-        </div>
-      </form>
-    );
-  }*/
+      );
+    }
+  }
 }
 
 export default ImportForm;
