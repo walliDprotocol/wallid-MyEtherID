@@ -23,14 +23,14 @@ class Home extends Component {
           <br />
             <ul>
               <li>MyEtherID is a free, open-source, client-side interface.</li>
-              <li>MyEtherID allows you to encrypt and store your certified identity data generated in BlockID’s <a href="https://blockid.herokuapp.com">ImportID</a> desktop app on the Ethereum blockchain, check in one or more smart contracts on the Ethereum blockchain, to check the corresponding smart contract addresses, and to confirm the transactions performed with those smart contracts</li>
-              <li>MyEtherID allows you to interact directly with the Ethereum blockchain, using your public Ethereum Wallet address. You are always in full control of your keys and identity certificates</li>
+              <li>MyEtherID allows you to encrypt and store your certified identity data generated in BlockID’s <a href="https://blockid.herokuapp.com">ImportID</a> desktop app on the Ethereum blockchain, check in one or more smart contracts on the Ethereum blockchain, to check the corresponding smart contract addresses, and to confirm the transactions performed with those smart contracts.</li>
+              <li>MyEtherID allows you to interact directly with the Ethereum blockchain, using your public Ethereum Wallet address. You are always in full control of your keys and identity certificates:</li>
               <ul>
                 <li>You are the sole entitled responsible for the security of your actions.</li>
                 <li>The handling of your keys happens entirely on your computer, inside your browser.</li>
-                <li>MyEtherID shall never store your private key, password, or any other account information. All the input information will be solely used to interact directly with the Ethereum blockchain</li>
+                <li>MyEtherID shall never store your private key, password, or any other account information. All the input information will be solely used to interact directly with the Ethereum blockchain.</li>
               </ul>
-              <li>Your account has a public and a private key. Whenever requested by third-parties, always supply your public key, which can be used to retrieve your ciphered blockchain information, never your private key. Afterwards, that information shall only be readable by you, upon you deciphering it with your private key</li>
+              <li>Your account has a public and a private key. Whenever requested by third-parties, always supply your public key, which can be used to retrieve your ciphered blockchain information, never your private key. Afterwards, that information shall only be readable by you, upon you deciphering it with your private key.</li>
               <li>Please take some time to read this, for your own good and safety:
                 <ul>
                   <li>It is not possible to recover nor to delete any action or transaction performed.</li>
