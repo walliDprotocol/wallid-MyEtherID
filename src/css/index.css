@@ -2,9 +2,10 @@ body {
   background-color: #F9F9F9;
   padding: 20px;
   margin: 0;
+  font-family: 'Ubuntu', sans-serif;
 }
 h1, h2, p, ul, li {
-  font-family: sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 ul.header li {
   display: inline;
