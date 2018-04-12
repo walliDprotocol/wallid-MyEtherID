@@ -37,14 +37,13 @@ ul.header li a {
 .active {
   background-color: #9c4dcc;
 }
-.footer{
-    background-color: #0FA3B1;
-}
 .row {
     padding: 0px;
 }
 .footer{
-    background-color: #0FA3B1;
+    background-color: #38006b;
+    padding: 20px;
+    color: #FFF;
 }
 .row-height {
     height: 70px;
