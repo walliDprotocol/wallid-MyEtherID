@@ -6,31 +6,37 @@ class Home extends Component {
       <div>
         <h2>Welcome to MyEtherID</h2>
         <br />
-        <h4>Connect your off-chain identity to your ether wallet</h4>
+        <h4>Connect your off-chain identity to your Ethereum Wallet</h4>
         <br />
         <p>MyEtherID is a webapp that allows users to encrypt and store  real life certified identities on a smart contract.
           It is also a gateway to manage different certified identity types you might own and check the history of your ID transactions through BlockID protocol.
-          It allows you to associate your identity attributes to your ether wallet without having access to your data or to your wallet keys.
+          It allows you to associate your identity attributes to your Ethereum Wallet without having access to your data or to your wallet keys.
           All  data is encrypted and decrypted by your own keys and associations to your wallet are made through Metamask.
           No decrypted data is ever accessed by anyone else but its owner nor stored on the Blockchain.</p>
-        <p>Please take some time to understand this for your own safety.
-          No one can recover nor delete any action or transaction made by yourself, and no one has access to your passwords and keys so make sure you keep them in an accessible but safe place.
-        </p>
+
         <br />
 
         <div class="row">
         <div class="col-md-6 color">
           <br />
-          <h4>What is MEI:</h4>
+          <h4>What is MyEtherID:</h4>
           <br />
             <ul>
-              <li>MyEther ID is a free, open-source, client-side interface.</li>
-              <li>MyEtherID allows you to encrypt and store your certified identity data ( generated in BlockID’s ImportID desktop app) on the Ethereum blockchain,check their smart contract addresses and confirm their transactions.</li>
-              <li>We allow you to interact directly with Ethereum blockchain through your wallet public address while you remain in full control of your keys and identity certificates.</li>
-              <li>You and only you are responsible for your security.</li>
-              <li>The handling of your keys happens entirely on your computer, inside your browser.</li>
-              <li>We never transmit, receive or store your private key, password, or other account information.</li>
-              <li>If you send your public key (address) to someone, they can send you ETH or tokens.</li>
+              <li>MyEtherID is a free, open-source, client-side interface.</li>
+              <li>MyEtherID allows you to encrypt and store your certified identity data generated in BlockID’s <a href="https://blockid.herokuapp.com">ImportID</a> desktop app on the Ethereum blockchain, check in one or more smart contracts on the Ethereum blockchain, to check the corresponding smart contract addresses, and to confirm the transactions performed with those smart contracts</li>
+              <li>MyEtherID allows you to interact directly with the Ethereum blockchain, using your public Ethereum Wallet address. You are always in full control of your keys and identity certificates</li>
+              <ul>
+                <li>You are the sole entitled responsible for the security of your actions.</li>
+                <li>The handling of your keys happens entirely on your computer, inside your browser.</li>
+                <li>MyEtherID shall never store your private key, password, or any other account information. All the input information will be solely used to interact directly with the Ethereum blockchain</li>
+              </ul>
+              <li>Your account has a public and a private key. Whenever requested by third-parties, always supply your public key, which can be used to retrieve your ciphered blockchain information, never your private key. Afterwards, that information shall only be readable by you, upon you deciphering it with your private key</li>
+              <li>Please take some time to read this, for your own good and safety:
+                <ul>
+                  <li>It is not possible to recover nor to delete any action or transaction performed.</li>
+                  <li>Nobody will be able to access your passwords and keys, so please make sure to keep them in an accessible but safe place.</li>
+                </ul>
+              </li>
             </ul>
           <br />
         </div>
