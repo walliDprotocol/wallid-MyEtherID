@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Web3 from 'web3'
 import BlockIdContract from './blockid/BlockId.js';
+import { withSwalInstance } from 'sweetalert2-react';
+import swal from 'sweetalert2';
 var CryptoJS = require("crypto-js");
+
+const SweetAlert = withSwalInstance(swal);
 
 window.addEventListener('reload', function () {
 
@@ -76,6 +80,8 @@ class BSTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      popupLogout: false,
+      popupError: false,
       data: '',
       ContractAddress : '0x82209352470b2f22f5a6874790114d5651a75285',
       ContractInstance : null,
@@ -109,7 +115,7 @@ class BSTable extends React.Component {
      else if (accounts.length === 0) {
        console.log("User is not logged in to MetaMask");
        self.state.isUserLogged = 0;
-       alert('User logged out? Please login your account at metamask and try again!')
+       self.state.popupLogout = true;
      }
      else {
        console.log("User is logged in to MetaMask");
@@ -173,7 +179,8 @@ class BSTable extends React.Component {
       }
       catch(err) {
           console.log("error",err);
-          alert("Decrypt fail! Try Again!")
+          this.setState({ popupError: true })
+          this.forceUpdate()
       }
 
     });
@@ -195,6 +202,13 @@ class BSTable extends React.Component {
         if(this.state.isUserLogged){
           return (
               <div>
+                <SweetAlert
+                  show={this.state.popupError}
+                  title="Decrypt fail!"
+                  text="Decrypt fail! Please try Again!"
+                  confirmButtonColor = "#0FA3B1"
+                  onConfirm={() => this.setState({ popupError: false })}
+                  />
                 <form onSubmit={this.handleSubmit} >
                   {/*<div class="form-group">
                     <label>
@@ -224,6 +238,12 @@ class BSTable extends React.Component {
         }else{
           return (
               <div>
+                <SweetAlert
+                  show={this.state.popupLogout}
+                  title="User logged out?"
+                  text="Please login your account at metamask and try again!"
+                  confirmButtonColor = "#0FA3B1"
+                  />
                 <p>User logged out? Please login your account at metamask and try again!</p>
                   <p>
                     <a href="https://metamask.io/">

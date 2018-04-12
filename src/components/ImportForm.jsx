@@ -2,6 +2,11 @@ import React from "react";
 import Web3 from 'web3'
 import BlockIdContract from '../blockid/BlockId.js';
 import { Link } from 'react-router-dom';
+import { withSwalInstance } from 'sweetalert2-react';
+import swal from 'sweetalert2';
+
+const SweetAlert = withSwalInstance(swal);
+
 var CryptoJS = require("crypto-js");
 var Spinner = require('react-spinkit');
 
@@ -19,6 +24,9 @@ class ImportForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      popupLogout: false,
+      popupError: false,
+      popupCancel: false,
       timeoutID: '',
       walletAddress: '',
       password: '20THIS_WILL_USE_METAMASK_SECURITY18',
@@ -54,7 +62,7 @@ class ImportForm extends React.Component {
       else if (accounts.length === 0) {
         console.log("User is not logged in to MetaMask");
         self.state.isUserLogged = 0;
-        alert('User logged out? Please login your account at metamask and try again!')
+        self.state.popupLogout = true;
       }
       else {
         console.log("User is logged in to MetaMask");
@@ -132,13 +140,15 @@ handleSucess(response) {
         self.forceUpdate()
       }else{
         self.state.addinfoSuccess = 0;
-        alert("Operation Failed")
+        self.state.popupCancel = true
+        self.forceUpdate()
       }
     });
 
   }
   catch(err) {
-    alert("ID Data format error. Please copy all data from ImportID")
+    this.state.popupError = true
+    this.forceUpdate()
   }
 
   return;
@@ -169,7 +179,6 @@ handleSubmit(event) {
   event.preventDefault();
 }
 
-
 /* run after component render */
 componentDidMount(){
 
@@ -179,9 +188,6 @@ componentDidMount(){
 componentWillMount(){
 
 }
-
-
-
 
 render() {
   if(window.web3){
@@ -206,6 +212,21 @@ render() {
         );
       }else{
         return (
+          <div>
+            <SweetAlert
+              show={this.state.popupError}
+              title="ID Data Error"
+              text="Please copy all data from ImportID"
+              confirmButtonColor = "#0FA3B1"
+              onConfirm={() => this.setState({ popupError: false })}
+              />
+              <SweetAlert
+                show={this.state.popupCancel}
+                title="Error"
+                text="Operation canceled. Please try again!"
+                confirmButtonColor = "#0FA3B1"
+                onConfirm={() => this.setState({ popupCancel: false })}
+                />
           <form onSubmit={this.handleSubmit} >
             <div class="form-group">
               <label>
@@ -240,11 +261,18 @@ render() {
                 value="Connect with metamask" />
             </div>
           </form>
+        </div>
         );
       }
     }else{
       return (
         <div>
+          <SweetAlert
+            show={this.state.popupLogout}
+            title="User logged out?"
+            text="Please login your account at metamask and try again!"
+            confirmButtonColor = "#0FA3B1"
+            />
           <h2>
             Select your identity type
           </h2>
