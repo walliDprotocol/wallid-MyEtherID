@@ -16,7 +16,7 @@ class Help extends Component {
           <p><a href="https://blockid.herokuapp.com">Why is BlockID protocol on Ethereum Blockchain?</a></p>
           <p><a href="https://blockid.herokuapp.com">Why do i need a ether wallet?</a></p>
           <p><a href="https://blockid.herokuapp.com">What is myetherwallet?</a></p>
-          <p><a href="https://blockid.herokuapp.com">What is metamask?</a></p>
+          <p><a href="https://blockid.herokuapp.com">What is MetaMask?</a></p>
           <p><a href="https://blockid.herokuapp.com">Download ImportID</a></p>
           <p><a href="https://blockid.herokuapp.com">What is ID Data?</a></p>
           <p><a href="https://blockid.herokuapp.com">What happens if i lose my keys?</a></p>

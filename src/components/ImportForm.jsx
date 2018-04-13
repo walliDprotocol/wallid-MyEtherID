@@ -12,7 +12,7 @@ var Spinner = require('react-spinkit');
 
 window.addEventListener('reload', function () {
   if(typeof web3 !== 'undefined'){
-    console.log("Using web3 detected from external source like Metamask")
+    console.log("Using web3 detected from external source like MetaMask")
     window.web3 = new Web3(window.web3.currentProvider)
   }else{
     console.log("No web3 detected. Falling back to http://localhost:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
@@ -253,12 +253,12 @@ render() {
               </textarea>
             </div>
             <p>
-              To submit connect with Metamask
+              To submit connect with MetaMask
             </p>
             <div class="form-group">
               <input
                 type="submit"
-                value="Connect with metamask" />
+                value="Connect with MetaMask" />
             </div>
           </form>
         </div>
@@ -270,7 +270,7 @@ render() {
           <SweetAlert
             show={this.state.popupLogout}
             title="User logged out?"
-            text="Please login your account at metamask and try again!"
+            text="Please login your account at MetaMask and try again!"
             confirmButtonColor = "#0FA3B1"
             />
           <h2>
@@ -288,16 +288,16 @@ render() {
               </select>
             </div>
             <p>
-              Login to your metamask to associate your ether wallet and refresh the page
+              Login to your MetaMask to associate your ether wallet and refresh the page
             </p>
             <p>
               <a href="https://metamask.io/">
-                Download metamask here
+                Download MetaMask here
               </a>
             </p>
             <p>
               <a href="https://metamask.io/">
-                What is Metamask?
+                What is MetaMask?
               </a>
             </p>
           </form>
@@ -322,16 +322,16 @@ render() {
             </select>
           </div>
           <p>
-            Don’t have memaskt plug in installed?
+            Don’t have Metamask plug in installed?
           </p>
           <p>
             <a href="https://metamask.io/">
-              Download metamask here
+              Download MetaMask here
             </a>
           </p>
           <p>
             <a href="https://metamask.io/">
-              What is Metamask?
+              What is MetaMask?
             </a>
           </p>
         </form>

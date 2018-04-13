@@ -11,7 +11,7 @@ class Home extends Component {
         <p>MyEtherID is a webapp that allows users to encrypt and store  real life certified identities on a smart contract.
           It is also a gateway to manage different certified identity types you might own and check the history of your ID transactions through BlockID protocol.
           It allows you to associate your identity attributes to your Ethereum Wallet without having access to your data or to your wallet keys.
-          All  data is encrypted and decrypted by your own keys and associations to your wallet are made through Metamask.
+          All  data is encrypted and decrypted by your own keys and associations to your wallet are made through MetaMask.
           No decrypted data is ever accessed by anyone else but its owner nor stored on the Blockchain.</p>
 
         <br />

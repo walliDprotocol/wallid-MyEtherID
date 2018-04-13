@@ -11,7 +11,7 @@ const SweetAlert = withSwalInstance(swal);
 window.addEventListener('reload', function () {
 
   if(typeof web3 !== 'undefined'){
-    console.log("Using web3 detected from external source like Metamask")
+    console.log("Using web3 detected from external source like MetaMask")
     window.web3 = new Web3(window.web3.currentProvider)
   }else{
     console.log("No web3 detected. Falling back to http://localhost:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
@@ -50,8 +50,8 @@ class Browse extends Component {
         <h2>Browse your identities</h2>
         <br />
         <p>Decrypt your Identity Smart Contract addresses and check your certified ID attributes.
-Make sure you are logged in metamask to ensure your safety accessing your ether wallet.</p>
-<p>Remember decryption is only possible your with your wallet private key through metamask association and we don’t have any access to your data
+Make sure you are logged in MetaMask to ensure your safety accessing your ether wallet.</p>
+<p>Remember decryption is only possible your with your wallet private key through MetaMask association and we don’t have any access to your data
 </p>
         <br />
         <BootstrapTable
@@ -241,18 +241,18 @@ class BSTable extends React.Component {
                 <SweetAlert
                   show={this.state.popupLogout}
                   title="User logged out?"
-                  text="Please login your account at metamask and try again!"
+                  text="Please login your account at MetaMask and try again!"
                   confirmButtonColor = "#0FA3B1"
                   />
-                <p>User logged out? Please login your account at metamask and try again!</p>
+                <p>User logged out? Please login your account at MetaMask and try again!</p>
                   <p>
                     <a href="https://metamask.io/">
-                    Download metamask here
+                    Download MetaMask here
                     </a>
                   </p>
                   <p>
                     <a href="https://metamask.io/">
-                      What is Metamask?
+                      What is MetaMask?
                     </a>
                   </p>
               </div>
