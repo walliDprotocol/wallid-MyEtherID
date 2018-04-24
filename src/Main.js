@@ -15,22 +15,43 @@ class Main extends Component {
     return (
       <HashRouter>
         <div>
-            <div className="logo">
-              <img src={require('./myetherid_topo.jpg')} alt="MyEtherID Logo"/>
+          <header>
+            <div class="container">
+              <nav class="navbar navbar-expand-md fixed-top">
+                <a class="navbar-brand" href="index.html">
+                  <img class="logoHeader" src={require('./img/myetherid-logo.svg')} alt="MyEther ID Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" class="nav-link">
+                      <NavLink exact to="/">Home Page</NavLink>
+                    </li>
+                    <li class="nav-item" class="nav-link">
+                      <NavLink to="/import">Store Identity</NavLink>
+                    </li>
+                    <li class="nav-item" class="nav-link">
+                      <NavLink to="/browse">View Identities</NavLink>
+                    </li>
+                    <li class="nav-item" class="nav-link">
+                      <NavLink to="/list">Transactions</NavLink>
+                    </li>
+                    <li class="nav-item" class="nav-link">
+                      <NavLink to="/help">Help</NavLink>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
             </div>
-          <ul className="header">
-            <li><NavLink exact to="/">Home Page</NavLink></li>
-            <li><NavLink to="/import">Store Identity</NavLink></li>
-            <li><NavLink to="/browse">View Identities</NavLink></li>
-            <li><NavLink to="/list">Transactions</NavLink></li>
-            <li><NavLink to="/help">Help</NavLink></li>
-          </ul>
+          </header>
           <div className="content">
-          <Route exact path="/" component={Home}/>
-          <Route path="/import" component={Import}/>
-          <Route path="/browse" component={Browse}/>
-          <Route path="/list" component={List}/>
-          <Route path="/help" component={Help}/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/import" component={Import}/>
+            <Route path="/browse" component={Browse}/>
+            <Route path="/list" component={List}/>
+            <Route path="/help" component={Help}/>
           </div>
           <Footer />
         </div>

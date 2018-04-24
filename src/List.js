@@ -21,11 +21,31 @@ import React, { Component } from "react";
 class List extends Component {
   render() {
     return (
-      <div>
-        <h2>Check your ID Transactions </h2>
-          <br />
-            <p>Confirm the history of your id transactions through your smart contract address. You can check it at Etherscan, pressingg <a href="https://rinkeby.etherscan.io/address/0x82209352470b2f22f5a6874790114d5651a75285">here.</a></p>
-        {/*<br />
+      <main role="main" class="container">
+        <div class="row justify-content-md-center">
+            <div class="col text-center">
+                <h1>List the transactions of your identities</h1>
+            </div>
+        </div>
+        <div class="row pt-2">
+            <div class="col text-center">
+                <p>Check the transaction history at Etherscan,
+                  pressing <a href="https://rinkeby.etherscan.io/address/0x82209352470b2f22f5a6874790114d5651a75285"
+                  target="_blank">here</a>.</p>
+            </div>
+        </div>
+        <div class="row pb-3 containerBorderBottom">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="text-center">
+                            <img class="img-fluid imgTransaction" src={require('./img/blockchain.svg')} alt="Blockchain Transation" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      {/*<br />
           <div class="form-group">
             <label>Paste an Ether wallet public address below to check its transaction history</label>
             <input type="password" name="password" onChange={this.handleChange} class="form-control" placeholder="Ether wallet public address" required />
@@ -45,7 +65,7 @@ class List extends Component {
           <TableHeaderColumn dataField="SCaddress" width='15%'>SC Address</TableHeaderColumn>
           <TableHeaderColumn dataField="TransactionDate" width='15%'>Transaction Date</TableHeaderColumn>
         </BootstrapTable>*/}
-      </div>
+      </main>
     );
   }
 }

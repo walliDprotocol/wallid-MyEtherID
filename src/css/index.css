@@ -1,93 +1,130 @@
-body {
-  background-color: #F9F9F9;
-  padding: 20px;
-  margin: 0;
-  font-family: 'Ubuntu', sans-serif;
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #F9F9F9;
 }
-h1, h2, p, ul, li {
-  font-family: 'Ubuntu', sans-serif;
+.logoHeader{
+    width: 200px;
+    height: 100px;
 }
-ul.header li {
-  display: inline;
-  list-style-type: none;
-  margin: 0;
+
+header nav{
+    border-bottom: 3px solid #0FA3B1;
+    background-color: #ffffff;
 }
-ul.header {
-  background-color: #38006b;
-  padding: 0;
+
+nav ul li a{
+    color: #0FA3B1;
 }
-ul.header li a {
-  color: #FFF;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 20px;
-  display: inline-block;
+
+nav ul li a:hover, nav ul li a.active{
+    color: #0FA3B1;
+    border-bottom: 2px solid #FF971A;
 }
-.content {
-  background-color: #FFF;
-  padding: 20px;
-}
-.content h2 {
-  padding: 0;
-  margin: 0;
-}
-.content li {
-  margin-bottom: 10px;
-}
-.active {
-  background-color: #9c4dcc;
-}
-.row {
-    padding: 0px;
-}
+
 .footer{
-    background-color: #38006b;
-    padding: 20px;
-    color: #FFF;
-}
-.row-height {
-    height: 70px;
-    text-align: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    background-color: #0FA3B1;
 }
 
-.col-md-4,.col-md-2 {
-    background-color: #fff;
+h6{
+    margin-top: 20px;
+    color: #F2F2F2;
 }
 
-.col-md-6 {
+.linkButtons{
+    background-color: #FF971A;
+    color: #fff;
 }
 
-.col-md-6.minHeight {
-  min-height: 400px;
+
+.linkButtons:hover{
+    background-color: #0FA3B1;
+    color: #fff;
 }
 
-.col-md-6.color{
-    background-color: #D1C4E9;
-    min-height: 400px;
+a{
+    color:#0FA3B1;
+    line-height: 40px;
 }
 
-.col-md-12 {
-    background-color: #D1C4E9;
+a:hover{
+    color:#FF971A;
+    text-decoration: none;
 }
 
-.col-md-2 {
-  text-align: center;
-  background-color: #D1C4E9;
+.navbar-toggler{
+    background-color: #FF971A;
 }
 
-.colorSubmit{
-  background-color: #EDE7F6;
+h1{
+    color: #FF971A;
 }
 
-.fill {
-    display: flex;
-    justify-content: center;
-    overflow: hidden
+h2{
+    font-size: 20px;
 }
-.fill img {
-    flex-shrink: 0;
-    max-width: 400px;
-    max-height: 400px;
+
+.containerBorderBottom{
+    border-bottom: 1px solid #B3B3B3;
+}
+
+.colorBlue{
+    color:#0FA3B1;
+}
+
+.colorGrey{
+    color:#878787;
+}
+
+.imgBlockChain{
+    width: 60%;
+}
+
+.imgTransaction{
+    width: 25%;
+}
+
+ul.meiTopics li{
+    margin-bottom: 18px;
+}
+
+.biggerLink{
+    color:#0FA3B1;
+    font-size: 20px;
+}
+
+.biggerLink:hover{
+    color:#FF971A;
+    font-size: 20px;
+}
+
+.page-link{
+    color: #0FA3B1;
+}
+
+.navbar{
+    padding: .5rem 4rem;
+}
+
+tbody tr:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 170px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+body  .container {
+  padding: 85px 15px 0;
 }

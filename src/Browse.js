@@ -24,11 +24,11 @@ window.addEventListener('reload', function () {
 var products = [
 {
   Entity: "Portuguese Republic",
-  IDCertificate: "x 509",
+  IDCertificate: "x509",
   Card: "Cartão de Cidadão",
   Attributes: "Identity, Address",
   SCaddress: "9h8gj79x9h8gj79x",
-  SCDate: " 12 Jan 18"
+  SCDate: "12 Jan 18"
 }
 ];
 
@@ -46,13 +46,15 @@ class Browse extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Browse your identities</h2>
-        <br />
-        <p>Decrypt your Identity Smart Contract addresses and check your certified ID attributes.
-Make sure you are logged in MetaMask to ensure your safety accessing your ether wallet.</p>
-<p>Remember decryption is only possible your with your wallet private key through MetaMask association and we don’t have any access to your data
-</p>
+      <main role="main" class="container">
+        <div class="row justify-content-md-center pb-5">
+            <div class="col-8 text-center">
+                <h1>Browse your identities</h1>
+                <p>Decrypt your Identity Smart Contract addresses and check your certified ID attributes. Make sure you are logged in metamask to ensure your safety accessing your ether wallet.
+                <br />
+                Remember decryption is only possible your with your wallet private key through metamask association and we don’t have any access to your data</p>
+            </div>
+        </div>
         <br />
         <BootstrapTable
           data={products}
@@ -69,7 +71,7 @@ Make sure you are logged in MetaMask to ensure your safety accessing your ether 
           <TableHeaderColumn dataField="SCaddress" width='20%'>SC Address</TableHeaderColumn>
           <TableHeaderColumn dataField="SCDate" width='20%'>SC Date</TableHeaderColumn>
         </BootstrapTable>
-      </div>
+      </main>
     );
   }
 }

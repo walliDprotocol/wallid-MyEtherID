@@ -273,9 +273,6 @@ render() {
             text="Please login your account at MetaMask and try again!"
             confirmButtonColor = "#0FA3B1"
             />
-          <h2>
-            Select your identity type
-          </h2>
           <form onSubmit={this.handleSubmit} >
             <div class="form-group">
               <label>
@@ -307,9 +304,6 @@ render() {
   }else {
     return (
       <div>
-        <h2>
-          Select your identity type
-        </h2>
         <form onSubmit={this.handleSubmit} >
           <div class="form-group">
             <label>
