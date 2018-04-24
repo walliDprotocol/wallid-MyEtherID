@@ -4,9 +4,9 @@ import { Route } from 'react-router'
 import { NavLink } from 'react-router-dom'
 
 import Home from './Home';
-import Import from './Import';
-import Browse from './Browse';
-import List from './List';
+import Store from './Store';
+import View from './View';
+import Transactions from './Transactions';
 import Help from './Help';
 import Footer from './Footer';
 
@@ -30,13 +30,13 @@ class Main extends Component {
                       <NavLink exact to="/">Home Page</NavLink>
                     </li>
                     <li class="nav-item nav-link">
-                      <NavLink to="/import">Store Identity</NavLink>
+                      <NavLink to="/store">Store Identity</NavLink>
                     </li>
                     <li class="nav-item nav-link">
-                      <NavLink to="/browse">View Identities</NavLink>
+                      <NavLink to="/view">View Identities</NavLink>
                     </li>
                     <li class="nav-item nav-link">
-                      <NavLink to="/list">Transactions</NavLink>
+                      <NavLink to="/transactions">Transactions</NavLink>
                     </li>
                     <li class="nav-item nav-link">
                       <NavLink to="/help">Help</NavLink>
@@ -48,9 +48,9 @@ class Main extends Component {
           </header>
           <div className="content">
             <Route exact path="/" component={Home}/>
-            <Route path="/import" component={Import}/>
-            <Route path="/browse" component={Browse}/>
-            <Route path="/list" component={List}/>
+            <Route path="/store" component={Store}/>
+            <Route path="/view" component={View}/>
+            <Route path="/transactions" component={Transactions}/>
             <Route path="/help" component={Help}/>
           </div>
           <Footer />

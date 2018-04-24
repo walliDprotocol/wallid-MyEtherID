@@ -69,7 +69,7 @@ class Home extends Component {
           </div>
           <div class="row text-center pt-5 pb-5">
               <div class="col">
-                <Link to="/import#top" class="btn linkButtons btn-lg active" role="button" aria-pressed="true">Start Storing Your ID</Link>
+                <Link to="/store#top" class="btn linkButtons btn-lg active" role="button" aria-pressed="true">Start Storing Your ID</Link>
               </div>
           </div>
       </main>
