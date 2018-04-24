@@ -32,19 +32,19 @@ class Import extends Component {
           </div>
           <div class="row text-center containerBorderBottom pb-5">
                       <div class="col">
-                          <a href="#" class="biggerLink" role="button" aria-pressed="true">What is BlockID?</a>
+                          <a href="/" class="biggerLink" role="button" aria-pressed="true">What is BlockID?</a>
                       </div>
                       <div class="col">
-                          <a href="#" class="biggerLink" role="button" aria-pressed="true">What is ImportID</a>
+                          <a href="/" class="biggerLink" role="button" aria-pressed="true">What is ImportID</a>
                       </div>
                       <div class="col">
-                          <a href="#" class="biggerLink" role="button" aria-pressed="true">What is my ID Data?</a>
+                          <a href="/" class="biggerLink" role="button" aria-pressed="true">What is my ID Data?</a>
                       </div>
           </div>
           <div class="row pt-5 pb-5 containerBorderBottom">
               <div class="col text-center">
                   <h5 class="pb-3">If you haven’t installed Import ID on your computer, you can download it for free.</h5>
-                  <a href="#" class="btn linkButtons btn-lg active" role="button" aria-pressed="true">Download here</a>
+                  <a href="/" class="btn linkButtons btn-lg active" role="button" aria-pressed="true">Download here</a>
               </div>
           </div>
           <div class="row pt-3">

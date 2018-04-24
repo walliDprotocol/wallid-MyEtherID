@@ -58,10 +58,10 @@ class Home extends Component {
                   <h2 class="colorBlue pb-3">Your ID in your Ether Wallet</h2>
                     <p>Encrypt and save your certified identity on the blockchain and associate it with your ether wallet.</p>
                     <p>If you don’t have an ether wallet, you can create it securely and for free on
-                    <a href="https://www.myetherwallet.com/" target="_blank"> MyEtherWallet.com</a>.</p>
-                    <a href="https://www.myetherwallet.com/" target="_blank" class="btn linkButtons btn-lg active" role="button" aria-pressed="true">Create here</a>
+                    <a href="https://www.myetherwallet.com/" target="_blank rel=noopener"> MyEtherWallet.com</a>.</p>
+                    <a href="https://www.myetherwallet.com/" target="_blank rel=noopener" class="btn linkButtons btn-lg active" role="button" aria-pressed="true">Create here</a>
                     <br />
-                    <a href="https://www.myetherwallet.com/" target="_blank">What is MyEtherWallet?</a>
+                    <a href="https://www.myetherwallet.com/" target="_blank rel=noopener">What is MyEtherWallet?</a>
               </div>
               <div class="col-4 text-right">
                 <img class="imgBlockChain" src={require('./img/blockchain.svg')} alt="Blockchain" />

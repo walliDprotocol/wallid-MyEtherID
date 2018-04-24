@@ -175,7 +175,7 @@ class BSTable extends React.Component {
           //console.log(dataAttribute[i]);
           loadData.push({ 'item' : i, 'value' : dataAttribute[i]})
         }
-        this.state.data = loadData
+        this.setState({ data: loadData })
         this.forceUpdate()
 
       }

@@ -147,7 +147,7 @@ handleSucess(response) {
 
   }
   catch(err) {
-    this.state.popupError = true
+    this.setState({ popupError: true })
     this.forceUpdate()
   }
 
@@ -220,48 +220,48 @@ render() {
               confirmButtonColor = "#0FA3B1"
               onConfirm={() => this.setState({ popupError: false })}
               />
-              <SweetAlert
-                show={this.state.popupCancel}
-                title="Error"
-                text="Operation canceled. Please try again!"
-                confirmButtonColor = "#0FA3B1"
-                onConfirm={() => this.setState({ popupCancel: false })}
-                />
-          <form onSubmit={this.handleSubmit} >
-            <div class="form-group">
-              <label>
-                Identity document:
-              </label>
-              <select class="form-control" required>
-                <option value="grapefruit">
-                  Cartão do Cidadão - República Portuguesa
-                </option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>
-                ID Data:
-              </label>
-              <textarea
-                id="importData"
-                name="data"
-                onChange={this.handleChange}
-                class="form-control"
-                rows="5"
-                placeholder="Paste your ID Data provided by BlockID’s Import ID App"
-                required>
-              </textarea>
-            </div>
-            <p>
-              To submit connect with MetaMask
-            </p>
-            <div class="form-group">
-              <input
-                type="submit"
-                value="Connect with MetaMask" />
-            </div>
-          </form>
-        </div>
+            <SweetAlert
+              show={this.state.popupCancel}
+              title="Error"
+              text="Operation canceled. Please try again!"
+              confirmButtonColor = "#0FA3B1"
+              onConfirm={() => this.setState({ popupCancel: false })}
+              />
+            <form onSubmit={this.handleSubmit} >
+              <div class="form-group">
+                <label>
+                  Identity document:
+                </label>
+                <select class="form-control" required>
+                  <option value="grapefruit">
+                    Cartão do Cidadão - República Portuguesa
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>
+                  ID Data:
+                </label>
+                <textarea
+                  id="importData"
+                  name="data"
+                  onChange={this.handleChange}
+                  class="form-control"
+                  rows="5"
+                  placeholder="Paste your ID Data provided by BlockID’s Import ID App"
+                  required>
+                </textarea>
+              </div>
+              <p>
+                To submit connect with MetaMask
+              </p>
+              <div class="form-group">
+                <input
+                  type="submit"
+                  value="Connect with MetaMask" />
+              </div>
+            </form>
+          </div>
         );
       }
     }else{

@@ -31,7 +31,7 @@ class List extends Component {
             <div class="col text-center">
                 <p>Check the transaction history at Etherscan,
                   pressing <a href="https://rinkeby.etherscan.io/address/0x82209352470b2f22f5a6874790114d5651a75285"
-                  target="_blank">here</a>.</p>
+                  target="_blank rel=noopener">here</a>.</p>
             </div>
         </div>
         <div class="row pb-3 containerBorderBottom">

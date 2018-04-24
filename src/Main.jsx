@@ -26,19 +26,19 @@ class Main extends Component {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                   <ul class="navbar-nav ml-auto">
-                    <li class="nav-item" class="nav-link">
+                    <li class="nav-item nav-link">
                       <NavLink exact to="/">Home Page</NavLink>
                     </li>
-                    <li class="nav-item" class="nav-link">
+                    <li class="nav-item nav-link">
                       <NavLink to="/import">Store Identity</NavLink>
                     </li>
-                    <li class="nav-item" class="nav-link">
+                    <li class="nav-item nav-link">
                       <NavLink to="/browse">View Identities</NavLink>
                     </li>
-                    <li class="nav-item" class="nav-link">
+                    <li class="nav-item nav-link">
                       <NavLink to="/list">Transactions</NavLink>
                     </li>
-                    <li class="nav-item" class="nav-link">
+                    <li class="nav-item nav-link">
                       <NavLink to="/help">Help</NavLink>
                     </li>
                   </ul>
