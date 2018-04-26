@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ImportForm from './components/ImportForm';
 
-class Import extends Component {
+class Store extends Component {
   render() {
     return (
       <main role="main" class="container">
@@ -63,4 +63,4 @@ class Import extends Component {
   }
 }
 
-export default Import;
+export default Store;

@@ -197,7 +197,7 @@ render() {
           <form onSubmit={this.handleSubmit} >
             <p>
               ID succesfully encrypted and stored on the blockchain. You can check it
-              <Link to ='/browse' > here.</Link>
+              <Link to ='/view' > here.</Link>
             </p>
           </form>
         );

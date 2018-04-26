@@ -18,7 +18,7 @@ import React, { Component } from "react";
   TransactionDate: "16 Fev 18"
 }
 ];*/
-class List extends Component {
+class Transactions extends Component {
   render() {
     return (
       <main role="main" class="container">
@@ -70,4 +70,4 @@ class List extends Component {
   }
 }
 
-export default List;
+export default Transactions;

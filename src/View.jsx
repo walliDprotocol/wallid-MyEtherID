@@ -32,7 +32,7 @@ var products = [
 }
 ];
 
-class Browse extends Component {
+class View extends Component {
 
   isExpandableRow(row) {
     return true;
@@ -76,7 +76,7 @@ class Browse extends Component {
   }
 }
 
-export default Browse;
+export default View;
 
 class BSTable extends React.Component {
   constructor(props) {
