@@ -285,7 +285,7 @@ render() {
               </select>
             </div>
             <p>
-              Login to your MetaMask to associate your ether wallet and refresh the page
+              Login to your Metamask to associate your ether wallet and refresh the page.
             </p>
             <p>
               <a href="https://metamask.io/">

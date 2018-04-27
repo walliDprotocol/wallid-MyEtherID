@@ -27,7 +27,8 @@ class Store extends Component {
         </div>
           <div class="row text-center pt-3 justify-content-md-center">
               <div class="col-md-10">
-                  <h5 class="pb-3">First, You need to extract your attributes from your Identity Document and locally generate your ID data from BlockID’s ImportID desktop app. Once you generate it on the app, copy it to respective ID Data section below.</h5>
+                  <h5 class="pb-3">You need to extract your attributes from your Identity Document and locally generate your ID data from
+                    BlockID’s ImportID desktop app. Once you generate it on the app, copy it to respective ID Data section above.</h5>
               </div>
           </div>
           <div class="row text-center containerBorderBottom pb-5">
