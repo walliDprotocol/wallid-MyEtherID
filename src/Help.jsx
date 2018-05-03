@@ -35,7 +35,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq1_desc" class="desc">
+            <p id="faq1_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               BlockID is an Ethereum blockchain protocol designed with the purpose to store encypted id attributes from certified Citizen Cards
               in smart contracts in Ethereum blockchain and to provide identity certifying services. At the present time there are three distinct
@@ -49,7 +51,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq2_desc" class="desc">
+            <p id="faq2_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               ImportID is an open source desktop app available for Windows and Linux that allows you to extract your ID attributes from your Citizen Card or
               other supported Identity certified document. ImportID’s embedded algorithm runs a validation process to make sure all ID data created within
@@ -64,7 +68,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq3_desc" class="desc">
+            <p id="faq3_desc" class="desc containerBorderBottom">
+
+            <h1 class="containerBorderBottom"></h1>
 
               WE STILL NEED TO DEFINE THIS
 
@@ -76,7 +82,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq4_desc" class="desc">
+            <p id="faq4_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               At the present moment only Portuguese Citizenship Card certificates are compatible with MyEtherID. BlockID’s team is working on the expansion of ImportID’s
               attribute certificate recognition feature to other identity types based on certificate X 509. It means in the near future all European Union Citizenship Cards
@@ -90,7 +98,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq5_desc" class="desc">
+            <p id="faq5_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               Encrypting your Identity certificates on the blockchain is  the safest way to store your identity in itself. By merging your attributes in a smart contract
               associated to your ether wallet, you solely will be able to access, trade and audit them. At the same time it is a safe way to store your identity it is
@@ -105,7 +115,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq6_desc" class="desc">
+            <p id="faq6_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               You can check what’s inside a smart contract, send its information to other wallets or apps. You can also verify the smart contracts’ data on MyEtherId Store
               Identity page using Metamask to decrypt your information and you can paste your smart contract address in any compatible kyc app to provide your
@@ -119,8 +131,10 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq7_desc" class="desc">
+            <p id="faq7_desc" class="desc containerBorderBottom">
 
+              <h1 class="containerBorderBottom"></h1>
+              
               POI is the certificate obtained by MyetherID when you store your identity data on the blockchain. While it encrypts the provided data it also runs a
               validation on the certificate being the stored attributes. These validations are stored and can be accessed by wallets from services to which if
               you’ve given access permissions upon a payment of a BLID token fee.
@@ -133,7 +147,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq8_desc" class="desc">
+            <p id="faq8_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               WE STILL NEED TO DEFINE THIS
 
@@ -145,7 +161,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq9_desc" class="desc">
+            <p id="faq9_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               The Ethereum Blockchain is currently the only viable solution to create, store and trade smart contracts. BlockID’s protocol is focused on one specific
               potential usage that comes from smart contracts, by storing and encrypting certified ID attributes in one and by associating it with it’s user’s Ethereum
@@ -161,7 +179,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq10_desc" class="desc">
+            <p id="faq10_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               The Ethereum wallet allows you to access any smart contract features on the blockchain. It is your Ethereum Blockchain Identity with the ability to send
               and receive any Ethereum token such as BLID. Your Ethereum wallet is only accessible and manageable with the correspondent private key generated upon the
@@ -175,7 +195,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq11_desc" class="desc">
+            <p id="faq11_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               MyEtherWallet is a web based app running a full Ethereum node that gives full control and responsibility over your Ethereum wallet. It does not allow you
               to create an account or to store your Ether in any server, it simply allows you create a wallet, which is yours to store and keep safe, and to broadcast
@@ -189,7 +211,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq12_desc" class="desc">
+            <p id="faq12_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               MetaMask is a bridge that allows you to run Ethereum dApps and use your Ethereum wallet right in your browser without running a full Ethereum node.
               MetaMask includes a secure identity vault, providing a user interface to manage his wallet on different sites and sign blockchain transactions.
@@ -203,7 +227,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq13_desc" class="desc">
+            <p id="faq13_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               ID Data the output ImportID produces after reading the attributes in your Citizen Card. It is a text generated within the desktop app that compiles
               that information in a format readable by MyEtherID when storing your identity on the blockchain. It must be copied from ImportID and pasted in
@@ -217,7 +243,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq14_desc" class="desc">
+            <p id="faq14_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               There is no possible recovery to your Ethereum wallet private key and metamask recovery. keywords. They are not stored anywhere and you are their only owner.
 
@@ -229,7 +257,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq15_desc" class="desc">
+            <p id="faq15_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               Completely. Your ID attributes are actually not stored anywhere and no one but yourself can have access or manage them. What’s stored in the blockchain is
               an encryption (hash) of those attributes. This encryption is made with your Ethereum wallet private key, using metamask and decryption can only be made with
@@ -243,7 +273,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq16_desc" class="desc">
+            <p id="faq16_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               You are the sole person able to access your decrypted ID attributes either in the physical world through your Identity Document or in the blockchain,
               through MyEtherID but with your private key and metamask connection only. Only an hash (encryption) of your attributes is stored in the blockchain.
@@ -260,7 +292,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq17_desc" class="desc">
+            <p id="faq17_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               All transactions that occur in the blockchain are registered and can be checked in etherscan.io or similar services. It’s not possible to trace user’s off
               chain identity since the only way to decrypt ID smart contracts is with its own private key and metamask linking. However, smart contract addresses are exposed
@@ -274,7 +308,9 @@ class Help extends Component {
             </button>
           </dt>
           <dd>
-            <p id="faq18_desc" class="desc">
+            <p id="faq18_desc" class="desc containerBorderBottom">
+
+              <h1 class="containerBorderBottom"></h1>
 
               Yes. No service or app running BlockID’s protocol has access to your information or data. ImportID is the only app in touch with that raw data but it is an
               open source application that runs locally on your desktop. From that point on, MyEtherID only deals and stores the encryption of that data, generating it
