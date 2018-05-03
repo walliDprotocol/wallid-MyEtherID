@@ -47,13 +47,20 @@ class View extends Component {
   render() {
     return (
       <main role="main" class="container">
-        <div class="row justify-content-md-center pb-5">
-            <div class="col-8 text-center">
-                <h1>Browse your identities</h1>
-                <p>Decrypt your Identity Smart Contract addresses and check your certified ID attributes. Make sure you are logged in metamask to ensure your safety accessing your ether wallet.
-                <br />
-                Remember decryption is only possible your with your wallet private key through metamask association and we don’t have any access to your data</p>
+        <div class="row justify-content-md-center pb-3 containerBorderBottom">
+          <div class="col text-center">
+                <h1 class="pb-3">Browse your identities</h1>
+                  <h2 class="colorGrey">
+                    Decrypt your Identity Smart Contract addresses and check your certified ID attributes
+                  </h2>
             </div>
+        </div>
+        <div class="row pt-3 pb-3 containerBorderBottom">
+          <div class="col text-center">
+            <p>Make sure you are logged in metamask to ensure your safety accessing your ether wallet.
+             <br />
+             Remember decryption is only possible your with your wallet private key through metamask association and we don’t have any access to your data</p>
+          </div>
         </div>
         <br />
         <BootstrapTable

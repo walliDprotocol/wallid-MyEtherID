@@ -2,11 +2,11 @@ dl.faq button {
     margin: 0;
     padding: 0;
     margin-top: 1em;
-    font-weight: bold;
     font-size: 110%;
     border: thin solid transparent;
     background-color: transparent;
     padding-left: 0.125em;
+    color: #0FA3B1;
 }
 
 dl dd {
@@ -20,7 +20,8 @@ dl.faq .desc {
     padding: 0.5em;
     font-size: 110%;
     display: none;
-    background-color: #ffe8cc;
+    background-color: #F9F9F9;
+    color:#878787;
 }
 
 dl.faq button:hover,

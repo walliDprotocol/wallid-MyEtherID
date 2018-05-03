@@ -230,7 +230,7 @@ render() {
             <form onSubmit={this.handleSubmit} >
               <div class="form-group">
                 <label>
-                  Identity document:
+                  Select your identity type:
                 </label>
                 <select class="form-control" required>
                   <option value="grapefruit">

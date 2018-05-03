@@ -7,16 +7,10 @@ class Store extends Component {
       <main role="main" class="container">
         <div class="row justify-content-md-center pb-3 containerBorderBottom" id="top">
             <div class="col text-center">
-                <h1>Store your Identity on the Blockchain</h1>
+                <h1 class="pb-3">Store your Identity on the Blockchain</h1>
                 <h2 class="colorGrey">
-                    Encrypt your ID attributes onto a smart contract address and store them on your ether wallet.
+                    Encrypt your ID attributes onto a smart contract address and store them on your ether wallet
                 </h2>
-            </div>
-        </div>
-
-        <div class="row pt-4">
-            <div class="col">
-                <h3>Select your identity type</h3>
             </div>
         </div>
 

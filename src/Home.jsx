@@ -5,8 +5,8 @@ class Home extends Component {
   render() {
     return (
       <main role="main" class="container">
-          <div class="row justify-content-md-center pb-2">
-              <div class="col text-center">
+        <div class="row justify-content-md-center pb-3">
+          <div class="col text-center">
                   <h1 class="pb-3">Welcome to MyEtherID</h1>
                   <h2 class="colorGrey">Connect your off-chain identity to your Ether Wallet</h2>
               </div>
