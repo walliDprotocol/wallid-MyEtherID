@@ -11,6 +11,16 @@ import Help from './Help';
 import Footer from './Footer';
 
 class Main extends Component {
+  state = {
+    navCollapsed: true
+  }
+  onToggleNav = () => {
+    this.setState({ navCollapsed: !this.state.navCollapsed })
+  }
+  closeNav = () => {
+    this.setState({ navCollapsed: true });
+  }
+
   render() {
     return (
       <HashRouter>
@@ -21,25 +31,26 @@ class Main extends Component {
                 <a class="navbar-brand" href="index.html">
                   <img class="logoHeader" src={require('./img/myetherid-logo.svg')} alt="MyEther ID Logo" />
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button"
+                  onClick={this.onToggleNav}>
                   <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div className={(this.state.navCollapsed ? 'collapse' : '') + ' navbar-collapse'}>
                   <ul class="navbar-nav ml-auto">
-                    <li class="nav-item nav-link">
-                      <NavLink exact to="/">Home Page</NavLink>
+                    <li class="nav-link">
+                      <NavLink exact to="/" onClick={this.closeNav}>Home Page</NavLink>
                     </li>
-                    <li class="nav-item nav-link">
-                      <NavLink to="/store">Store Identity</NavLink>
+                    <li class="nav-link">
+                      <NavLink to="/store" onClick={this.closeNav}>Store Identity</NavLink>
                     </li>
-                    <li class="nav-item nav-link">
-                      <NavLink to="/view">View Identities</NavLink>
+                    <li class="nav-link">
+                      <NavLink to="/view" onClick={this.closeNav}>View Identities</NavLink>
                     </li>
-                    <li class="nav-item nav-link">
-                      <NavLink to="/transactions">Transactions</NavLink>
+                    <li class="nav-link">
+                      <NavLink to="/transactions" onClick={this.closeNav}>Transactions</NavLink>
                     </li>
-                    <li class="nav-item nav-link">
-                      <NavLink to="/help">Help</NavLink>
+                    <li class="nav-link">
+                      <NavLink to="/help" onClick={this.closeNav}>Help</NavLink>
                     </li>
                   </ul>
                 </div>
