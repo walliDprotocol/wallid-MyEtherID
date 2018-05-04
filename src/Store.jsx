@@ -1,15 +1,17 @@
 import React, { Component } from "react";
+import { HashLink as Link } from 'react-router-hash-link';
 import ImportForm from './components/ImportForm';
 
 class Store extends Component {
   render() {
     return (
       <main role="main" class="container">
-        <div class="row justify-content-md-center pb-3 containerBorderBottom" id="top">
+        <div class="scroll-pre"></div>
+        <div class="row justify-content-md-center pb-3 containerBorderBottom">
             <div class="col text-center">
                 <h1 class="pb-3">Store your Identity on the Blockchain</h1>
                 <h2 class="colorGrey">
-                    Encrypt your ID attributes onto a smart contract address and store them on your ether wallet
+                    Encrypt and store your ID attributes associated with your Ethereum wallet onto a smart contract
                 </h2>
             </div>
         </div>
@@ -27,13 +29,13 @@ class Store extends Component {
           </div>
           <div class="row text-center containerBorderBottom pb-5">
                       <div class="col">
-                          <a href="/" class="biggerLink" role="button" aria-pressed="true">What is BlockID?</a>
+                        <Link to="/help#top" class="biggerLink">What is BlockID?</Link>
                       </div>
                       <div class="col">
-                          <a href="/" class="biggerLink" role="button" aria-pressed="true">What is ImportID</a>
+                        <Link to="/help#top" class="biggerLink">What is ImportID</Link>
                       </div>
                       <div class="col">
-                          <a href="/" class="biggerLink" role="button" aria-pressed="true">What is my ID Data?</a>
+                        <Link to="/help#top" class="biggerLink">What is my ID Data?</Link>
                       </div>
           </div>
           <div class="row pt-5 pb-5 containerBorderBottom">
@@ -44,7 +46,7 @@ class Store extends Component {
           </div>
           <div class="row pt-3">
               <div class="col">
-                  <h3>How to Protect Yourself From Loss</h3>
+                  <h4>How to Protect Yourself From Loss</h4>
                   <p>If you lose your private key or metamask recovery keywords they are gone forever. Don't lose them.</p>
                   <ul>
                       <li>Make a backup of your keys. Do NOT just store them on your computer. Print them out on a piece of paper or save them to a USB drive.</li>

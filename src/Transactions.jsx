@@ -22,11 +22,12 @@ class Transactions extends Component {
   render() {
     return (
       <main role="main" class="container">
+        <div class="scroll-pre"></div>
         <div class="row justify-content-md-center pb-3 containerBorderBottom">
           <div class="col text-center">
-            <h1 class="pb-3">List the transactions of your identities</h1>
+            <h1 class="pb-3">Check your identities transactions</h1>
             <h2 class="colorGrey">
-              Check the transaction history at Etherscan
+              Confirm your identities transactions history onto smart contract
             </h2>
           </div>
         </div>

@@ -25,8 +25,9 @@ class Main extends Component {
     return (
       <HashRouter>
         <div>
-          <header>
-            <div class="container">
+          <header id="top">
+            <div>
+              <div class="scroll-pre"></div>
               <nav class="navbar navbar-expand-md fixed-top">
                 <a class="navbar-brand" href="index.html">
                   <img class="logoHeader" src={require('./img/myetherid-logo.svg')} alt="MyEther ID Logo" />
@@ -57,13 +58,11 @@ class Main extends Component {
               </nav>
             </div>
           </header>
-          <div className="content">
             <Route exact path="/" component={Home}/>
             <Route path="/store" component={Store}/>
             <Route path="/view" component={View}/>
             <Route path="/transactions" component={Transactions}/>
             <Route path="/help" component={Help}/>
-          </div>
           <Footer />
         </div>
       </HashRouter>

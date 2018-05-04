@@ -47,11 +47,12 @@ class View extends Component {
   render() {
     return (
       <main role="main" class="container">
+        <div class="scroll-pre"></div>
         <div class="row justify-content-md-center pb-3 containerBorderBottom">
           <div class="col text-center">
-                <h1 class="pb-3">Browse your identities</h1>
+                <h1 class="pb-3">View your identities</h1>
                   <h2 class="colorGrey">
-                    Decrypt your Identity Smart Contract addresses and check your certified ID attributes
+                    Decrypt your ID attributes from a smart contract and check your certified ID attributes
                   </h2>
             </div>
         </div>

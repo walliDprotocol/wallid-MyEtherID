@@ -20,6 +20,7 @@ class Help extends Component {
   render() {
     return (
       <main role="main" class="container">
+        <div class="scroll-pre"></div>
         <div class="row justify-content-md-center pb-3 containerBorderBottom">
           <div class="col text-center">
             <h1 class="pb-3">Help</h1>

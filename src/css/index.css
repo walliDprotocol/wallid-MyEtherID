@@ -125,6 +125,9 @@ body {
   font-family: 'Ubuntu', sans-serif;
   color: #F9F9F9;
 }
-body  .container {
-  padding: 85px 15px 0;
+
+.scroll-pre {
+  height: 90px;
+  width: 100%;
+  background-color: inherit;
 }
