@@ -21,7 +21,7 @@ class Help extends Component {
     return (
       <main role="main" className="container">
         <div className="scroll-pre"></div>
-        <div className="row justify-content-md-center pb-3 containerBorderBottom">
+        <div className="row justify-content-md pb-3 containerBorderBottom">
           <div className="col text-center">
             <h1 className="pb-3">Help</h1>
               <h2 className="colorGrey">

@@ -28,13 +28,13 @@ class Store extends Component {
               </div>
           </div>
           <div className="row text-center containerBorderBottom pb-5">
-                      <div className="col">
+                      <div className="col-md-4">
                         <Link to="/help#top" className="biggerLink">What is BlockID?</Link>
                       </div>
-                      <div className="col">
+                      <div className="col-md-4">
                         <Link to="/help#top" className="biggerLink">What is ImportID</Link>
                       </div>
-                      <div className="col">
+                      <div className="col-md-4">
                         <Link to="/help#top" className="biggerLink">What is my ID Data?</Link>
                       </div>
           </div>

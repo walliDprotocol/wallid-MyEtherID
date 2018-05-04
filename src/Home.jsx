@@ -14,11 +14,12 @@ class Home extends Component {
 
           </div>
         </div>
-        <div className="row pt-5 pb-3 containerBorderBottom">
+        <div className="row pt-5 pb-2 containerBorderBottom">
           <div className="col">
             <h3 className="text-center colorBlue pb-5">What is MyEtherID</h3>
+            </div>
             <div className="row">
-              <div className="col">
+              <div className="col-md-6">
                 <p>
                   MyEtherID is a webapp that allows you to encrypt and store real life certified identities on a smart contract.
                   It is also a gateway to manage different certified identity types you might own and check the history of your ID transactions through BlockID protocol.
@@ -32,7 +33,7 @@ class Home extends Component {
                   MyEtherID allows you to encrypt and store your certified identity data on the Ethereum blockchain,
                   check the corresponding smart contract addresses, and to confirm the transactions performed with those smart contracts.</p>
               </div>
-              <div className="col">
+              <div className="col-md-6">
 
                 <p>MyEtherID allows you to interact directly with the Ethereum blockchain, using your public Ethereum Wallet address.
                   You are always in full control of your keys and identity certificates:</p>
@@ -44,10 +45,11 @@ class Home extends Component {
                 </ul>
               </div>
             </div>
-          </div>
+
         </div>
+
         <div className="row justify-content-md-center pb-5 pt-5">
-          <div className="col-8">
+          <div className="col-md-8">
             <h3 className="colorBlue pb-3">Your ID in your Ether Wallet</h3>
             <p>Encrypt and save your certified identity on the blockchain and associate it with your ether wallet.</p>
             <p>If you don’t have an Ethereum wallet, you can create it securely and for free on
@@ -55,12 +57,12 @@ class Home extends Component {
               <Link to="/help#top">What is MyEtherWallet?</Link>
 
             </div>
-            <div className="col-4 text-right">
+            <div className="col-md-4 text-center">
               <img className="imgBlockChain" src={require('./img/blockchain.svg')} alt="Blockchain" />
             </div>
           </div>
           <div className="row text-center pb-5 containerBorderBottom">
-            <div className="col">
+            <div className="col-md-12">
               <Link to="/store#top" className="btn linkButtons btn-lg active" role="button" aria-pressed="true">Start Storing your ID</Link>
             </div>
           </div>

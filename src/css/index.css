@@ -19,7 +19,6 @@ nav ul li a{
 nav ul li a:hover, nav ul li a.active{
     color: #0FA3B1;
     border-bottom: 2px solid #FF971A;
-    padding-bottom: 10px;
 }
 
 h6{
@@ -116,7 +115,7 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 470px;
+  margin-bottom: 400px;
 }
 .footer {
   position: absolute;
