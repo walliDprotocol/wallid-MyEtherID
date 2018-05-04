@@ -2,11 +2,11 @@ import React from 'react';
 
 function Footer(/*props*/) {
   return (
-    <footer class="footer">
-      <div class="row justify-content-md-center">
-        <div class="col">
+    <footer className="footer">
+      <div className="row justify-content-md-center">
+        <div className="col">
           <a href="/">
-            <img class="logoHeader" src={require('./img/myetherid-logo.svg')} alt="MyEther ID Logo" />
+            <img className="logoHeader" src={require('./img/myetherid-logo.svg')} alt="MyEther ID Logo" />
           </a>
           <p>
             Free, open-source, client-side interface to encrypt and store id attributes on the blockchain.
@@ -17,7 +17,7 @@ function Footer(/*props*/) {
           <br />
           <a href="https://www.myetherid.com/" target="_blank rel=noopener">MyEtherID @ 2018</a>
         </div>
-        <div class="col">
+        <div className="col">
           <p>
             Feel free to donate MyEtherID:
           </p>
@@ -35,7 +35,7 @@ function Footer(/*props*/) {
             <a href="https://www.myetherid.com/" target="_blank rel=noopener">BlockID ICO</a>
           </p>
         </div>
-        <div class="col">
+        <div className="col">
           <a href="https://www.myetherid.com/" target="_blank rel=noopener"> Block-id.io</a>
           <br />
           <a href="https://www.myetherid.com/" target="_blank rel=noopener"> MyEtherId.io</a>

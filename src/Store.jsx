@@ -5,47 +5,47 @@ import ImportForm from './components/ImportForm';
 class Store extends Component {
   render() {
     return (
-      <main role="main" class="container">
-        <div class="scroll-pre"></div>
-        <div class="row justify-content-md-center pb-3 containerBorderBottom">
-            <div class="col text-center">
-                <h1 class="pb-3">Store your Identity on the Blockchain</h1>
-                <h2 class="colorGrey">
+      <main role="main" className="container">
+        <div className="scroll-pre"></div>
+        <div className="row justify-content-md-center pb-3 containerBorderBottom">
+            <div className="col text-center">
+                <h1 className="pb-3">Store your Identity on the Blockchain</h1>
+                <h2 className="colorGrey">
                     Encrypt and store your ID attributes associated with your Ethereum wallet onto a smart contract
                 </h2>
             </div>
         </div>
 
-        <div class="row pt-3 pb-3 containerBorderBottom">
-          <div class="col">
+        <div className="row pt-3 pb-3 containerBorderBottom">
+          <div className="col">
         <ImportForm />
         </div>
         </div>
-          <div class="row text-center pt-3 justify-content-md-center">
-              <div class="col-md-10">
-                  <h5 class="pb-3">You need to extract your attributes from your Identity Document and locally generate your ID data from
+          <div className="row text-center pt-3 justify-content-md-center">
+              <div className="col-md-10">
+                  <h5 className="pb-3">You need to extract your attributes from your Identity Document and locally generate your ID data from
                     BlockID’s ImportID desktop app. Once you generate it on the app, copy it to respective ID Data section above.</h5>
               </div>
           </div>
-          <div class="row text-center containerBorderBottom pb-5">
-                      <div class="col">
-                        <Link to="/help#top" class="biggerLink">What is BlockID?</Link>
+          <div className="row text-center containerBorderBottom pb-5">
+                      <div className="col">
+                        <Link to="/help#top" className="biggerLink">What is BlockID?</Link>
                       </div>
-                      <div class="col">
-                        <Link to="/help#top" class="biggerLink">What is ImportID</Link>
+                      <div className="col">
+                        <Link to="/help#top" className="biggerLink">What is ImportID</Link>
                       </div>
-                      <div class="col">
-                        <Link to="/help#top" class="biggerLink">What is my ID Data?</Link>
+                      <div className="col">
+                        <Link to="/help#top" className="biggerLink">What is my ID Data?</Link>
                       </div>
           </div>
-          <div class="row pt-5 pb-5 containerBorderBottom">
-              <div class="col text-center">
-                  <h5 class="pb-3">If you haven’t installed Import ID on your computer, you can download it for free.</h5>
-                  <a href="/" class="btn linkButtons btn-lg active" role="button" aria-pressed="true">Download here</a>
+          <div className="row pt-5 pb-5 containerBorderBottom">
+              <div className="col text-center">
+                  <h5 className="pb-3">If you haven’t installed Import ID on your computer, you can download it for free.</h5>
+                  <a href="/" className="btn linkButtons btn-lg active" role="button" aria-pressed="true">Download here</a>
               </div>
           </div>
-          <div class="row pt-3">
-              <div class="col">
+          <div className="row pt-3">
+              <div className="col">
                   <h4>How to Protect Yourself From Loss</h4>
                   <p>If you lose your private key or metamask recovery keywords they are gone forever. Don't lose them.</p>
                   <ul>

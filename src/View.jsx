@@ -46,18 +46,18 @@ class View extends Component {
 
   render() {
     return (
-      <main role="main" class="container">
-        <div class="scroll-pre"></div>
-        <div class="row justify-content-md-center pb-3 containerBorderBottom">
-          <div class="col text-center">
-                <h1 class="pb-3">View your identities</h1>
-                  <h2 class="colorGrey">
+      <main role="main" className="container">
+        <div className="scroll-pre"></div>
+        <div className="row justify-content-md-center pb-3 containerBorderBottom">
+          <div className="col text-center">
+                <h1 className="pb-3">View your identities</h1>
+                  <h2 className="colorGrey">
                     Decrypt your ID attributes from a smart contract and check your certified ID attributes
                   </h2>
             </div>
         </div>
-        <div class="row pt-3 pb-3 containerBorderBottom">
-          <div class="col text-center">
+        <div className="row pt-3 pb-3 containerBorderBottom">
+          <div className="col text-center">
             <p>Make sure you are logged in metamask to ensure your safety accessing your ether wallet.
              <br />
              Remember decryption is only possible your with your wallet private key through metamask association and we don’t have any access to your data</p>
@@ -220,7 +220,7 @@ class BSTable extends React.Component {
                   onConfirm={() => this.setState({ popupError: false })}
                   />
                 <form onSubmit={this.handleSubmit} >
-                  {/*<div class="form-group">
+                  {/*<div className="form-group">
                     <label>
                       BlockID Encryption Password
                     </label>
@@ -229,13 +229,13 @@ class BSTable extends React.Component {
                         What is BlockID Encrytion Password?
                       </a>
                     </p>
-                    {/*<div class="row ">
-                      <div class="col-md-6">
+                    {/*<div className="row ">
+                      <div className="col-md-6">
                         <input
                           type="password"
                           name="password"
                           onChange={this.handleChange}
-                          class="form-control"
+                          className="form-control"
                           placeholder="Enter the password to decrypt your certified ID attributes"
                           required />
                       </div>

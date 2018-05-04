@@ -4,21 +4,21 @@ import { HashLink as Link } from 'react-router-hash-link';
 class Home extends Component {
   render() {
     return (
-      <main role="main" class="container">
-        <div class="scroll-pre"></div>
+      <main role="main" className="container">
+        <div className="scroll-pre"></div>
 
-        <div class="row justify-content-md-center pb-3">
-          <div class="col text-center containerBorderBottom">
-            <h1 class="pb-3">Welcome to MyEtherID</h1>
-            <h2 class="colorGrey">Connect your off-chain identity to your Ether Wallet</h2>
+        <div className="row justify-content-md-center pb-3">
+          <div className="col text-center containerBorderBottom">
+            <h1 className="pb-3">Welcome to MyEtherID</h1>
+            <h2 className="colorGrey">Connect your off-chain identity to your Ether Wallet</h2>
 
           </div>
         </div>
-        <div class="row pt-5 pb-3 containerBorderBottom">
-          <div class="col">
-            <h3 class="text-center colorBlue pb-5">What is MyEtherID</h3>
-            <div class="row">
-              <div class="col">
+        <div className="row pt-5 pb-3 containerBorderBottom">
+          <div className="col">
+            <h3 className="text-center colorBlue pb-5">What is MyEtherID</h3>
+            <div className="row">
+              <div className="col">
                 <p>
                   MyEtherID is a webapp that allows you to encrypt and store real life certified identities on a smart contract.
                   It is also a gateway to manage different certified identity types you might own and check the history of your ID transactions through BlockID protocol.
@@ -32,11 +32,11 @@ class Home extends Component {
                   MyEtherID allows you to encrypt and store your certified identity data on the Ethereum blockchain,
                   check the corresponding smart contract addresses, and to confirm the transactions performed with those smart contracts.</p>
               </div>
-              <div class="col">
+              <div className="col">
 
                 <p>MyEtherID allows you to interact directly with the Ethereum blockchain, using your public Ethereum Wallet address.
                   You are always in full control of your keys and identity certificates:</p>
-                <ul class="meiTopics">
+                <ul className="meiTopics">
                   <li>You are the sole entitled responsible for the security of your actions.</li>
                   <li>The handling of your keys happens entirely on your computer, inside your browser.</li>
                   <li>MyEtherID shall never store your private key, recovery keywords, or any other account information.
@@ -46,27 +46,27 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div class="row justify-content-md-center pb-5 pt-5">
-          <div class="col-8">
-            <h3 class="colorBlue pb-3">Your ID in your Ether Wallet</h3>
+        <div className="row justify-content-md-center pb-5 pt-5">
+          <div className="col-8">
+            <h3 className="colorBlue pb-3">Your ID in your Ether Wallet</h3>
             <p>Encrypt and save your certified identity on the blockchain and associate it with your ether wallet.</p>
             <p>If you don’t have an Ethereum wallet, you can create it securely and for free on
               <a href="https://www.myetherwallet.com/" target="_blank rel=noopener"> MyEtherWallet.com</a>.</p>
               <Link to="/help#top">What is MyEtherWallet?</Link>
 
             </div>
-            <div class="col-4 text-right">
-              <img class="imgBlockChain" src={require('./img/blockchain.svg')} alt="Blockchain" />
+            <div className="col-4 text-right">
+              <img className="imgBlockChain" src={require('./img/blockchain.svg')} alt="Blockchain" />
             </div>
           </div>
-          <div class="row text-center pb-5 containerBorderBottom">
-            <div class="col">
-              <Link to="/store#top" class="btn linkButtons btn-lg active" role="button" aria-pressed="true">Start Storing your ID</Link>
+          <div className="row text-center pb-5 containerBorderBottom">
+            <div className="col">
+              <Link to="/store#top" className="btn linkButtons btn-lg active" role="button" aria-pressed="true">Start Storing your ID</Link>
             </div>
           </div>
 
-          <div class="row pt-3">
-            <div class="col">
+          <div className="row pt-3">
+            <div className="col">
               <h4>Stay safe on the Blockchain</h4>
               <p>Your account has a public and a private key. Whenever requested by third-parties, always supply your public key, which can be used
                 to retrieve your ciphered blockchain information, never your private key. Afterwards, that information shall only be readable by

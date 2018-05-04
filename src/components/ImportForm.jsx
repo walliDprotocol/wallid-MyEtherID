@@ -228,17 +228,17 @@ render() {
               onConfirm={() => this.setState({ popupCancel: false })}
               />
             <form onSubmit={this.handleSubmit} >
-              <div class="form-group">
+              <div className="form-group">
                 <label>
                   Select your identity type:
                 </label>
-                <select class="form-control" required>
+                <select className="form-control" required>
                   <option value="grapefruit">
                     Cartão do Cidadão - República Portuguesa
                   </option>
                 </select>
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <label>
                   ID Data:
                 </label>
@@ -246,7 +246,7 @@ render() {
                   id="importData"
                   name="data"
                   onChange={this.handleChange}
-                  class="form-control"
+                  className="form-control"
                   rows="5"
                   placeholder="Paste your ID Data provided by BlockID’s Import ID App"
                   required>
@@ -255,7 +255,7 @@ render() {
               <p>
                 To submit connect with MetaMask
               </p>
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="submit"
                   value="Connect with MetaMask" />
@@ -274,11 +274,11 @@ render() {
             confirmButtonColor = "#0FA3B1"
             />
           <form onSubmit={this.handleSubmit} >
-            <div class="form-group">
+            <div className="form-group">
               <label>
                 Select identity type:
               </label>
-              <select class="form-control" required>
+              <select className="form-control" required>
                 <option value="grapefruit">
                   Cartão do Cidadão - República Portuguesa
                 </option>
@@ -305,11 +305,11 @@ render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit} >
-          <div class="form-group">
+          <div className="form-group">
             <label>
               Select identity type:
             </label>
-            <select class="form-control" required>
+            <select className="form-control" required>
               <option value="grapefruit">
                 Cartão do Cidadão - República Portuguesa
               </option>

@@ -21,36 +21,36 @@ TransactionDate: "16 Fev 18"
 class Transactions extends Component {
   render() {
     return (
-      <main role="main" class="container">
-        <div class="scroll-pre"></div>
-        <div class="row justify-content-md-center pb-3 containerBorderBottom">
-          <div class="col text-center">
-            <h1 class="pb-3">Check your identities transactions</h1>
-            <h2 class="colorGrey">
+      <main role="main" className="container">
+        <div className="scroll-pre"></div>
+        <div className="row justify-content-md-center pb-3 containerBorderBottom">
+          <div className="col text-center">
+            <h1 className="pb-3">Check your identities transactions</h1>
+            <h2 className="colorGrey">
               Confirm your identities transactions history onto smart contract
             </h2>
           </div>
         </div>
-        <div class="row pt-3 pb-3 containerBorderBottom">
-          <div class="col text-center">
+        <div className="row pt-3 pb-3 containerBorderBottom">
+          <div className="col text-center">
             <p>Check the transaction history at Etherscan, pressing <a href="https://rinkeby.etherscan.io/address/0x82209352470b2f22f5a6874790114d5651a75285" target="_blank rel=noopener">here</a>.</p>
           </div>
         </div>
-        <div class="row pb-3 containerBorderBottom">
-          <div class="col">
-            <div class="row">
-              <div class="col">
-                <div class="text-center">
-                  <img class="img-fluid imgTransaction" src={require('./img/blockchain.svg')} alt="Blockchain Transation" />
+        <div className="row pb-3 containerBorderBottom">
+          <div className="col">
+            <div className="row">
+              <div className="col">
+                <div className="text-center">
+                  <img className="img-fluid imgTransaction" src={require('./img/blockchain.svg')} alt="Blockchain Transation" />
                 </div>
               </div>
             </div>
           </div>
         </div>
         {/*<br />
-        <div class="form-group">
+        <div className="form-group">
         <label>Paste an Ether wallet public address below to check its transaction history</label>
-        <input type="password" name="password" onChange={this.handleChange} class="form-control" placeholder="Ether wallet public address" required />
+        <input type="password" name="password" onChange={this.handleChange} className="form-control" placeholder="Ether wallet public address" required />
         </div>
         <br />
         <BootstrapTable
