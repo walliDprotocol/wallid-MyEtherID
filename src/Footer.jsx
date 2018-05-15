@@ -24,7 +24,7 @@ function Footer(/*props*/) {
 
           <div class="col-md-4 mx-auto">
             <p>
-              Feel free to donate MyEtherID:
+              Feel free to donate to MyEtherID:
             </p>
             <p>
               <a href="https://www.myetherid.com/" target="_blank rel=noopener"> ETH: 0x012345678901234567890123</a>

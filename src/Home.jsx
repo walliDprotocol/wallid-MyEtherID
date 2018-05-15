@@ -10,7 +10,7 @@ class Home extends Component {
         <div className="row justify-content-md-center pb-3">
           <div className="col text-center containerBorderBottom">
             <h1 className="pb-3">Welcome to MyEtherID</h1>
-            <h2 className="colorGrey">Connect your off-chain identity to your Ether Wallet</h2>
+            <h2 className="colorGrey">Connect your off-chain identity o your Ethereum wallet</h2>
 
           </div>
         </div>
@@ -26,16 +26,13 @@ class Home extends Component {
                 </p>
                 <p>
                   It allows you to associate your identity attributes to your Ethereum Wallet without having access to your data or to your wallet keys.
-                  All data is encrypted and decrypted by your own keys and associations to your wallet are made through Metamask.
+                  All data is encrypted and decrypted by your own keys and associations to your wallet are made through MetaMask.
                   No decrypted data is ever accessed by anyone else but its owner nor stored on the Blockchain.
                 </p>
-                <p>MyEther ID is a free, open-source, client-side interface.
-                  MyEtherID allows you to encrypt and store your certified identity data on the Ethereum blockchain,
-                  check the corresponding smart contract addresses, and to confirm the transactions performed with those smart contracts.</p>
               </div>
               <div className="col-md-6">
 
-                <p>MyEtherID allows you to interact directly with the Ethereum blockchain, using your public Ethereum Wallet address.
+                <p>MyEther ID is a free, open-source, client-side interface. MyEtherID allows you to interact directly with the Ethereum blockchain, using your public Ethereum Wallet address.
                   You are always in full control of your keys and identity certificates:</p>
                 <ul className="meiTopics">
                   <li>You are the sole entitled responsible for the security of your actions.</li>
@@ -50,8 +47,8 @@ class Home extends Component {
 
         <div className="row justify-content-md-center pb-5 pt-5">
           <div className="col-md-8">
-            <h3 className="colorBlue pb-3">Your ID in your Ether Wallet</h3>
-            <p>Encrypt and save your certified identity on the blockchain and associate it with your ether wallet.</p>
+            <h3 className="colorBlue pb-3">Your ID in your Ethereum Wallet</h3>
+            <p>Encrypt and save your certified identity on the blockchain and associate it with with your Ethereum wallet.</p>
             <p>If you don’t have an Ethereum wallet, you can create it securely and for free on
               <a href="https://www.myetherwallet.com/" target="_blank rel=noopener"> MyEtherWallet.com</a>.</p>
               <Link to="/help#top">What is MyEtherWallet?</Link>
@@ -75,7 +72,7 @@ class Home extends Component {
                 you or entities trusted by yourself, upon you deciphering it with matamask plugin.</p>
               <p>How to Protect Yourself From Loss:</p>
               <ul>
-                <li>If you lose your private key or metamask recovery keywords they are gone forever. Don't lose them.</li>
+                <li>If you lose your private key or MetaMask recovery keywords they are gone forever. Don't lose them.</li>
                 <li>Make a backup of your keys. Do NOT just store them on your computer. Print them out on a piece of paper or save them to a USB drive.</li>
                 <li>Store this paper or USB drive in a different physical location. A backup is not useful if it is destroyed by a fire or flood along with your laptop.</li>
                 <li>Do not store your keys inn Dropbox, Google Drive, or other cloud storage. If that account is compromised, your funds will be stolen.</li>

@@ -25,7 +25,7 @@ class Help extends Component {
           <div className="col text-center">
             <h1 className="pb-3">Help</h1>
               <h2 className="colorGrey">
-                  Frequently-asked questions
+                  Frequently asked questions
               </h2>
           </div>
         </div>
@@ -104,7 +104,7 @@ class Help extends Component {
 
 
               Encrypting your Identity certificates on the blockchain is  the safest way to store your identity in itself. By merging your attributes in a smart contract
-              associated to your ether wallet, you solely will be able to access, trade and audit them. At the same time it is a safe way to store your identity it is
+              associated o your Ethereum wallet, you solely will be able to access, trade and audit them. At the same time it is a safe way to store your identity it is
               also the most efficient way to trade your attributes online. By engaging in KYC and registration processes in websites and applications, you can instantly
               share your encrypted attributes and they will be able to instantly verify the validity of that data and approve your application.
 
@@ -121,7 +121,7 @@ class Help extends Component {
 
 
               You can check what’s inside a smart contract, send its information to other wallets or apps. You can also verify the smart contracts’ data on MyEtherId Store
-              Identity page using Metamask to decrypt your information and you can paste your smart contract address in any compatible kyc app to provide your
+              Identity page using MetaMask to decrypt your information and you can paste your smart contract address in any compatible kyc app to provide your
               proof-of-identity (POI) to that service and instantly succeed in any identity required application.
 
             </p>
@@ -208,7 +208,7 @@ class Help extends Component {
           </dd>
           <dt>
             <button aria-expanded="false" aria-controls="faq12_desc">
-              What is Metamask?
+              What is MetaMask?
             </button>
           </dt>
           <dd>
@@ -248,7 +248,7 @@ class Help extends Component {
 
 
 
-              There is no possible recovery to your Ethereum wallet private key and metamask recovery. keywords. They are not stored anywhere and you are their only owner.
+              There is no possible recovery to your Ethereum wallet private key and MetaMask recovery. keywords. They are not stored anywhere and you are their only owner.
 
             </p>
           </dd>
@@ -263,7 +263,7 @@ class Help extends Component {
 
 
               Completely. Your ID attributes are actually not stored anywhere and no one but yourself can have access or manage them. What’s stored in the blockchain is
-              an encryption (hash) of those attributes. This encryption is made with your Ethereum wallet private key, using metamask and decryption can only be made with
+              an encryption (hash) of those attributes. This encryption is made with your Ethereum wallet private key, using MetaMask and decryption can only be made with
               the same key.
 
             </p>
@@ -279,10 +279,10 @@ class Help extends Component {
 
 
               You are the sole person able to access your decrypted ID attributes either in the physical world through your Identity Document or in the blockchain,
-              through MyEtherID but with your private key and metamask connection only. Only an hash (encryption) of your attributes is stored in the blockchain.
+              through MyEtherID but with your private key and MetaMask connection only. Only an hash (encryption) of your attributes is stored in the blockchain.
               Only your private key can decrypt them and nobody else has access to it.
               You can, however trade your decrypted attributes with entities you trust. Some websites are running BlockID’s compatible dApps that request you to provide
-              your ID Smart Contract Address and to connect your metamask to decrypt your data, so you can enjoy an instant registration application or kyc approval.
+              your ID Smart Contract Address and to connect your MetaMask to decrypt your data, so you can enjoy an instant registration application or kyc approval.
               Make sure you trust the sources you are trusting  your data to.
 
             </p>
@@ -298,7 +298,7 @@ class Help extends Component {
 
 
               All transactions that occur in the blockchain are registered and can be checked in etherscan.io or similar services. It’s not possible to trace user’s off
-              chain identity since the only way to decrypt ID smart contracts is with its own private key and metamask linking. However, smart contract addresses are exposed
+              chain identity since the only way to decrypt ID smart contracts is with its own private key and MetaMask linking. However, smart contract addresses are exposed
               in the context of transactions between themselves.
 
             </p>
@@ -315,7 +315,7 @@ class Help extends Component {
 
               Yes. No service or app running BlockID’s protocol has access to your information or data. ImportID is the only app in touch with that raw data but it is an
               open source application that runs locally on your desktop. From that point on, MyEtherID only deals and stores the encryption of that data, generating it
-              from your own private key. It means that only your Ethereum wallet private key, through metamask has the ability to access and manage your ID raw data.
+              from your own private key. It means that only your Ethereum wallet private key, through MetaMask has the ability to access and manage your ID raw data.
 
             </p>
           </dd>

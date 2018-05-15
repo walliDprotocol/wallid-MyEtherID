@@ -47,7 +47,7 @@ class Store extends Component {
           <div className="row pt-3">
               <div className="col">
                   <h4>How to Protect Yourself From Loss</h4>
-                  <p>If you lose your private key or metamask recovery keywords they are gone forever. Don't lose them.</p>
+                  <p>If you lose your private key or MetaMask recovery keywords they are gone forever. Don't lose them.</p>
                   <ul>
                       <li>Make a backup of your keys. Do NOT just store them on your computer. Print them out on a piece of paper or save them to a USB drive.</li>
                       <li>Store this paper or USB drive in a different physical location. A backup is not useful if it is destroyed by a fire or flood along with your laptop.</li>

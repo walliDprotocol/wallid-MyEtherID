@@ -27,7 +27,7 @@ class Transactions extends Component {
           <div className="col text-center">
             <h1 className="pb-3">Check your identities transactions</h1>
             <h2 className="colorGrey">
-              Confirm your identities transactions history onto smart contract
+              Confirm BlockID’s smart contract Identity transactions
             </h2>
           </div>
         </div>

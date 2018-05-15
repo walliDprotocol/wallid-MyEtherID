@@ -14,7 +14,7 @@ window.addEventListener('reload', function () {
     console.log("Using web3 detected from external source like MetaMask")
     window.web3 = new Web3(window.web3.currentProvider)
   }else{
-    console.log("No web3 detected. Falling back to http://localhost:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
+    console.log("No web3 detected. Falling back to http://localhost:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to MetaMask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
     window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"))
     alert('No web3? You should consider trying MetaMask!')
   }
@@ -52,15 +52,15 @@ class View extends Component {
           <div className="col text-center">
                 <h1 className="pb-3">View your identities</h1>
                   <h2 className="colorGrey">
-                    Decrypt your ID attributes from a smart contract and check your certified ID attributes
+                    Decrypt your ID data from a smart contract and check your certified ID attributes
                   </h2>
             </div>
         </div>
         <div className="row pt-3 pb-3 containerBorderBottom">
           <div className="col text-center">
-            <p>Make sure you are logged in metamask to ensure your safety accessing your ether wallet.
+            <p>Make sure you are logged in MetaMask to ensure your safety accessing your ether wallet.
              <br />
-             Remember decryption is only possible your with your wallet private key through metamask association and we don’t have any access to your data</p>
+             Remember decryption is only possible your with your wallet private key through MetaMask association and we don’t have any access to your data</p>
           </div>
         </div>
         <br />

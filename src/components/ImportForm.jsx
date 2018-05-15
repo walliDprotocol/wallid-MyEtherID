@@ -15,7 +15,7 @@ window.addEventListener('reload', function () {
     console.log("Using web3 detected from external source like MetaMask")
     window.web3 = new Web3(window.web3.currentProvider)
   }else{
-    console.log("No web3 detected. Falling back to http://localhost:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
+    console.log("No web3 detected. Falling back to http://localhost:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to MetaMask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
     window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"))
   }
 });
@@ -285,7 +285,7 @@ render() {
               </select>
             </div>
             <p>
-              Login to your Metamask to associate your ether wallet and refresh the page.
+              Login to your MetaMask to associate your ether wallet and refresh the page.
             </p>
             <p>
               <a href="https://metamask.io/">
@@ -316,7 +316,7 @@ render() {
             </select>
           </div>
           <p>
-            Don’t have Metamask plug in installed?
+            Don’t have MetaMask plug in installed?
           </p>
           <p>
             <a href="https://metamask.io/">
