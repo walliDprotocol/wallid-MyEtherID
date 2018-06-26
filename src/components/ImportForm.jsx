@@ -125,25 +125,25 @@ handleSucess(response) {
   var obj = {};
   try {
     obj = JSON.parse(this.state.data);
-    var idAttr = CryptoJS.AES.encrypt(JSON.stringify( obj.id_attributes), this.state.password).toString();
-    var address =  CryptoJS.AES.encrypt( JSON.stringify( obj.address_attributes), this.state.password).toString();
+    var identityAttributes = CryptoJS.AES.encrypt(JSON.stringify( obj.identityAttributes), this.state.password).toString();
+    var address_attributes =  CryptoJS.AES.encrypt( JSON.stringify( obj.address_attributes), this.state.password).toString();
 
     console.log('Encrypt idAttr ', idAttr  );
     console.log('Encrypt address ', address );
 
-    var self = this
-    this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
-      console.log('add info result is ', data);
-      if(data){
-        self.state.addinfoSuccess = 1;
-        self.state.timeoutID = setInterval(self.timer.bind(self), 5000, data);
-        self.forceUpdate()
-      }else{
-        self.state.addinfoSuccess = 0;
-        self.state.popupCancel = true
-        self.forceUpdate()
-      }
-    });
+    // var self = this
+    // this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
+    //   console.log('add info result is ', data);
+    //   if(data){
+    //     self.state.addinfoSuccess = 1;
+    //     self.state.timeoutID = setInterval(self.timer.bind(self), 5000, data);
+    //     self.forceUpdate()
+    //   }else{
+    //     self.state.addinfoSuccess = 0;
+    //     self.state.popupCancel = true
+    //     self.forceUpdate()
+    //   }
+    // });
 
   }
   catch(err) {
