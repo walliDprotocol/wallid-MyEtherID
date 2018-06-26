@@ -32,7 +32,7 @@ class ImportForm extends React.Component {
       password: '20THIS_WILL_USE_METAMASK_SECURITY18',
       passwordCheck: '20THIS_WILL_USE_METAMASK_SECURITY18',
       data: '',
-      ContractAddress : '0x82209352470b2f22f5a6874790114d5651a75285',
+      ContractAddress : '0x7f852d0be239e1a547b07c88aa54cfcc98a80f49',
       ContractInstance : null
     };
 
@@ -43,10 +43,10 @@ class ImportForm extends React.Component {
       const MyContract = window.web3.eth.contract(BlockIdContract.abi)
       this.state.ContractInstance = MyContract.at(this.state.ContractAddress)
 
-      this.state.ContractInstance.countItemList( (err, data) => {
-        console.log('Count items :  ', data);
-        console.log('total items #', data.c[0] );
-      });
+      // this.state.ContractInstance.countItemList( (err, data) => {
+      //   console.log('Count items :  ', data);
+      //   console.log('total items #', data.c[0] );
+      // });
       this.checkMetamaskUser()
     }
   }
@@ -120,30 +120,37 @@ handleSucess(response) {
   console.log('WalletAddress :' + this.state.walletAddress);
   //console.log('Password : ' + this.state.password);
   //console.log('Password Check : ' + this.state.passwordCheck);
-  console.log('Data :' + this.state.data);
+  //console.log('Data :' + this.state.data);
 
   var obj = {};
   try {
     obj = JSON.parse(this.state.data);
-    var identityAttributes = CryptoJS.AES.encrypt(JSON.stringify( obj.identityAttributes), this.state.password).toString();
-    var address_attributes =  CryptoJS.AES.encrypt( JSON.stringify( obj.address_attributes), this.state.password).toString();
+    var storeIdProviderWa = JSON.stringify( obj.dataID.storeIDProvider.wa);
+    var idt = JSON.stringify( obj.dataID.data.idt);
+    var idtName = JSON.stringify( obj.dataID.data.idtName);
+    console.log('storeId Provider WA :' + storeIdProviderWa);
+    console.log('idt :' + idt);
 
-    console.log('Encrypt idAttr ', idAttr  );
-    console.log('Encrypt address ', address );
+    var identityAttributes = CryptoJS.AES.encrypt(JSON.stringify( obj.dataID.data.identityID.identityAttributes), this.state.password).toString();
+    var addressAttributes =  CryptoJS.AES.encrypt( JSON.stringify( obj.dataID.data.identityID.addressAttributes), this.state.password).toString();
 
-    // var self = this
-    // this.state.ContractInstance.addInfo( idAttr ,  address , (err, data) => {
-    //   console.log('add info result is ', data);
-    //   if(data){
-    //     self.state.addinfoSuccess = 1;
-    //     self.state.timeoutID = setInterval(self.timer.bind(self), 5000, data);
-    //     self.forceUpdate()
-    //   }else{
-    //     self.state.addinfoSuccess = 0;
-    //     self.state.popupCancel = true
-    //     self.forceUpdate()
-    //   }
-    // });
+    console.log('Encrypt identity Attributes ', identityAttributes  );
+    console.log('Encrypt address Attributes ', addressAttributes );
+
+    var self = this
+    // addInfo(bytes identityId, bytes idt, bytes idtName, bytes pWalletId) public returns (address callerAdd)
+    this.state.ContractInstance.addInfo( identityAttributes, idt, idtName, storeIdProviderWa, (err, data) => {
+      console.log('add info result is ', data);
+      if(data){
+        self.state.addinfoSuccess = 1;
+        self.state.timeoutID = setInterval(self.timer.bind(self), 5000, data);
+        self.forceUpdate()
+      }else{
+        self.state.addinfoSuccess = 0;
+        self.state.popupCancel = true
+        self.forceUpdate()
+      }
+    });
 
   }
   catch(err) {
@@ -156,20 +163,25 @@ handleSucess(response) {
 
 handleSubmit(event) {
   console.log("handleSubmit");
+  var obj = JSON.parse(this.state.data);
+  delete obj.dataID.data.identityID;
+  console.log("DataID to VerifyID" +  JSON.stringify( obj));
+
+
   if(this.state.password === this.state.passwordCheck){
-    this.handleSucess()
-    //   fetch('https://blockid.caixamagica.pt/api/store', {
+     this.handleSucess()
+    //   fetch('https://api.block-id.io/api/store', {
     //     method: 'POST',
     //     headers: {
     //       'Content-Type': 'application/json'
     //     },
-    //     body: this.state.data
+    //     body: obj
     //   })
     //   .then(this.handleErrors)
     //   .then(response => this.handleSucess(response) )
     //   .catch(error => {
     //     console.log(error)
-    //     alert("Store BlockID Fail. Please check the internet connection.")
+    //     alert("Store Wallid Fail. Please check the internet connection.")
     //
     //   }
     // );

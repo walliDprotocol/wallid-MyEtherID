@@ -93,7 +93,7 @@ class BSTable extends React.Component {
       popupLogout: false,
       popupError: false,
       data: '',
-      ContractAddress : '0x82209352470b2f22f5a6874790114d5651a75285',
+      ContractAddress : '0x7f852d0be239e1a547b07c88aa54cfcc98a80f49',
       ContractInstance : null,
       password: '20THIS_WILL_USE_METAMASK_SECURITY18'
     };
@@ -105,10 +105,10 @@ class BSTable extends React.Component {
       const MyContract = window.web3.eth.contract(BlockIdContract.abi)
       this.state.ContractInstance = MyContract.at(this.state.ContractAddress)
 
-      this.state.ContractInstance.countItemList( (err, data) => {
-        console.log('Count items :  ', data);
-        console.log('total items #', data.c[0] );
-      });
+      // this.state.ContractInstance.countItemList( (err, data) => {
+      //   console.log('Count items :  ', data);
+      //   console.log('total items #', data.c[0] );
+      // });
       this.checkMetamaskUser()
     }
   }
@@ -156,7 +156,7 @@ class BSTable extends React.Component {
 
   getInfo()
   {
-    this.state.ContractInstance.getInfo( (err, data) => {
+    this.state.ContractInstance.getIdtData( "CC_PT", (err, data) => {
       console.log('get Info Result ', data);
       var loadData = [];
       var dataAttribute = [];
