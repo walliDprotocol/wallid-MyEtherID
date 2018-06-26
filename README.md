@@ -6,7 +6,7 @@ MyEtherID is a webapp that allows you to encrypt and store real life certified i
 # DataID Structure Sample
 
 {
-	"DataID": {
+	"dataID": {
 		"storeIDProvider": {
 			"name": "wallid-storeid",
 			"url": "wallid-storeid.caixamagica.pt",
