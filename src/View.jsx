@@ -159,30 +159,29 @@ class BSTable extends React.Component {
     this.state.ContractInstance.getIdtData( "CC_PT", (err, data) => {
       console.log('get Info Result ', data);
       var loadData = [];
-      var dataAttribute = [];
+      var identifyId = {}
 
       try {
-        var bytes =  CryptoJS.AES.decrypt(this.hex2a(data[1]) ,this.state.password);
+        var bytes =  CryptoJS.AES.decrypt(this.hex2a(data[0]) ,this.state.password);
         var ret_1 = bytes.toString(CryptoJS.enc.Utf8);
-        dataAttribute = JSON.parse(ret_1);
-        //console.log(dataAttribute);
+        identifyId = JSON.parse(ret_1);
+
+        //console.log('Identify ', identifyId);
         //console.log(Object.keys(dataAttribute));
-        for(var i in dataAttribute){
+        
+        for(var i in identifyId.identityAttributes){
           //console.log(i);
           //console.log(dataAttribute[i]);
-          loadData.push({ 'item' : i, 'value' : dataAttribute[i]})
+          loadData.push({ 'item' : i, 'value' : identifyId.identityAttributes[i]})
+        }
+        
+        for( i in identifyId.addressAttributes){
+          //console.log(i);
+          //console.log(dataAttribute[i]);
+          loadData.push({ 'item' : i, 'value' : identifyId.addressAttributes[i]})
         }
 
-        bytes =  CryptoJS.AES.decrypt(this.hex2a(data[2]),this.state.password);
-        var ret_2 = bytes.toString(CryptoJS.enc.Utf8);
-        dataAttribute = JSON.parse(ret_2)
-        //console.log(dataAttribute);
-        //console.log(Object.keys(dataAttribute));
-        for(i in dataAttribute){
-          //console.log(i);
-          //console.log(dataAttribute[i]);
-          loadData.push({ 'item' : i, 'value' : dataAttribute[i]})
-        }
+       
         this.setState({ data: loadData })
         this.forceUpdate()
 

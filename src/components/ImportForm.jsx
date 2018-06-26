@@ -126,20 +126,18 @@ handleSucess(response) {
   try {
     obj = JSON.parse(this.state.data);
     var storeIdProviderWa = JSON.stringify( obj.dataID.storeIDProvider.wa);
-    var idt = JSON.stringify( obj.dataID.data.idt);
-    var idtName = JSON.stringify( obj.dataID.data.idtName);
+    var idt = obj.dataID.data.idt;
+    var idtName = obj.dataID.data.idtName;
     console.log('storeId Provider WA :' + storeIdProviderWa);
     console.log('idt :' + idt);
 
-    var identityAttributes = CryptoJS.AES.encrypt(JSON.stringify( obj.dataID.data.identityID.identityAttributes), this.state.password).toString();
-    var addressAttributes =  CryptoJS.AES.encrypt( JSON.stringify( obj.dataID.data.identityID.addressAttributes), this.state.password).toString();
+    var identityId = CryptoJS.AES.encrypt(JSON.stringify( obj.dataID.data.identityID), this.state.password).toString();
 
-    console.log('Encrypt identity Attributes ', identityAttributes  );
-    console.log('Encrypt address Attributes ', addressAttributes );
+    console.log('Encrypt identity ID ', identityId  );
 
     var self = this
     // addInfo(bytes identityId, bytes idt, bytes idtName, bytes pWalletId) public returns (address callerAdd)
-    this.state.ContractInstance.addInfo( identityAttributes, idt, idtName, storeIdProviderWa, (err, data) => {
+    this.state.ContractInstance.addInfo( identityId, idt, idtName, storeIdProviderWa, (err, data) => {
       console.log('add info result is ', data);
       if(data){
         self.state.addinfoSuccess = 1;
