@@ -1,6 +1,6 @@
 {
 "dataID": {
-"storeIDProvider": {"name":"wallid-storeid","url":"wallid-storeid.caixamagica.pt","wa":"0x0x67E191D4bA926E49b139BD927ba34E5034ac550a"},
+"storeIDProvider": {"name":"wallid-storeid","url":"https://api.block-id.io/api/store","wa":"0x0x67E191D4bA926E49b139BD927ba34E5034ac550a"},
 "data": {
 "idt":"CC_PT",
 "idtName":"Citizen Card - Portuguese Republic",

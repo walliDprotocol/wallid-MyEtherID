@@ -10,6 +10,11 @@ const SweetAlert = withSwalInstance(swal);
 var CryptoJS = require("crypto-js");
 var Spinner = require('react-spinkit');
 
+const state = {
+  STATE_TRANSACTION_PROCESSING: '1',
+  STATE_TRANSACTION_CONFIRMED: '2'
+};
+
 window.addEventListener('reload', function () {
   if(typeof web3 !== 'undefined'){
     console.log("Using web3 detected from external source like MetaMask")
@@ -85,7 +90,7 @@ class ImportForm extends React.Component {
       {
         console.log('Last Transaction was confirmed!');
         clearInterval(self.state.timeoutID);
-        self.state.addinfoSuccess = 2;
+        self.state.addinfoSuccess = state['STATE_TRANSACTION_CONFIRMED'];
         self.forceUpdate()
       }
     }
@@ -125,7 +130,7 @@ handleSucess(response) {
   var obj = {};
   try {
     obj = JSON.parse(this.state.data);
-    var storeIdProviderWa = JSON.stringify( obj.dataID.storeIDProvider.wa);
+    var storeIdProviderWa = obj.dataID.storeIDProvider.wa;
     var idt = obj.dataID.data.idt;
     var idtName = obj.dataID.data.idtName;
     console.log('storeId Provider WA :' + storeIdProviderWa);
@@ -136,20 +141,18 @@ handleSucess(response) {
     console.log('Encrypt identity ID ', identityId  );
 
     var self = this
-    // addInfo(bytes identityId, bytes idt, bytes idtName, bytes pWalletId) public returns (address callerAdd)
     this.state.ContractInstance.addInfo( identityId, idt, idtName, storeIdProviderWa, (err, data) => {
       console.log('add info result is ', data);
       if(data){
-        self.state.addinfoSuccess = 1;
+        self.state.addinfoSuccess = state['STATE_TRANSACTION_PROCESSING'];
         self.state.timeoutID = setInterval(self.timer.bind(self), 5000, data);
         self.forceUpdate()
       }else{
-        self.state.addinfoSuccess = 0;
+        self.state.addinfoSuccess = state['STATE_0'];
         self.state.popupCancel = true
         self.forceUpdate()
       }
     });
-
   }
   catch(err) {
     this.setState({ popupError: true })
@@ -163,26 +166,25 @@ handleSubmit(event) {
   console.log("handleSubmit");
   var obj = JSON.parse(this.state.data);
   delete obj.dataID.data.identityID;
-  console.log("DataID to VerifyID" +  JSON.stringify( obj));
 
+  var storeIdProviderUrl = obj.dataID.storeIDProvider.url;
 
   if(this.state.password === this.state.passwordCheck){
-     this.handleSucess()
-    //   fetch('https://api.block-id.io/api/store', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: obj
-    //   })
-    //   .then(this.handleErrors)
-    //   .then(response => this.handleSucess(response) )
-    //   .catch(error => {
-    //     console.log(error)
-    //     alert("Store Wallid Fail. Please check the internet connection.")
-    //
-    //   }
-    // );
+//     this.handleSucess()
+      fetch(storeIdProviderUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(obj)
+      })
+      .then(this.handleErrors)
+      .then(response => this.handleSucess(response) )
+      .catch(error => {
+        console.log(error)
+        alert("Store Wallid Fail")
+      }
+    );
   }else{
     alert("Password and comfirm password is not the same")
   }
@@ -202,7 +204,7 @@ componentWillMount(){
 render() {
   if(window.web3){
     if(this.state.isUserLogged){
-      if(this.state.addinfoSuccess === 2){
+      if(this.state.addinfoSuccess === state['STATE_TRANSACTION_CONFIRMED']){
         return (
           <form onSubmit={this.handleSubmit} >
             <p>
@@ -211,7 +213,7 @@ render() {
             </p>
           </form>
         );
-      }else if(this.state.addinfoSuccess === 1){
+      }else if(this.state.addinfoSuccess === state['STATE_TRANSACTION_PROCESSING']){
         return (
           <div align="center">
             <p>
