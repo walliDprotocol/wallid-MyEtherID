@@ -18,7 +18,15 @@ export default {
           "type": "bytes"
         },
         {
-          "name": "pWalletId",
+          "name": "pWalletAddress",
+          "type": "bytes"
+        },
+        {
+          "name": "pName",
+          "type": "bytes"
+        },
+        {
+          "name": "pUrl",
           "type": "bytes"
         }
       ],
@@ -31,6 +39,56 @@ export default {
       ],
       "payable": false,
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_id",
+          "type": "bytes32"
+        }
+      ],
+      "name": "deposit",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_id",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Deposit",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "countItemList",
+      "outputs": [
+        {
+          "name": "count",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -48,11 +106,19 @@ export default {
           "type": "bytes"
         },
         {
-          "name": "pWalletId",
+          "name": "pWalletAddress",
           "type": "bytes"
         },
         {
           "name": "ridt",
+          "type": "bytes"
+        },
+        {
+          "name": "pName",
+          "type": "bytes"
+        },
+        {
+          "name": "pUrl",
           "type": "bytes"
         }
       ],
