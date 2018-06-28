@@ -37,7 +37,7 @@ class ImportForm extends React.Component {
       password: '20THIS_WILL_USE_METAMASK_SECURITY18',
       passwordCheck: '20THIS_WILL_USE_METAMASK_SECURITY18',
       data: '',
-      ContractAddress : '0x7f852d0be239e1a547b07c88aa54cfcc98a80f49',
+      ContractAddress : '0x0bdafb4db2b71f70530d5b2070a3468052c1adb1',
       ContractInstance : null
     };
 
@@ -131,6 +131,9 @@ handleSucess(response) {
   try {
     obj = JSON.parse(this.state.data);
     var storeIdProviderWa = obj.dataID.storeIDProvider.wa;
+    var storeIdProviderName = obj.dataID.storeIDProvider.name;
+    var storeIdProviderUrl = obj.dataID.storeIDProvider.url;
+
     var idt = obj.dataID.data.idt;
     var idtName = obj.dataID.data.idtName;
     console.log('storeId Provider WA :' + storeIdProviderWa);
@@ -141,7 +144,7 @@ handleSucess(response) {
     console.log('Encrypt identity ID ', identityId  );
 
     var self = this
-    this.state.ContractInstance.addInfo( identityId, idt, idtName, storeIdProviderWa, (err, data) => {
+    this.state.ContractInstance.addInfo( identityId, idt, idtName, storeIdProviderWa, storeIdProviderName, storeIdProviderUrl, (err, data) => {
       console.log('add info result is ', data);
       if(data){
         self.state.addinfoSuccess = state['STATE_TRANSACTION_PROCESSING'];

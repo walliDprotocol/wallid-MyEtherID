@@ -93,7 +93,7 @@ class BSTable extends React.Component {
       popupLogout: false,
       popupError: false,
       data: '',
-      ContractAddress : '0x7f852d0be239e1a547b07c88aa54cfcc98a80f49',
+      ContractAddress : '0x0bdafb4db2b71f70530d5b2070a3468052c1adb1',
       ContractInstance : null,
       password: '20THIS_WILL_USE_METAMASK_SECURITY18'
     };
@@ -168,20 +168,19 @@ class BSTable extends React.Component {
 
         //console.log('Identify ', identifyId);
         //console.log(Object.keys(dataAttribute));
-        
+
         for(var i in identifyId.identityAttributes){
           //console.log(i);
           //console.log(dataAttribute[i]);
           loadData.push({ 'item' : i, 'value' : identifyId.identityAttributes[i]})
         }
-        
+
         for( i in identifyId.addressAttributes){
           //console.log(i);
           //console.log(dataAttribute[i]);
           loadData.push({ 'item' : i, 'value' : identifyId.addressAttributes[i]})
         }
 
-       
         this.setState({ data: loadData })
         this.forceUpdate()
 
