@@ -121,7 +121,9 @@ html {
   height: 400px;
   padding: 45px 60px 0;
   font-family: 'Ubuntu', sans-serif;
-
+}
+.footerBox {
+  padding: 1rem 2rem
 }
 .footerColor {
   color: #F9F9F9;
