@@ -32,17 +32,14 @@ class Help extends Component {
         <dl className="faq">
           <dt>
             <button aria-expanded="false" aria-controls="faq1_desc">
-              What is BlockID?
+              What is WalliD?
             </button>
           </dt>
           <dd>
             <p id="faq1_desc" className="desc containerBorderBottom containerBorderTop">
-
-
-
-              BlockID is an Ethereum blockchain protocol designed with the purpose to store encypted id attributes from certified Citizen Cards
+              WalliD is an Ethereum blockchain protocol designed with the purpose to store encypted id attributes from certified Citizen Cards
               in smart contracts in Ethereum blockchain and to provide identity certifying services. At the present time there are three distinct
-              applications running on BlockID’s protocol: ImportID, MyEtherID, VerifyID.
+              applications running on WalliD’s protocol: ImportID, MyEtherID, VerifyID.
 
             </p>
           </dd>
@@ -79,7 +76,7 @@ class Help extends Component {
           </dd>
           <dt>
             <button aria-expanded="false" aria-controls="faq4_desc">
-              Which Identity Types are supported by BlockID’s protocol?
+              Which Identity Types are supported by WalliD’s protocol?
             </button>
           </dt>
           <dd>
@@ -87,7 +84,7 @@ class Help extends Component {
 
 
 
-              At the present moment only Portuguese Citizenship Card certificates are compatible with MyEtherID. BlockID’s team is working on the expansion of ImportID’s
+              At the present moment only Portuguese Citizenship Card certificates are compatible with MyEtherID. WalliD’s team is working on the expansion of ImportID’s
               attribute certificate recognition feature to other identity types based on certificate X 509. It means in the near future all European Union Citizenship Cards
               data will be supported. Further identity certificates will be added later.
 
@@ -158,7 +155,7 @@ class Help extends Component {
           </dd>
           <dt>
             <button aria-expanded="false" aria-controls="faq9_desc">
-              Why is BlockID Protocol running on Ethereum Blockchain?
+              Why is WalliD Protocol running on Ethereum Blockchain?
             </button>
           </dt>
           <dd>
@@ -166,10 +163,10 @@ class Help extends Component {
 
 
 
-              The Ethereum Blockchain is currently the only viable solution to create, store and trade smart contracts. BlockID’s protocol is focused on one specific
+              The Ethereum Blockchain is currently the only viable solution to create, store and trade smart contracts. WalliD’s protocol is focused on one specific
               potential usage that comes from smart contracts, by storing and encrypting certified ID attributes in one and by associating it with it’s user’s Ethereum
               Wallet. Ethereum provides the solid base for any kind of smart contracts to use their protocol and internet users will use it as a gateway to unlock a
-              series of different private, safe and efficient transactions online. BlockID allows you to associate your real life certified ID to your wallet
+              series of different private, safe and efficient transactions online. WalliD allows you to associate your real life certified ID to your wallet
               whenever you need to prove your identity on the blockchain.
 
             </p>
@@ -281,7 +278,7 @@ class Help extends Component {
               You are the sole person able to access your decrypted ID attributes either in the physical world through your Identity Document or in the blockchain,
               through MyEtherID but with your private key and MetaMask connection only. Only an hash (encryption) of your attributes is stored in the blockchain.
               Only your private key can decrypt them and nobody else has access to it.
-              You can, however trade your decrypted attributes with entities you trust. Some websites are running BlockID’s compatible dApps that request you to provide
+              You can, however trade your decrypted attributes with entities you trust. Some websites are running WalliD’s compatible dApps that request you to provide
               your ID Smart Contract Address and to connect your MetaMask to decrypt your data, so you can enjoy an instant registration application or kyc approval.
               Make sure you trust the sources you are trusting  your data to.
 
@@ -313,7 +310,7 @@ class Help extends Component {
 
 
 
-              Yes. No service or app running BlockID’s protocol has access to your information or data. ImportID is the only app in touch with that raw data but it is an
+              Yes. No service or app running WalliD’s protocol has access to your information or data. ImportID is the only app in touch with that raw data but it is an
               open source application that runs locally on your desktop. From that point on, MyEtherID only deals and stores the encryption of that data, generating it
               from your own private key. It means that only your Ethereum wallet private key, through MetaMask has the ability to access and manage your ID raw data.
 

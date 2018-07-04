@@ -27,9 +27,9 @@ function Footer(/*props*/) {
               Feel free to donate to MyEtherID:
             </p>
             <p>
-              <a href="https://www.myetherid.com/" target="_blank rel=noopener"> ETH: 0x012345678901234567890123</a>
+              <a href="https://www.myetherid.com/" target="_blank rel=noopener">ETH: 0x012345678901234567890123</a>
               <br />
-              <a href="https://www.myetherid.com/" target="_blank rel=noopener"> BLID: 012345678901234567890123</a>
+              <a href="https://www.myetherid.com/" target="_blank rel=noopener">WAL: 0x012345678901234567890123</a>
             </p>
             <p>
               Downloads:
@@ -37,25 +37,20 @@ function Footer(/*props*/) {
             <p>
               <a href="https://www.myetherid.com/" target="_blank rel=noopener">ImportID</a>
               <br />
-              <a href="https://www.myetherid.com/" target="_blank rel=noopener">BlockID ICO</a>
             </p>
           </div>
 
 
           <div class="col-md-4 mx-auto">
-            <a href="https://www.myetherid.com/" target="_blank rel=noopener"> Block-id.io</a>
+            <a href="https://www.wallid.io" target="_blank rel=noopener">wallid.io</a>
             <br />
-            <a href="https://www.myetherid.com/" target="_blank rel=noopener"> MyEtherId.io</a>
+            <a href="https://www.myetherid.com/" target="_blank rel=noopener">MyEtherId.io</a>
             <br />
-            <a href="https://www.myetherid.com/" target="_blank rel=noopener"> BlockId Team</a>
+            <a href="https://www.myetherid.com/" target="_blank rel=noopener">WalliD Team</a>
             <br />
-            <a href="https://www.myetherid.com/" target="_blank rel=noopener"> Email support: support@myetherid.io</a>
+            Email support: <a href="https://www.myetherid.com/" target="_blank rel=noopener">support@myetherid.io</a>
             <br />
-            <a href="https://www.myetherid.com/" target="_blank rel=noopener"> GitHub: MyEtherId</a>
-            <br />
-            <a href="https://www.myetherid.com/" target="_blank rel=noopener"> GitHub: ImportID</a>
-            <br />
-            <a href="https://www.myetherid.com/" target="_blank rel=noopener"> GitHub: VerifyID</a>
+            GitHub: <a href="https://github.com/wallid-project" target="_blank rel=noopener"> wallid-project</a>
           </div>
         </div>
       </div>

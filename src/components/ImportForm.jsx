@@ -264,7 +264,7 @@ render() {
                   onChange={this.handleChange}
                   className="form-control"
                   rows="5"
-                  placeholder="Paste your ID Data provided by BlockID’s Import ID App"
+                  placeholder="Paste your ID data provided by WalliD’s ImportiD app"
                   required>
                 </textarea>
               </div>
