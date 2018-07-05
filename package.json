@@ -5,6 +5,8 @@
   "dependencies": {
     "bootstrap": "^4.0.0",
     "crypto-js": "^3.1.9-1",
+    "eth-lightwallet": "^3.0.1",
+    "ethereumjs-tx": "^1.3.5",
     "jquery": "^3.3.1",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
@@ -17,7 +19,8 @@
     "react-spinkit": "^3.0.0",
     "react-web3": "^0.4.5",
     "sweetalert2-react": "^0.7.2",
-    "web3": "^1.0.0-beta.33"
+    "truffle-contract": "^3.0.6",
+    "web3": "1.0.0-beta.31"
   },
   "scripts": {
     "start": "react-scripts start",

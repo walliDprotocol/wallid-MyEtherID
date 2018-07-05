@@ -1,7 +1,103 @@
 {
-    "contractName": "BlockId",
-    "adress": "0x0bdafb4db2b71f70530d5b2070a3468052c1adb1",
+    "contractName": "WallId",
+    "contract_adress": "0x8e42ea091e2ea89e2cb54740414b63df9ba08dad",
+    "wallet_adress": "0x6Ff539fDE26ec962cC22B2e74c66c774fd38B1D2",
+    "private_key": "12af950377a6d4fece30892ffe505d637524efcb6dfd8c555bccb45eefa4f177",
     "abi": [
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "_wallId",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "idt",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "name": "opid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "identityId",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "name": "veridyId",
+                    "type": "bytes"
+                }
+            ],
+            "name": "EventDataId",
+            "type": "event"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "userAddress",
+                    "type": "address"
+                },
+                {
+                    "name": "idt",
+                    "type": "bytes"
+                },
+                {
+                    "name": "opid",
+                    "type": "uint256"
+                },
+                {
+                    "name": "sdkey",
+                    "type": "bytes"
+                }
+            ],
+            "name": "acceptedToken",
+            "outputs": [
+                {
+                    "name": "ret",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "userAddress",
+                    "type": "address"
+                },
+                {
+                    "name": "idt",
+                    "type": "bytes"
+                },
+                {
+                    "name": "opid",
+                    "type": "uint256"
+                },
+                {
+                    "name": "verifyId",
+                    "type": "bytes"
+                }
+            ],
+            "name": "acceptedUserData",
+            "outputs": [
+                {
+                    "name": "ret",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
         {
             "constant": false,
             "inputs": [
@@ -28,6 +124,14 @@
                 {
                     "name": "pUrl",
                     "type": "bytes"
+                },
+                {
+                    "name": "opid",
+                    "type": "uint256"
+                },
+                {
+                    "name": "sdkey",
+                    "type": "bytes"
                 }
             ],
             "name": "addInfo",
@@ -45,36 +149,72 @@
             "constant": false,
             "inputs": [
                 {
-                    "name": "_id",
-                    "type": "bytes32"
+                    "name": "idt",
+                    "type": "bytes"
+                },
+                {
+                    "name": "opid",
+                    "type": "uint256"
                 }
             ],
-            "name": "deposit",
-            "outputs": [],
-            "payable": true,
-            "stateMutability": "payable",
+            "name": "getIdtDataVerified",
+            "outputs": [
+                {
+                    "name": "ret",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
             "type": "function"
         },
         {
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
-                    "name": "_from",
+                    "indexed": false,
+                    "name": "_wallId",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "name": "_id",
-                    "type": "bytes32"
+                    "indexed": false,
+                    "name": "idt",
+                    "type": "bytes"
                 },
                 {
                     "indexed": false,
-                    "name": "_value",
+                    "name": "opid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "sdkey",
+                    "type": "bytes"
+                }
+            ],
+            "name": "RequestVerifyId",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "_wallId",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "idt",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "name": "opid",
                     "type": "uint256"
                 }
             ],
-            "name": "Deposit",
+            "name": "RequestPayment",
             "type": "event"
         },
         {
@@ -97,16 +237,20 @@
                 {
                     "name": "idt",
                     "type": "bytes"
+                },
+                {
+                    "name": "opid",
+                    "type": "bytes"
                 }
             ],
             "name": "getIdtData",
             "outputs": [
                 {
-                    "name": "identityId",
+                    "name": "ridentityId",
                     "type": "bytes"
                 },
                 {
-                    "name": "pWalletAddress",
+                    "name": "rpWalletId",
                     "type": "bytes"
                 },
                 {
@@ -114,11 +258,7 @@
                     "type": "bytes"
                 },
                 {
-                    "name": "pName",
-                    "type": "bytes"
-                },
-                {
-                    "name": "pUrl",
+                    "name": "ropid",
                     "type": "bytes"
                 }
             ],
@@ -160,4 +300,5 @@
             "type": "function"
         }
     ]
+
 }
