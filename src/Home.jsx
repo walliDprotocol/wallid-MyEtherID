@@ -9,7 +9,7 @@ class Home extends Component {
 
         <div className="row justify-content-md-center pb-3">
           <div className="col text-center containerBorderBottom">
-            <h1 className="pb-3">Welcome to MyEtherID</h1>
+            <h1 className="pb-3">About us</h1>
             <h2 className="colorGrey">Connect your off-chain identity o your Ethereum wallet</h2>
 
           </div>
@@ -22,7 +22,7 @@ class Home extends Component {
               <div className="col-md-6">
                 <p>
                   MyEtherID is a webapp that allows you to encrypt and store real life certified identities on a smart contract.
-                  It is also a gateway to manage different certified identity types you might own and check the history of your ID transactions through BlockID protocol.
+                  It is also a gateway to manage different certified identity types you might own and check the history of your ID transactions through WalliD protocol.
                 </p>
                 <p>
                   It allows you to associate your identity attributes to your Ethereum Wallet without having access to your data or to your wallet keys.

@@ -52,7 +52,7 @@ class View extends Component {
           <div className="col text-center">
                 <h1 className="pb-3">View your identities</h1>
                   <h2 className="colorGrey">
-                    Decrypt your ID data from a smart contract and check your certified ID attributes
+                    Check Your ID documents within WalliD’s smart contract
                   </h2>
             </div>
         </div>
@@ -220,11 +220,11 @@ class BSTable extends React.Component {
                 <form onSubmit={this.handleSubmit} >
                   {/*<div className="form-group">
                     <label>
-                      BlockID Encryption Password
+                      WalliD Encryption Password
                     </label>
                     <p>
                       <a href="/">
-                        What is BlockID Encrytion Password?
+                        What is WalliD Encrytion Password?
                       </a>
                     </p>
                     {/*<div className="row ">

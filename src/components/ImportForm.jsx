@@ -130,12 +130,13 @@ handleSucess(response) {
   var obj = {};
   try {
     obj = JSON.parse(this.state.data);
-    var storeIdProviderWa = obj.dataID.storeIDProvider.wa;
+    var storeIdProviderWa = JSON.stringify(obj.dataID.storeIDProvider.wa);
     var storeIdProviderName = obj.dataID.storeIDProvider.name;
     var storeIdProviderUrl = obj.dataID.storeIDProvider.url;
 
     var idt = obj.dataID.data.idt;
-    var idtName = obj.dataID.data.idtName;
+    var wa = JSON.stringify(obj.dataID.data.wa);
+
     console.log('storeId Provider WA :' + storeIdProviderWa);
     console.log('idt :' + idt);
 
@@ -144,7 +145,7 @@ handleSucess(response) {
     console.log('Encrypt identity ID ', identityId  );
 
     var self = this
-    this.state.ContractInstance.addInfo( identityId, idt, idtName, storeIdProviderWa, storeIdProviderName, storeIdProviderUrl, (err, data) => {
+    this.state.ContractInstance.addInfo( identityId, idt, wa, storeIdProviderWa, wa, storeIdProviderUrl, (err, data) => {
       console.log('add info result is ', data);
       if(data){
         self.state.addinfoSuccess = state['STATE_TRANSACTION_PROCESSING'];
@@ -263,7 +264,7 @@ render() {
                   onChange={this.handleChange}
                   className="form-control"
                   rows="5"
-                  placeholder="Paste your ID Data provided by BlockID’s Import ID App"
+                  placeholder="Paste your ID data provided by WalliD’s ImportiD app"
                   required>
                 </textarea>
               </div>

@@ -39,16 +39,16 @@ class Main extends Component {
                 <div className={(this.state.navCollapsed ? 'collapse' : '') + ' navbar-collapse'}>
                   <ul className="navbar-nav ml-auto">
                     <li className="nav-link">
-                      <NavLink exact to="/" onClick={this.closeNav}>Home Page</NavLink>
-                    </li>
-                    <li className="nav-link">
-                      <NavLink to="/store" onClick={this.closeNav}>Store Identity</NavLink>
+                      <NavLink exact to="/" onClick={this.closeNav}>Store Identity</NavLink>
                     </li>
                     <li className="nav-link">
                       <NavLink to="/view" onClick={this.closeNav}>View Identities</NavLink>
                     </li>
                     <li className="nav-link">
                       <NavLink to="/transactions" onClick={this.closeNav}>Transactions</NavLink>
+                    </li>
+                    <li className="nav-link">
+                      <NavLink to="/store" onClick={this.closeNav}>About us</NavLink>
                     </li>
                     <li className="nav-link">
                       <NavLink to="/help" onClick={this.closeNav}>Help</NavLink>
@@ -58,8 +58,8 @@ class Main extends Component {
               </nav>
             </div>
           </header>
-            <Route exact path="/" component={Home}/>
-            <Route path="/store" component={Store}/>
+            <Route exact path="/" component={Store}/>
+            <Route path="/store" component={Home}/>
             <Route path="/view" component={View}/>
             <Route path="/transactions" component={Transactions}/>
             <Route path="/help" component={Help}/>

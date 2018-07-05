@@ -11,7 +11,7 @@ class Store extends Component {
             <div className="col text-center">
                 <h1 className="pb-3">Store your Identity on the Blockchain</h1>
                 <h2 className="colorGrey">
-                    Encrypt and store your ID attributes associated with your Ethereum wallet onto a smart contract
+                    Encrypt you ID documents in you Ethereum Wallet
                 </h2>
             </div>
         </div>
@@ -24,12 +24,12 @@ class Store extends Component {
           <div className="row text-center pt-3 justify-content-md-center">
               <div className="col-md-10">
                   <h5 className="pb-3">You need to extract your attributes from your Identity Document and locally generate your ID data from
-                    BlockID’s ImportID desktop app. Once you generate it on the app, copy it to respective ID Data section above.</h5>
+                    WalliD’s ImportID desktop app. Once you generate it on the app, copy it to respective ID Data section above.</h5>
               </div>
           </div>
           <div className="row text-center containerBorderBottom pb-5">
                       <div className="col-md-4">
-                        <Link to="/help#top" className="biggerLink">What is BlockID?</Link>
+                        <Link to="/help#top" className="biggerLink">What is WalliD?</Link>
                       </div>
                       <div className="col-md-4">
                         <Link to="/help#top" className="biggerLink">What is ImportID</Link>
