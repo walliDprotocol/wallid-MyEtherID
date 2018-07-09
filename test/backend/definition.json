@@ -1,6 +1,6 @@
 {
     "contractName": "WallId",
-    "contract_adress": "0x21c71059b8432084d52bc46c3c09c7e38be022f7",
+    "contract_adress": "0x787e5fc4773cad0c45f287bf00daca402845b1b7",
     "wallet_adress": "0x6Ff539fDE26ec962cC22B2e74c66c774fd38B1D2",
     "private_key": "12af950377a6d4fece30892ffe505d637524efcb6dfd8c555bccb45eefa4f177",
     "abi": [
@@ -300,5 +300,4 @@
             "type": "function"
         }
     ]
-
 }

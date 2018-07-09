@@ -27,7 +27,7 @@ var web3 = new Web3(
 
 var address_wallet = "0x6Ff539fDE26ec962cC22B2e74c66c774fd38B1D2";
 //adress from last contract!
-var contract_addr = "0x8e42ea091e2ea89e2cb54740414b63df9ba08dad";
+var contract_addr = "0x787e5fc4773cad0c45f287bf00daca402845b1b7";
 //My key from metamask
 var key = interface_abi.private_key;
 

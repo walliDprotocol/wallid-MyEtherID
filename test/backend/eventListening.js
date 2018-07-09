@@ -28,7 +28,7 @@ var web3 = new Web3(
 
 var address_wallet = "0x6Ff539fDE26ec962cC22B2e74c66c774fd38B1D2";
 //adress from last contract!
-var contract_addr = "0x21c71059b8432084d52bc46c3c09c7e38be022f7";
+var contract_addr = "0x787e5fc4773cad0c45f287bf00daca402845b1b7";
 //My key from metamask
 var key = interface_abi.private_key;
 
@@ -115,7 +115,7 @@ var DataId = econtract.events.EventDataId({
 }, function (error, result) {
 
     console.log('EventDataId was called');
-
+    console.log('Results ', result.returnValues);
     console.log('3. OPERATION SUCCESS GET NEXT TASK!!!!');
     //console.log('VALUS ->> ', result.returnValues);
 
