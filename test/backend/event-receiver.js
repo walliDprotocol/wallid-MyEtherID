@@ -8,7 +8,7 @@ var INFURA_RINKBY = 'https://rinkeby.infura.io/cFPVC7DEylasScNoPTYP';
 
 var address_wallet = '0x6Ff539fDE26ec962cC22B2e74c66c774fd38B1D2'
 //adress from last contract!
-var contract_addr = '0x99705f2e9d59ce35a84654fcd632e9d0cebb3583';
+var contract_addr = '0x21c71059b8432084d52bc46c3c09c7e38be022f7';
 //My key from metamask
 var key = '12af950377a6d4fece30892ffe505d637524efcb6dfd8c555bccb45eefa4f177';
 

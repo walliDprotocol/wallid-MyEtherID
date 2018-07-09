@@ -1,6 +1,6 @@
 {
     "contractName": "WallId",
-    "contract_adress": "0x8e42ea091e2ea89e2cb54740414b63df9ba08dad",
+    "contract_adress": "0x21c71059b8432084d52bc46c3c09c7e38be022f7",
     "wallet_adress": "0x6Ff539fDE26ec962cC22B2e74c66c774fd38B1D2",
     "private_key": "12af950377a6d4fece30892ffe505d637524efcb6dfd8c555bccb45eefa4f177",
     "abi": [
@@ -146,27 +146,26 @@
             "type": "function"
         },
         {
-            "constant": false,
+            "anonymous": false,
             "inputs": [
                 {
+                    "indexed": false,
+                    "name": "_wallId",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
                     "name": "idt",
                     "type": "bytes"
                 },
                 {
+                    "indexed": false,
                     "name": "opid",
                     "type": "uint256"
                 }
             ],
-            "name": "getIdtDataVerified",
-            "outputs": [
-                {
-                    "name": "ret",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
+            "name": "RequestPayment",
+            "type": "event"
         },
         {
             "anonymous": false,
@@ -196,26 +195,27 @@
             "type": "event"
         },
         {
-            "anonymous": false,
+            "constant": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "name": "_wallId",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
                     "name": "idt",
                     "type": "bytes"
                 },
                 {
-                    "indexed": false,
                     "name": "opid",
                     "type": "uint256"
                 }
             ],
-            "name": "RequestPayment",
-            "type": "event"
+            "name": "getIdtDataVerified",
+            "outputs": [
+                {
+                    "name": "ret",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
             "constant": true,
