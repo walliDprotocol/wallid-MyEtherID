@@ -93,7 +93,7 @@ class BSTable extends React.Component {
       popupLogout: false,
       popupError: false,
       data: '',
-      ContractAddress : '0x0bdafb4db2b71f70530d5b2070a3468052c1adb1',
+      ContractAddress : '0x787e5fc4773cad0c45f287bf00daca402845b1b7',
       ContractInstance : null,
       password: '20THIS_WILL_USE_METAMASK_SECURITY18'
     };
@@ -156,7 +156,8 @@ class BSTable extends React.Component {
 
   getInfo()
   {
-    this.state.ContractInstance.getIdtData( "CC_PT", (err, data) => {
+    var opid = "123456789";
+    this.state.ContractInstance.getIdtData( "CC_PT", opid,(err, data) => {
       console.log('get Info Result ', data);
       var loadData = [];
       var identifyId = {}

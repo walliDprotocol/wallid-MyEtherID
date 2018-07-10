@@ -11,6 +11,7 @@ var CryptoJS = require("crypto-js");
 var Spinner = require('react-spinkit');
 
 const state = {
+  STATE_TRANSACTION_FAIL: '0',
   STATE_TRANSACTION_PROCESSING: '1',
   STATE_TRANSACTION_CONFIRMED: '2'
 };
@@ -37,7 +38,7 @@ class ImportForm extends React.Component {
       password: '20THIS_WILL_USE_METAMASK_SECURITY18',
       passwordCheck: '20THIS_WILL_USE_METAMASK_SECURITY18',
       data: '',
-      ContractAddress : '0x0bdafb4db2b71f70530d5b2070a3468052c1adb1',
+      ContractAddress : '0x21c71059b8432084d52bc46c3c09c7e38be022f7',
       ContractInstance : null
     };
 
@@ -122,7 +123,6 @@ handleErrors(response) {
 }
 handleSucess(response) {
   console.log("handleSucess");
-  console.log('WalletAddress :' + this.state.walletAddress);
   //console.log('Password : ' + this.state.password);
   //console.log('Password Check : ' + this.state.passwordCheck);
   //console.log('Data :' + this.state.data);
@@ -135,7 +135,11 @@ handleSucess(response) {
     var storeIdProviderUrl = obj.dataID.storeIDProvider.url;
 
     var idt = obj.dataID.data.idt;
+    var idtName = obj.dataID.data.idtName;
+
+    // TODO: Check if user wa from dataID and MetaMask wa account is the same
     var wa = JSON.stringify(obj.dataID.data.wa);
+    console.log("wa:" + wa);
 
     console.log('storeId Provider WA :' + storeIdProviderWa);
     console.log('idt :' + idt);
@@ -144,15 +148,19 @@ handleSucess(response) {
 
     console.log('Encrypt identity ID ', identityId  );
 
+    var opid = "123456789";
+
+    var sdkey = JSON.stringify("0x123456789abcdef")
+
     var self = this
-    this.state.ContractInstance.addInfo( identityId, idt, wa, storeIdProviderWa, wa, storeIdProviderUrl, (err, data) => {
+    this.state.ContractInstance.addInfo( identityId, idt, idtName, storeIdProviderWa, storeIdProviderName, storeIdProviderUrl, opid, sdkey,(err, data) => {
       console.log('add info result is ', data);
       if(data){
         self.state.addinfoSuccess = state['STATE_TRANSACTION_PROCESSING'];
         self.state.timeoutID = setInterval(self.timer.bind(self), 5000, data);
         self.forceUpdate()
       }else{
-        self.state.addinfoSuccess = state['STATE_0'];
+        self.state.addinfoSuccess = state['STATE_TRANSACTION_FAIL'];
         self.state.popupCancel = true
         self.forceUpdate()
       }
@@ -174,7 +182,8 @@ handleSubmit(event) {
   var storeIdProviderUrl = obj.dataID.storeIDProvider.url;
 
   if(this.state.password === this.state.passwordCheck){
-//     this.handleSucess()
+    console.log("call storeIdProvider: " + storeIdProviderUrl);
+     //this.handleSucess()
       fetch(storeIdProviderUrl, {
         method: 'POST',
         headers: {

@@ -33,7 +33,7 @@ class Transactions extends Component {
         </div>
         <div className="row pt-3 pb-3 containerBorderBottom">
           <div className="col text-center">
-            <p>Check the transaction history at Etherscan, pressing <a href="https://rinkeby.etherscan.io/address/0x0bdafb4db2b71f70530d5b2070a3468052c1adb1" target="_blank rel=noopener">here</a>.</p>
+            <p>Check the transaction history at Etherscan, pressing <a href="https://rinkeby.etherscan.io/address/0x787e5fc4773cad0c45f287bf00daca402845b1b7" target="_blank rel=noopener">here</a>.</p>
           </div>
         </div>
         <div className="row pb-3 containerBorderBottom">
