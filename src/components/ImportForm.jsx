@@ -177,6 +177,13 @@ handleSucess(response) {
 handleSubmit(event) {
   console.log("handleSubmit");
   var obj = JSON.parse(this.state.data);
+
+  var verifyId = CryptoJS.AES.encrypt(JSON.stringify( obj.dataID.data.verifyID), this.state.password).toString();
+
+  console.log('Encrypt verify ID ', verifyId  );
+
+  obj.dataID.data.verifyID = verifyId;
+
   delete obj.dataID.data.identityID;
 
   var storeIdProviderUrl = obj.dataID.storeIDProvider.url;
