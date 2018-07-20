@@ -14,11 +14,11 @@ function Footer(/*props*/) {
             <p>
               Free, open-source, client-side interface to encrypt and store id attributes on the blockchain.
             </p>
-            <a href="https://www.MyEtheriD.com/" target="_blank rel=noopener">Disclaimer</a>
+            <a href="https://www.MyEtheriD.io/" target="_blank rel=noopener">Disclaimer</a>
             <br />
-            <a href="https://www.MyEtheriD.com/" target="_blank rel=noopener">Latest Block#: 4t6i31198</a>
+            <a href="https://www.MyEtheriD.io/" target="_blank rel=noopener">Latest Block#: 4t6i31198</a>
             <br />
-            <a href="https://www.MyEtheriD.com/" target="_blank rel=noopener">MyEtherID @ 2018</a>
+            <a href="https://www.MyEtheriD.io/" target="_blank rel=noopener">MyEtherID @ 2018</a>
           </div>
 
           <div class="col-md-3 footerBox">
@@ -26,15 +26,15 @@ function Footer(/*props*/) {
               Feel free to donate to MyEtherID:
             </p>
             <p>
-              <a href="https://www.MyEtheriD.com/" target="_blank rel=noopener">ETH: 0x012345678901234567890123</a>
+              <a href="https://www.MyEtheriD.io/" target="_blank rel=noopener">ETH: 0x012345678901234567890123</a>
               <br />
-              <a href="https://www.MyEtheriD.com/" target="_blank rel=noopener">WAL: 0x012345678901234567890123</a>
+              <a href="https://www.MyEtheriD.io/" target="_blank rel=noopener">WAL: 0x012345678901234567890123</a>
             </p>
             <p>
               Downloads:
             </p>
             <p>
-              <a href="https://www.MyEtheriD.com/" target="_blank rel=noopener">ImportID</a>
+              <a href="/WalliD-ImportID.msi" target="_blank rel=noopener">ImportID</a>
               <br />
             </p>
           </div>
@@ -42,11 +42,11 @@ function Footer(/*props*/) {
           <div class="col-md-3 footerBox">
             <a href="https://www.wallid.io" target="_blank rel=noopener">wallid.io</a>
             <br />
-            <a href="https://www.MyEtheriD.com/" target="_blank rel=noopener">MyEtherId.io</a>
+            <a href="https://www.MyEtheriD.io/" target="_blank rel=noopener">MyEtherId.io</a>
             <br />
-            <a href="https://www.MyEtheriD.com/" target="_blank rel=noopener">WalliD Team</a>
+            <a href="https://www.MyEtheriD.io/" target="_blank rel=noopener">WalliD Team</a>
             <br />
-            Email support: <a href="https://www.MyEtheriD.com/" target="_blank rel=noopener">support@myetherid.io</a>
+            Email support: <a href="https://www.MyEtheriD.io/" target="_blank rel=noopener">support@myetherid.io</a>
             <br />
             GitHub: <a href="https://github.com/wallid-project" target="_blank rel=noopener"> wallid-project</a>
           </div>
@@ -95,7 +95,7 @@ function Footer(/*props*/) {
 
       <div class="footer-copyright py-3 text-center">
         © 2018 Copyright:
-        <a href="/"> MyEtheriD.com </a>
+        <a href="/"> MyEtheriD.io </a>
       </div>
 
     </footer>

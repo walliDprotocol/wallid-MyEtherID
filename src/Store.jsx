@@ -41,7 +41,7 @@ class Store extends Component {
           <div className="row pt-5 pb-5 containerBorderBottom">
               <div className="col text-center">
                   <h5 className="pb-3">If you haven’t installed Import ID on your computer, you can download it for free.</h5>
-                  <a href="/" className="btn linkButtons btn-lg active" role="button" aria-pressed="true">Download here</a>
+                  <a href="/WalliD-ImportID.msi" className="btn linkButtons btn-lg active" role="button" aria-pressed="true">Download here</a>
               </div>
           </div>
           <div className="row pt-3">
