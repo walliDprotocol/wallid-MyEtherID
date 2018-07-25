@@ -4,8 +4,11 @@ import BlockIdContract from '../blockid/BlockId.js';
 import { Link } from 'react-router-dom';
 import { withSwalInstance } from 'sweetalert2-react';
 import swal from 'sweetalert2';
+import Switch from "react-switch";
+
 
 const SweetAlert = withSwalInstance(swal);
+const PASSWORD = '20THIS_WILL_USE_METAMASK_SECURITY18';
 
 var CryptoJS = require("crypto-js");
 var Spinner = require('react-spinkit');
@@ -35,15 +38,19 @@ class ImportForm extends React.Component {
       popupCancel: false,
       timeoutID: '',
       walletAddress: '',
-      password: '20THIS_WILL_USE_METAMASK_SECURITY18',
-      passwordCheck: '20THIS_WILL_USE_METAMASK_SECURITY18',
+      password: PASSWORD,
+      passwordCheck: PASSWORD,
       data: '',
       ContractAddress : '0x787e5fc4773cad0c45f287bf00daca402845b1b7',
-      ContractInstance : null
+      ContractInstance : null,
+      isManualPassword : true,
+      chiperPassword  : PASSWORD
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUsePassword = this.handleUsePassword.bind(this);
+    
 
     if(window.web3){
       const MyContract = window.web3.eth.contract(BlockIdContract.abi)
@@ -106,6 +113,11 @@ hex2a(hexx) {
   return str;
 }
 
+handleUsePassword(event){
+  console.log('LOG ', this.state.isManualPassword);
+  this.setState({ isManualPassword : event });
+}
+
 handleChange(event) {
   this.setState({
     [event.target.name]: event.target.value
@@ -122,7 +134,7 @@ handleErrors(response) {
   return response;
 }
 handleSucess(response) {
-  console.log("handleSucess");
+  console.log("handleSucess ", this.state.isManualPassword );
   //console.log('Password : ' + this.state.password);
   //console.log('Password Check : ' + this.state.passwordCheck);
   //console.log('Data :' + this.state.data);
@@ -144,7 +156,9 @@ handleSucess(response) {
     console.log('storeId Provider WA :' + storeIdProviderWa);
     console.log('idt :' + idt);
 
-    var identityId = CryptoJS.AES.encrypt(JSON.stringify( obj.dataID.data.identityID), this.state.password).toString();
+    var password = this.state.isManualPassword ? this.state.chiperPassword : this.state.password;
+    console.log('password for encrpt (1) ', password);
+    var identityId = CryptoJS.AES.encrypt(JSON.stringify( obj.dataID.data.identityID), password).toString();
 
     console.log('Encrypt identity ID ', identityId  );
 
@@ -175,10 +189,12 @@ handleSucess(response) {
 }
 
 handleSubmit(event) {
-  console.log("handleSubmit");
+  console.log("handleSubmit ManualPasswprd",this.state.isManualPassword  );
   var obj = JSON.parse(this.state.data);
 
-  var verifyId = CryptoJS.AES.encrypt(JSON.stringify( obj.dataID.data.verifyID), this.state.password).toString();
+  var password = this.state.isManualPassword ? this.state.chiperPassword : this.state.password;
+  console.log('password for encrpt (2) ', password);
+  var verifyId = CryptoJS.AES.encrypt(JSON.stringify( obj.dataID.data.verifyID), password).toString();
 
   console.log('Encrypt verify ID ', verifyId  );
 
@@ -188,7 +204,9 @@ handleSubmit(event) {
 
   var storeIdProviderUrl = obj.dataID.storeIDProvider.url;
 
-  if(this.state.password === this.state.passwordCheck){
+  /** vviana - remove the check of password  */
+  //if(this.state.password === this.state.passwordCheck){
+
     console.log("call storeIdProvider: " + storeIdProviderUrl);
      //this.handleSucess()
       fetch(storeIdProviderUrl, {
@@ -205,9 +223,13 @@ handleSubmit(event) {
         alert("Store Wallid Fail")
       }
     );
+
+  /*
   }else{
     alert("Password and comfirm password is not the same")
   }
+  */
+
   event.preventDefault();
 }
 
@@ -259,7 +281,7 @@ render() {
               confirmButtonColor = "#0FA3B1"
               onConfirm={() => this.setState({ popupCancel: false })}
               />
-            <form onSubmit={this.handleSubmit} >
+            <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label>
                   Select your identity type:
@@ -284,6 +306,38 @@ render() {
                   required>
                 </textarea>
               </div>
+              <div className="form-inline">
+              
+                <div>
+                  <p><strong> Disclaimer: </strong> Current Metamask version doesn't have the ability to encrypt data with users' private keys. It will be available soon.
+                  Otherwise you can choose to allow MyEtheriD to encrypt your ID data with a default password ( We do not recommend this action)</p> 
+                </div>
+                <Switch
+                  onChange={this.handleUsePassword}
+                  checked={this.state.isManualPassword}
+                  id="normal-switch"
+                />  
+                          
+              </div>
+              <div className="form-inline">
+                <label>
+                  Password : 	&nbsp;	&nbsp;
+                </label>
+
+                <input
+                  hidden={ !this.state.isManualPassword ?  true : false }
+                  id="chiperPassword"
+                  name="chiperPassword"
+                  onChange={this.handleChange}
+                  className="form-control"
+                  type="password"
+                  placeholder="Insert password to encrypt your data"
+                  required={this.state.isManualPassword ?  true : false }
+                  >
+                </input>
+              </div>
+              
+              <br/>
               <p>
                 To submit connect with MetaMask
               </p>

@@ -17,6 +17,7 @@
     "react-router-hash-link": "^1.2.0",
     "react-scripts": "1.1.1",
     "react-spinkit": "^3.0.0",
+    "react-switch": "^3.0.4",
     "react-web3": "^0.4.5",
     "sweetalert2-react": "^0.7.2",
     "truffle-contract": "^3.0.6",
