@@ -27,6 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy" : "git push -f https://heroku:625dcc17-c99e-4b5b-b898-73404d1ceeba@git.heroku.com/credibank.git master:master"
   }
 }

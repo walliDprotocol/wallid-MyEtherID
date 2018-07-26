@@ -309,8 +309,8 @@ render() {
               <div className="form-inline">
               
                 <div>
-                  <p><strong> Disclaimer: </strong> Current Metamask version doesn't have the ability to encrypt data with users' private keys. It will be available soon.
-                  Otherwise you can choose to allow MyEtheriD to encrypt your ID data with a default password ( We do not recommend this action)</p> 
+                  <p><strong> Disclaimer: </strong> Current Metamask build doesn't support the features do encrypt data with users' private keys. It will be available as soon.  
+ you can encrypt your ID data with a password of your choice <strong>(recommended action)</strong>  Otherwise you can choose to allow MyEtheriD to encrypt your ID data with a default password ( We do not recommend this action)</p> 
                 </div>
                 <Switch
                   onChange={this.handleUsePassword}
@@ -319,12 +319,13 @@ render() {
                 />  
                           
               </div>
-              <div className="form-inline">
-                <label>
+              <div className="form-inline"  hidden={ !this.state.isManualPassword ?  true : false }>
+                <label >
                   Password : 	&nbsp;	&nbsp;
                 </label>
 
                 <input
+                  style={{width: "300px"}}
                   hidden={ !this.state.isManualPassword ?  true : false }
                   id="chiperPassword"
                   name="chiperPassword"
