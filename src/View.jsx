@@ -44,41 +44,49 @@ class View extends Component {
     );
   }
 
+
   render() {
     return (
-      <main role="main" className="container">
-        <div className="scroll-pre"></div>
-        <div className="row justify-content-md-center pb-3 containerBorderBottom">
-          <div className="col text-center">
-                <h1 className="pb-3">View your identities</h1>
-                  <h2 className="colorGrey">
+      <main role="main">
+        <div className="container">
+          <div className="row justify-content-md-center pb-3">
+            <div className="col text-center">
+                  <h2 className="pb-2">View your identities</h2>
+                  <h3 className="orange">
                     Check Your ID documents within WalliD’s smart contract
-                  </h2>
+                  </h3>
+              </div>
+          </div>
+          <div className="jumbotron">
+            <div className="row text-center justify-content-md-center pt-4 pb-3">
+              <div className="col-md-10">
+                <p>Make sure you are logged in MetaMask to ensure your safety accessing your Ethereum wallet.
+                <br />
+                Remember decryption is only possible your with your wallet private key through MetaMask association and we don’t have any access to your data</p>
+              </div>
             </div>
-        </div>
-        <div className="row pt-3 pb-3 containerBorderBottom">
-          <div className="col text-center">
-            <p>Make sure you are logged in MetaMask to ensure your safety accessing your ether wallet.
-             <br />
-             Remember decryption is only possible your with your wallet private key through MetaMask association and we don’t have any access to your data</p>
+            <br />
+            <div className="bootstrapTable">
+              <BootstrapTable
+                data={products}
+                bordered={ false }
+                hover
+                responsive
+                pagination
+                expandableRow={ this.isExpandableRow }
+                expandComponent={ this.expandComponent }
+                >
+
+                <TableHeaderColumn dataField="Entity" isKey={true}>Entity</TableHeaderColumn>
+                <TableHeaderColumn dataField="IDCertificate">ID Certificate</TableHeaderColumn>
+                <TableHeaderColumn dataField="Card">Card</TableHeaderColumn>
+                <TableHeaderColumn dataField="Attributes">Attributes</TableHeaderColumn>
+                <TableHeaderColumn dataField="SCaddress">SC Address</TableHeaderColumn>
+                <TableHeaderColumn dataField="SCDate">SC Date</TableHeaderColumn>
+              </BootstrapTable>
+            </div>
           </div>
         </div>
-        <br />
-        <BootstrapTable
-          data={products}
-          hover
-          condensed
-          pagination
-          expandableRow={ this.isExpandableRow }
-          expandComponent={ this.expandComponent }
-          >
-          <TableHeaderColumn dataField="Entity" width='20%' isKey={true}>Entity</TableHeaderColumn>
-          <TableHeaderColumn dataField="IDCertificate" width='10%'>ID Certificate</TableHeaderColumn>
-          <TableHeaderColumn dataField="Card" width='10%'>Card</TableHeaderColumn>
-          <TableHeaderColumn dataField="Attributes" width='20%'>Attributes</TableHeaderColumn>
-          <TableHeaderColumn dataField="SCaddress" width='20%'>SC Address</TableHeaderColumn>
-          <TableHeaderColumn dataField="SCDate" width='20%'>SC Date</TableHeaderColumn>
-        </BootstrapTable>
       </main>
     );
   }
@@ -195,17 +203,21 @@ class BSTable extends React.Component {
     });
   }
 
+
   render() {
     if (this.state.data) {
       return (
-        <BootstrapTable
-          data={this.state.data}
-          hover
-          condensed
-          >
-          <TableHeaderColumn dataField="item" width='20%' isKey={true}>Item</TableHeaderColumn>
-          <TableHeaderColumn dataField="value" width='10%'>Value</TableHeaderColumn>
-        </BootstrapTable>
+        <div className="innerBootstrapTable table-responsive">
+          <BootstrapTable
+            data={this.state.data}
+            bordered={ false }
+            hover
+            responsive
+            >
+            <TableHeaderColumn dataField="item" width='50%' isKey={true}>Item</TableHeaderColumn>
+            <TableHeaderColumn dataField="value" width='50%'>Value</TableHeaderColumn>
+          </BootstrapTable>
+        </div>
       );
       } else {
         if(this.state.isUserLogged){
@@ -215,10 +227,10 @@ class BSTable extends React.Component {
                   show={this.state.popupError}
                   title="Decrypt fail!"
                   text="Decrypt fail! Please try Again!"
-                  confirmButtonColor = "#0FA3B1"
+                  confirmButtonColor = "#17a4b1"
                   onConfirm={() => this.setState({ popupError: false })}
                   />
-                <form onSubmit={this.handleSubmit} >
+                <form onSubmit={this.handleSubmit} className="tableForm">
                   {/*<div className="form-group">
                     <label>
                       WalliD Encryption Password
@@ -228,19 +240,15 @@ class BSTable extends React.Component {
                         What is WalliD Encrytion Password?
                       </a>
                     </p>
-                    {/*<div className="row ">
-                      <div className="col-md-6">
-                        <input
-                          type="password"
-                          name="password"
-                          onChange={this.handleChange}
-                          className="form-control"
-                          placeholder="Enter the password to decrypt your certified ID attributes"
-                          required />
-                      </div>
-                    </div>
+                    <input
+                      type="password"
+                      name="password"
+                      onChange={this.handleChange}
+                      className="form-control"
+                      placeholder="Enter the password to decrypt your certified ID attributes"
+                      required />
                   </div>*/}
-                  <input type="submit" value="View ID" />
+                  <input type="submit" value="View ID" className="btn btn-lg btnStyle" />
                   </form>
               </div>
         );
@@ -251,23 +259,22 @@ class BSTable extends React.Component {
                   show={this.state.popupLogout}
                   title="User logged out?"
                   text="Please login your account at MetaMask and try again!"
-                  confirmButtonColor = "#0FA3B1"
+                  confirmButtonColor = "#17a4b1"
                   />
-                <p>User logged out? Please login your account at MetaMask and try again!</p>
-                  <p>
-                    <a href="https://metamask.io/">
-                    Download MetaMask here
-                    </a>
-                  </p>
-                  <p>
-                    <a href="https://metamask.io/">
-                      What is MetaMask?
-                    </a>
-                  </p>
+                <p className="tableParagraph">User logged out? Please login your account at MetaMask and try again!</p>
+                <p className="tableParagraph">
+                  <a href="https://metamask.io/">
+                  Download MetaMask here
+                  </a>
+                </p>
+                <p className="tableParagraph">
+                  <a href="https://metamask.io/">
+                    What is MetaMask?
+                  </a>
+                </p>
               </div>
-        );
+          );
         }
-
-      }
+       }
     }
   }
