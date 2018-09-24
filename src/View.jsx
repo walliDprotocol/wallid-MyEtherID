@@ -4,9 +4,11 @@ import Web3 from 'web3'
 import BlockIdContract from './blockid/BlockId.js';
 import { withSwalInstance } from 'sweetalert2-react';
 import swal from 'sweetalert2';
+import Switch from "react-switch";
 var CryptoJS = require("crypto-js");
 
 const SweetAlert = withSwalInstance(swal);
+const PASSWORD = '20THIS_WILL_USE_METAMASK_SECURITY18';
 
 window.addEventListener('reload', function () {
 
@@ -103,11 +105,14 @@ class BSTable extends React.Component {
       data: '',
       ContractAddress : '0x787e5fc4773cad0c45f287bf00daca402845b1b7',
       ContractInstance : null,
-      password: '20THIS_WILL_USE_METAMASK_SECURITY18'
+      password: PASSWORD,
+      isManualPassword : true,
+      chiperPassword  : PASSWORD
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUsePassword = this.handleUsePassword.bind(this);
 
     if(window.web3){
       const MyContract = window.web3.eth.contract(BlockIdContract.abi)
@@ -143,6 +148,11 @@ class BSTable extends React.Component {
    });
  }
 
+ handleUsePassword(event){
+   console.log('LOG ', this.state.isManualPassword);
+   this.setState({ isManualPassword : event });
+ }
+
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
@@ -171,7 +181,9 @@ class BSTable extends React.Component {
       var identifyId = {}
 
       try {
-        var bytes =  CryptoJS.AES.decrypt(this.hex2a(data[0]) ,this.state.password);
+        var password = this.state.isManualPassword ? this.state.chiperPassword : this.state.password;
+        console.log('password for encrpt (1) ', password);
+        var bytes =  CryptoJS.AES.decrypt(this.hex2a(data[0]) ,password);
         var ret_1 = bytes.toString(CryptoJS.enc.Utf8);
         identifyId = JSON.parse(ret_1);
 
@@ -231,7 +243,7 @@ class BSTable extends React.Component {
                   onConfirm={() => this.setState({ popupError: false })}
                   />
                 <form onSubmit={this.handleSubmit} className="tableForm">
-                  {/*<div className="form-group">
+                  <div className="form-group">
                     <label>
                       WalliD Encryption Password
                     </label>
@@ -240,14 +252,34 @@ class BSTable extends React.Component {
                         What is WalliD Encrytion Password?
                       </a>
                     </p>
+                    <label htmlFor="material-switch">
+                    <Switch
+                      onChange={this.handleUsePassword}
+                      checked={this.state.isManualPassword}
+                      onColor="#fff"
+                      onHandleColor="#f89722"
+                      handleDiameter={34}
+                      uncheckedIcon={false}
+                      checkedIcon={false}
+                      boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+                      activeBoxShadow="0px 3px 7px 0 rgba(9, 44, 51, 0.35)"
+                      height={34}
+                      width={60}
+                      className="react-switch"
+                      id="material-switch"
+                    />
+                  </label>
                     <input
+                      hidden={ !this.state.isManualPassword ?  true : false }
                       type="password"
-                      name="password"
+                      id="chiperPassword"
+                      name="chiperPassword"
                       onChange={this.handleChange}
-                      className="form-control"
+                      className="form-control inputClass"
                       placeholder="Enter the password to decrypt your certified ID attributes"
-                      required />
-                  </div>*/}
+                      required={this.state.isManualPassword ?  true : false }
+                      />
+                  </div>
                   <input type="submit" value="View ID" className="btn btn-lg btnStyle" />
                   </form>
               </div>
