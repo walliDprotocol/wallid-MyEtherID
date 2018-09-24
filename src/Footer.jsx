@@ -73,10 +73,10 @@ function Footer(/*props*/) {
           <div class="col-sm-12 col-md-2 col-lg-2 mt-5">
               <p class="mediumSize">Powered by</p>
               <div class="footerContent mt-3">
-                <a href="https://www.wallid.io/" target="_blank rel=noopener">
+                <a href="http://www.wallid.io/" target="_blank rel=noopener">
                   <img className="logoHeader" src={require('./img/wallid-logo.png')} alt="WalliD Logo" />
                 </a>
-                <a href="https://www.wallid.io/" target="_blank rel=noopener">
+                <a href="http://www.wallid.io/" target="_blank rel=noopener">
                 <p class="mediumSize mt-3">WallID team</p>
                 </a>
               </div>
