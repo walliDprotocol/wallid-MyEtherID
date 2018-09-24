@@ -18,7 +18,7 @@ function Footer(/*props*/) {
               <div class="footerContent row">
                   <div class="col-3 mt-3">
                       <div>
-                          <a href="https://github.com/wallid-project" target="_blank rel=noopener">
+                          <a href="https://github.com/walliDprotocol" target="_blank rel=noopener">
                               <img src={require('./img/github.png')} class="img-fluid socialMedia mt-2" alt="Github"/>
                           </a>
                       </div>
@@ -66,17 +66,19 @@ function Footer(/*props*/) {
           <div class="col-sm-12 col-md-1 col-lg-2 mt-5">
               <p class="mediumSize">Github</p>
               <div class="footerContent mt-3">
-                <p class="mediumSize"><a href="https://github.com/wallid-project" target="_blank rel=noopener">WallID project</a></p>
+                <p class="mediumSize"><a href="https://github.com/walliDprotocol" target="_blank rel=noopener">WallID project</a></p>
               </div>
           </div>
 
           <div class="col-sm-12 col-md-2 col-lg-2 mt-5">
-              <p class="mediumSize">Poweder by</p>
+              <p class="mediumSize">Powered by</p>
               <div class="footerContent mt-3">
-                <a href="/">
+                <a href="https://www.wallid.io/" target="_blank rel=noopener">
                   <img className="logoHeader" src={require('./img/wallid-logo.png')} alt="WalliD Logo" />
                 </a>
+                <a href="https://www.wallid.io/" target="_blank rel=noopener">
                 <p class="mediumSize mt-3">WallID team</p>
+                </a>
               </div>
           </div>
       </div>
