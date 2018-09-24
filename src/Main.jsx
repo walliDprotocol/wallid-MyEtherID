@@ -25,39 +25,36 @@ class Main extends Component {
     return (
       <HashRouter>
         <div>
-          <header id="top">
-            <div>
-              <div className="scroll-pre"></div>
-              <nav className="navbar navbar-expand-md fixed-top">
-                <a className="navbar-brand" href="index.html">
-                  <img className="logoHeader" src={require('./img/myetherid-logo.svg')} alt="MyEther ID Logo" />
-                </a>
-                <button className="navbar-toggler" type="button"
-                  onClick={this.onToggleNav}>
-                  <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className={(this.state.navCollapsed ? 'collapse' : '') + ' navbar-collapse'}>
-                  <ul className="navbar-nav ml-auto">
-                    <li className="nav-link">
-                      <NavLink exact to="/" onClick={this.closeNav}>Store Identity</NavLink>
-                    </li>
-                    <li className="nav-link">
-                      <NavLink to="/view" onClick={this.closeNav}>View Identities</NavLink>
-                    </li>
-                    <li className="nav-link">
-                      <NavLink to="/transactions" onClick={this.closeNav}>Transactions</NavLink>
-                    </li>
-                    <li className="nav-link">
-                      <NavLink to="/store" onClick={this.closeNav}>About us</NavLink>
-                    </li>
-                    <li className="nav-link">
-                      <NavLink to="/help" onClick={this.closeNav}>Help</NavLink>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-          </header>
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top header bg-green-menu">
+            <div class="container">
+              <a className="navbar-brand" href="index.html">
+                <img className="logoHeader" src={require('./img/myetherid-logo.png')} height="35" width="167" alt="MyEther ID Logo" />
+              </a>
+              <button className="navbar-toggler" type="button"
+                onClick={this.onToggleNav}>
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className={(this.state.navCollapsed ? 'collapse' : '') + ' navbar-collapse'}>
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-link">
+                    <NavLink exact to="/" onClick={this.closeNav}>Store Identity</NavLink>
+                  </li>
+                  <li className="nav-link">
+                    <NavLink to="/view" onClick={this.closeNav}>View Identities</NavLink>
+                  </li>
+                  <li className="nav-link">
+                    <NavLink to="/transactions" onClick={this.closeNav}>Transactions</NavLink>
+                  </li>
+                  <li className="nav-link">
+                    <NavLink to="/store" onClick={this.closeNav}>About us</NavLink>
+                  </li>
+                  <li className="nav-link">
+                    <NavLink to="/help" onClick={this.closeNav}>Help</NavLink>
+                  </li>
+                </ul>
+              </div>
+              </div>
+            </nav>
             <Route exact path="/" component={Store}/>
             <Route path="/store" component={Home}/>
             <Route path="/view" component={View}/>

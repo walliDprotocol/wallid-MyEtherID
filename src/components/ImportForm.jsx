@@ -50,7 +50,7 @@ class ImportForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUsePassword = this.handleUsePassword.bind(this);
-    
+
 
     if(window.web3){
       const MyContract = window.web3.eth.contract(BlockIdContract.abi)
@@ -248,42 +248,42 @@ render() {
     if(this.state.isUserLogged){
       if(this.state.addinfoSuccess === state['STATE_TRANSACTION_CONFIRMED']){
         return (
-          <form onSubmit={this.handleSubmit} >
+          <form class="text-center successfullyStored" onSubmit={this.handleSubmit} >
             <p>
               ID succesfully encrypted and stored on the blockchain. You can check it
-              <Link to ='/view' > here.</Link>
+              <Link to="/view" className="inlineLink"> here</Link>.
             </p>
           </form>
         );
       }else if(this.state.addinfoSuccess === state['STATE_TRANSACTION_PROCESSING']){
         return (
-          <div align="center">
+          <div align="center" className="storing">
             <p>
-              Storing on the blockchain. Please wait....
+              Storing on the Blockchain. Please wait....
             </p>
-            <Spinner name="wandering-cubes" color="blue"/>
+            <Spinner name="ball-beat" color="#17a4b1"/>
           </div>
         );
       }else{
         return (
-          <div>
+          <div class="text-center">
             <SweetAlert
               show={this.state.popupError}
               title="ID Data Error"
               text="Please copy all data from ImportID"
-              confirmButtonColor = "#0FA3B1"
+              confirmButtonColor = "#f89722"
               onConfirm={() => this.setState({ popupError: false })}
               />
             <SweetAlert
               show={this.state.popupCancel}
               title="Error"
               text="Operation canceled. Please try again!"
-              confirmButtonColor = "#0FA3B1"
+              confirmButtonColor = "#f89722"
               onConfirm={() => this.setState({ popupCancel: false })}
               />
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} >
               <div className="form-group">
-                <label>
+                <label className="pb-2 mt-2">
                   Select your identity type:
                 </label>
                 <select className="form-control" required>
@@ -292,9 +292,9 @@ render() {
                   </option>
                 </select>
               </div>
-              <div className="form-group">
-                <label>
-                  ID Data:
+              <div className="form-group pb-2">
+                <label className="mt-3 pb-2">
+                  ID Data
                 </label>
                 <textarea
                   id="importData"
@@ -306,46 +306,58 @@ render() {
                   required>
                 </textarea>
               </div>
-              <div className="form-inline">
-              
-                <div>
-                  <p><strong> Disclaimer: </strong> Current Metamask build doesn't support the features do encrypt data with users' private keys. It will be available as soon.  
- you can encrypt your ID data with a password of your choice <strong>(recommended action)</strong>  Otherwise you can choose to allow MyEtheriD to encrypt your ID data with a default password ( We do not recommend this action)</p> 
-                </div>
+
+              <p className="mt-4">
+                Disclaimer
+              </p>
+              <p>
+                Current Metamask build doesn’t support the features do encrypt data with users’ private key.
+                It will be available as soon, you can encrypt your ID data with a pasword of your choice (recommended action).
+                Otherwise you can choos to alow MyEtheriD to encrypt your ID data with a default password (We do not recommended this action).
+              </p>
+                <label htmlFor="material-switch">
                 <Switch
                   onChange={this.handleUsePassword}
                   checked={this.state.isManualPassword}
-                  id="normal-switch"
-                />  
-                          
-              </div>
-              <div className="form-inline"  hidden={ !this.state.isManualPassword ?  true : false }>
-                <label >
-                  Password : 	&nbsp;	&nbsp;
+                  onColor="#fff"
+                  onHandleColor="#f89722"
+                  handleDiameter={34}
+                  uncheckedIcon={false}
+                  checkedIcon={false}
+                  boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+                  activeBoxShadow="0px 3px 7px 0 rgba(9, 44, 51, 0.35)"
+                  height={34}
+                  width={60}
+                  className="react-switch"
+                  id="material-switch"
+                />
+              </label>
+
+              <div className="form-group pb-2">
+                <label className="mt-3 pb-2">
+                  Password
                 </label>
 
                 <input
-                  style={{width: "300px"}}
                   hidden={ !this.state.isManualPassword ?  true : false }
                   id="chiperPassword"
                   name="chiperPassword"
                   onChange={this.handleChange}
-                  className="form-control"
+                  className="form-control inputClass"
                   type="password"
                   placeholder="Insert password to encrypt your data"
                   required={this.state.isManualPassword ?  true : false }
                   >
                 </input>
               </div>
-              
-              <br/>
               <p>
                 To submit connect with MetaMask
               </p>
               <div className="form-group">
                 <input
                   type="submit"
-                  value="Connect with MetaMask" />
+                  value="Connect with MetaMask"
+                  className="btn btn-lg btnStyle" />
               </div>
             </form>
           </div>
@@ -353,17 +365,17 @@ render() {
       }
     }else{
       return (
-        <div>
+        <div class="text-center">
           <SweetAlert
             show={this.state.popupLogout}
             title="User logged out?"
             text="Please login your account at MetaMask and try again!"
-            confirmButtonColor = "#0FA3B1"
+            confirmButtonColor = "#17a4b1"
             />
           <form onSubmit={this.handleSubmit} >
-            <div className="form-group">
-              <label>
-                Select identity type:
+            <div className="form-group pb-3">
+              <label className="pb-2">
+                Select Identity Type:
               </label>
               <select className="form-control" required>
                 <option value="grapefruit">
@@ -372,11 +384,11 @@ render() {
               </select>
             </div>
             <p>
-              Login to your MetaMask to associate your ether wallet and refresh the page.
+              Login to your MetaMask to associate your Ethereum Wallet and refresh the page.
             </p>
             <p>
               <a href="https://metamask.io/">
-                Download MetaMask here
+                <button type="button" class="btn btn-block btn-lg btnStyle">Download MetaMask</button>
               </a>
             </p>
             <p>
@@ -390,11 +402,11 @@ render() {
     }
   }else {
     return (
-      <div>
+      <div class="text-center">
         <form onSubmit={this.handleSubmit} >
-          <div className="form-group">
-            <label>
-              Select identity type:
+          <div className="form-group pb-3">
+            <label className="pb-2">
+              Select Identity Type:
             </label>
             <select className="form-control" required>
               <option value="grapefruit">
@@ -407,7 +419,7 @@ render() {
           </p>
           <p>
             <a href="https://metamask.io/">
-              Download MetaMask here
+              <button type="button" class="btn btn-block btn-lg btnStyle">Download MetaMask</button>
             </a>
           </p>
           <p>
@@ -417,9 +429,9 @@ render() {
           </p>
         </form>
       </div>
-    );
-  }
-}
+     );
+    }
+   }
 }
 
 export default ImportForm;

@@ -1,0 +1,501 @@
+/* Show it is fixed to the top */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+main {
+    background-image: linear-gradient(to bottom, #062d36, #1c1c1c);
+}
+ 
+.test{
+    border: 1px solid #666;
+    height: 20px;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-top: 75px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.smallSize {
+    font-size: 12px;
+}
+
+.mediumSize {
+    font-size: 14px;
+}
+
+a,
+a:active {
+    color: #fff;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #f89722;
+}
+
+/* Background colors */
+
+.bg-black {
+    background-color: #000000;
+}
+
+
+.bg-blue{
+    background-color: #0FA3B1;
+}
+
+.bg-blue-dark{
+    background-color: #005B60;
+}
+
+.bg-blue-light{
+    background-color: #9FD1D3;
+}
+
+.bg-blue-lighter{
+    background-color: rgba(159, 209, 211, 0.2);
+}
+
+.bg-blue-gradient{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#064146+0,005b60+100 */
+    background: #064146; /* Old browsers */
+    background: -moz-linear-gradient(top, #064146 0%, #005b60 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #064146 0%,#005b60 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #064146 0%,#005b60 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#064146', endColorstr='#005b60',GradientType=0 ); /* IE6-9 */
+}
+
+.bg-green {
+    background-color: #17a4b1;
+}
+
+.bg-green-menu {
+    background-color: #03303a;
+}
+
+.bg-green-dark {
+    background-color: #092c33;
+}
+
+.bg-green-gradient-menu {
+    background-image: linear-gradient(to bottom, #062d36, #1c1c1c);
+}
+
+.bg-green-gradient {
+    background-image: linear-gradient(to bottom, #092c33, #1c1c1c);
+}
+
+.bg-orange{
+    background-color: #f89722;
+}
+
+
+.bg-white{
+    background-color: #fff;
+}
+
+
+/* Text colors */
+
+.blue{
+    color: #0FA3B1;
+}
+
+.blue-dark{
+    color: #005B60;
+}
+
+.green {
+    color: #1c9aa6;
+}
+
+.orange{
+    color: #f89722;
+}
+
+.grey{
+    color: #808080;
+}
+
+.white{
+    color: #fff;
+}
+
+/* General */
+
+.btnStyle{
+    background-image: linear-gradient(to bottom, #f89722, #bb6c0d);
+    box-shadow: 0px 3px 7px 0 rgba(9, 44, 51, 0.35);
+    width: auto;
+    margin: auto;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px 30px;
+}
+
+.btnStyle:hover{
+    background-image: linear-gradient(to bottom, #f89722, #bb6c0d);
+    opacity: 0.8;
+}
+
+.jumbotron {
+    border-radius: 10px;
+    background-color: #b6bec0;
+    color: #092c33;
+    padding: 10px;
+}
+
+.jumbotron-dark {
+    background-color: #8a9091;
+}
+
+.jumbotron h3 {
+    color: #092c33;
+}
+
+.jumbotron a {
+    color: #092c33;
+    font-size: 14px;
+}
+
+main {
+    margin-top: -2px;
+    padding-bottom: 1px;
+}
+
+.containerBorderBottom{
+    border-bottom: 1px solid #08282f;
+    margin: 0 20px;
+    padding-bottom: 20px;
+}
+
+.containerNoBorder{
+    margin: 0 20px;
+}
+
+.containerBorderTop{
+  border-top: 1px solid #08282f;
+}
+
+li {
+    font-size: 14px;
+}
+
+
+/* ImportForm */
+
+select.form-control {
+    width: 50%;
+}
+
+.form-group input.inputClass {
+    width: 40%;
+}
+
+select.form-control,
+.form-group textarea,
+.form-group input.inputClass {
+    color: #000000;
+    margin: auto;
+    background-image: linear-gradient(to bottom, #e6e6e6, #ffffff);
+    box-shadow: 0px 3px 7px 0 rgba(9, 44, 51, 0.35);
+}
+
+.storing {
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+
+.successfullyStored {
+    padding-top: 110px;
+    padding-bottom: 105px;
+}
+
+.successfullyStored p a {
+    color: #f89722;
+}
+
+.importForm {
+    margin: auto;
+    padding: 0 15px;
+}
+
+
+/* Header Styles */
+
+.header {
+    min-height: 70px;
+}
+
+.nav-link{
+    font-size: 14px;
+}
+
+li.nav-item {
+    margin: auto;
+    padding: 8px;
+}
+
+.navBtn {
+    padding: 6px 15px;
+    font-size: 14px;
+    margin-top: -6px;
+}
+
+
+/* View */
+
+.bootstrapTable {
+    padding: 0 10px;
+    margin-top: -45px;
+}
+
+.bootstrapTable .table {
+    border-bottom: 1px solid #08282f;
+}
+
+.innerBootstrapTable {
+    background-color: #a8b0b2;
+    padding: 10px 20px;
+}
+
+.innerBootstrapTable .table {
+    background-color: #a8b0b2;
+    border-bottom: 0;
+}
+
+.innerBootstrapTable .table td,
+.innerBootstrapTable .table th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.table td[colspan="6"] { 
+    padding: 0 0 12px 0;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table td, .table th {
+    padding-right: 5px;
+}
+
+.table td {
+    border-bottom: 0;
+    border-top: 1px solid #08282f;
+    font-size: 14px;
+}
+
+.page-item.active .page-link,
+#pageDropDown {
+    background-color: #092c33;
+    color: #f89722;
+    border-radius: 5px;
+    border-bottom: 0;
+    font-size: 16px;
+    border-color: #092c33;
+}
+
+.table thead th {
+    border-bottom: 1px solid #08282f;
+    border-top: 0;
+}
+
+.tableParagraph {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.tableForm {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.tableForm .form-control {
+    width: 60%;
+    margin: auto;
+}
+
+.react-bs-table-container .react-bs-table table td, 
+.react-bs-table-container .react-bs-table table th {
+    white-space: pre-line;
+    text-overflow: unset;
+    overflow-wrap: break-word;
+}
+
+
+/* Home */
+
+a.inlineLink {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.linkP {
+    margin-top: -10px;
+}
+
+
+/* Store */
+
+.intendedText p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.intendedText ul {
+    padding-right: 20px;
+}
+
+
+/* Help */
+
+dl.faq button {
+    color: #092c33 !important;
+    margin-top: 12px !important;
+    padding-right: 25px !important;
+}
+
+dl.faq button:active,
+dl.faq button:hover,
+dl.faq button:focus {
+    background-color: transparent !important;
+    font-weight: bold;
+    width: 100%;
+    text-decoration: none !important;
+    border-color: transparent !important;
+}
+
+dl.faq button[aria-expanded="true"] {
+    font-weight: bold;
+}
+
+dl.faq .desc {
+    background-color: transparent !important;
+    color: #464646 !important;
+    margin-right: 20px !important;
+    padding-left: 20px !important;
+    padding-right: 25px !important;
+}
+
+dl.faq button[aria-expanded="false"]:before,
+dl.faq button[aria-expanded="true"]:before {
+    position: absolute;
+    right: 0;
+    padding-right: 15px !important;
+}
+
+.faq dt {
+    position: relative;
+}
+
+dt.containerBorderBottom {
+    padding-bottom: 12px;
+    margin-left: 25px;
+    padding-left: 15px;
+}
+
+dd p {
+    padding: 0 20px;
+}
+
+
+/* Footer */
+
+footer{
+    min-height: 250px;
+}
+
+footer ul li{
+    list-style-type: none;
+}
+
+footer ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
+footer h2{
+    text-align: left;
+    font-size: 20px;
+}
+
+.footerImg {
+    max-width: 170px;
+    margin: auto;
+    padding-bottom: 8px;
+}
+
+footer .input-form, footer .input-form:active{
+    background-image: linear-gradient(to bottom, #fff, #ddd);
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    color: #1c1c1c;
+}
+
+footer .btn-form{
+    height: 75px;
+    background-color: #fff;
+    color: #FF971A;
+    border-radius: 10px;
+}
+
+footer p {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+
+    .footerContent {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    footer {
+        text-align: left;
+    }
+}
+
+.textSection{
+    font-size: 14px;
+}
