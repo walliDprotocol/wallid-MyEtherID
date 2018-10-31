@@ -19,6 +19,7 @@ const state = {
   STATE_TRANSACTION_CONFIRMED: '2'
 };
 
+
 window.addEventListener('reload', function () {
   if(typeof web3 !== 'undefined'){
     console.log("Using web3 detected from external source like MetaMask")
@@ -67,6 +68,7 @@ class ImportForm extends React.Component {
   checkMetamaskUser() {
     var self = this
 
+    window.ethereum.enable();
     window.web3.eth.getAccounts(function(err, accounts){
 
       if (err != null) {
@@ -376,7 +378,7 @@ render() {
           <SweetAlert
             show={this.state.popupLogout}
             title="User logged out?"
-            text="Please login your account at MetaMask and try again!"
+            text="Please login your account at MetaMask and refresh to try again!"
             confirmButtonColor = "#17a4b1"
             />
           <form onSubmit={this.handleSubmit} >
