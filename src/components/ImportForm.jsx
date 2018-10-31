@@ -19,6 +19,7 @@ const state = {
   STATE_TRANSACTION_CONFIRMED: '2'
 };
 
+
 window.addEventListener('reload', function () {
   if(typeof web3 !== 'undefined'){
     console.log("Using web3 detected from external source like MetaMask")
@@ -50,7 +51,7 @@ class ImportForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUsePassword = this.handleUsePassword.bind(this);
-    
+
 
     if(window.web3){
       const MyContract = window.web3.eth.contract(BlockIdContract.abi)
@@ -66,6 +67,7 @@ class ImportForm extends React.Component {
   checkMetamaskUser() {
     var self = this
 
+    window.ethereum.enable();
     window.web3.eth.getAccounts(function(err, accounts){
 
       if (err != null) {
@@ -307,17 +309,17 @@ render() {
                 </textarea>
               </div>
               <div className="form-inline">
-              
+
                 <div>
-                  <p><strong> Disclaimer: </strong> Current Metamask build doesn't support the features do encrypt data with users' private keys. It will be available as soon.  
- you can encrypt your ID data with a password of your choice <strong>(recommended action)</strong>  Otherwise you can choose to allow MyEtheriD to encrypt your ID data with a default password ( We do not recommend this action)</p> 
+                  <p><strong> Disclaimer: </strong> Current Metamask build doesn't support the features do encrypt data with users' private keys. It will be available as soon.
+ you can encrypt your ID data with a password of your choice <strong>(recommended action)</strong>  Otherwise you can choose to allow MyEtheriD to encrypt your ID data with a default password ( We do not recommend this action)</p>
                 </div>
                 <Switch
                   onChange={this.handleUsePassword}
                   checked={this.state.isManualPassword}
                   id="normal-switch"
-                />  
-                          
+                />
+
               </div>
               <div className="form-inline"  hidden={ !this.state.isManualPassword ?  true : false }>
                 <label >
@@ -337,7 +339,7 @@ render() {
                   >
                 </input>
               </div>
-              
+
               <br/>
               <p>
                 To submit connect with MetaMask
@@ -357,7 +359,7 @@ render() {
           <SweetAlert
             show={this.state.popupLogout}
             title="User logged out?"
-            text="Please login your account at MetaMask and try again!"
+            text="Please login your account at MetaMask and refresh to try again!"
             confirmButtonColor = "#0FA3B1"
             />
           <form onSubmit={this.handleSubmit} >
