@@ -44,7 +44,8 @@ class ImportForm extends React.Component {
       ContractAddress : '0x787e5fc4773cad0c45f287bf00daca402845b1b7',
       ContractInstance : null,
       isManualPassword : true,
-      chiperPassword  : PASSWORD
+      chiperPassword  : PASSWORD,
+      userWa: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -80,6 +81,8 @@ class ImportForm extends React.Component {
       else {
         console.log("User is logged in to MetaMask");
         self.state.isUserLogged = 1;
+        console.log(accounts[0]);
+        self.state.userWa = accounts[0];
       }
       self.forceUpdate()
     });
@@ -150,8 +153,10 @@ handleSucess(response) {
     var idtName = obj.dataID.data.idtName;
 
     // TODO: Check if user wa from dataID and MetaMask wa account is the same
-    var wa = JSON.stringify(obj.dataID.data.wa);
-    console.log("wa:" + wa);
+    //var wa = JSON.stringify(obj.dataID.data.wa);
+    // Using Metamask user WA
+    //var wa = this.state.userWa
+    //console.log("wa:" + wa);
 
     console.log('storeId Provider WA :' + storeIdProviderWa);
     console.log('idt :' + idt);
@@ -201,6 +206,8 @@ handleSubmit(event) {
   obj.dataID.data.verifyID = verifyId;
 
   delete obj.dataID.data.identityID;
+
+  obj.dataID.data.wa = this.state.userWa
 
   var storeIdProviderUrl = obj.dataID.storeIDProvider.url;
 

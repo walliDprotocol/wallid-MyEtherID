@@ -175,7 +175,8 @@ class BSTable extends React.Component {
   getInfo()
   {
     var opid = "123456789";
-    this.state.ContractInstance.getIdtData( "CC_PT", opid,(err, data) => {
+    // TODO: Add selector to IDType
+    this.state.ContractInstance.getIdtData( "CC_PT_TST", opid,(err, data) => {
       console.log('get Info Result ', data);
       var loadData = [];
       var identifyId = {}
