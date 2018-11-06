@@ -28,9 +28,7 @@ var products = [
   Entity: "Portuguese Republic",
   IDCertificate: "x509",
   Card: "Cartão de Cidadão",
-  Attributes: "Identity, Address",
-  SCaddress: "9h8gj79x9h8gj79x",
-  SCDate: "12 Jan 18"
+  Attributes: "Identity, Address"
 }
 ];
 
@@ -83,8 +81,6 @@ class View extends Component {
                 <TableHeaderColumn dataField="IDCertificate">ID Certificate</TableHeaderColumn>
                 <TableHeaderColumn dataField="Card">Card</TableHeaderColumn>
                 <TableHeaderColumn dataField="Attributes">Attributes</TableHeaderColumn>
-                <TableHeaderColumn dataField="SCaddress">SC Address</TableHeaderColumn>
-                <TableHeaderColumn dataField="SCDate">SC Date</TableHeaderColumn>
               </BootstrapTable>
             </div>
           </div>
