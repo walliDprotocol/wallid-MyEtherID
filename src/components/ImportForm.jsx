@@ -289,16 +289,6 @@ render() {
               onConfirm={() => this.setState({ popupCancel: false })}
               />
             <form onSubmit={this.handleSubmit} >
-              <div className="form-group">
-                <label className="pb-2 mt-2">
-                  Select your identity type:
-                </label>
-                <select className="form-control" required>
-                  <option value="grapefruit">
-                    Cartão do Cidadão - República Portuguesa
-                  </option>
-                </select>
-              </div>
               <div className="form-group pb-2">
                 <label className="mt-3 pb-2">
                   ID Data

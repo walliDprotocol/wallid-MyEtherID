@@ -46,7 +46,6 @@ class View extends Component {
     );
   }
 
-
   render() {
     return (
       <main role="main">
@@ -67,6 +66,7 @@ class View extends Component {
                 Remember decryption is only possible your with your wallet private key through MetaMask association and we don’t have any access to your data</p>
               </div>
             </div>
+            <br />
             <br />
             <div className="bootstrapTable">
               <BootstrapTable
@@ -107,11 +107,14 @@ class BSTable extends React.Component {
       ContractInstance : null,
       password: PASSWORD,
       isManualPassword : true,
-      chiperPassword  : PASSWORD
+      chiperPassword  : PASSWORD,
+      idt: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeIdt = this.handleChangeIdt.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmitClose = this.handleSubmitClose.bind(this);
     this.handleUsePassword = this.handleUsePassword.bind(this);
 
     if(window.web3){
@@ -125,6 +128,14 @@ class BSTable extends React.Component {
       this.checkMetamaskUser()
     }
   }
+
+  componentDidMount() {
+    delete this.state.data;
+   }
+
+   componentWillUnmount() {
+     delete this.state.data;
+   }
 
   checkMetamaskUser() {
    var self = this
@@ -159,8 +170,23 @@ class BSTable extends React.Component {
     });
   }
 
+  handleChangeIdt(event) {
+    console.log("handleChangeIdt");
+    console.log(event.target.name);
+    console.log(event.target.value);
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
   handleSubmit(event) {
     this.getInfo()
+    event.preventDefault();
+  }
+
+  handleSubmitClose(event) {
+    delete this.state.data;
+    this.forceUpdate()
     event.preventDefault();
   }
 
@@ -174,9 +200,10 @@ class BSTable extends React.Component {
 
   getInfo()
   {
+    // TODO: OPID
     var opid = "123456789";
-    // TODO: Add selector to IDType
-    this.state.ContractInstance.getIdtData( "CC_PT_TST", opid,(err, data) => {
+    console.log(this.state.idt);
+    this.state.ContractInstance.getIdtData( this.state.idt, opid,(err, data) => {
       console.log('get Info Result ', data);
       var loadData = [];
       var identifyId = {}
@@ -208,7 +235,7 @@ class BSTable extends React.Component {
 
       }
       catch(err) {
-          console.log("error",err);
+          //console.log("error",err);
           this.setState({ popupError: true })
           this.forceUpdate()
       }
@@ -221,6 +248,15 @@ class BSTable extends React.Component {
     if (this.state.data) {
       return (
         <div className="innerBootstrapTable table-responsive">
+          <form onSubmit={this.handleSubmitClose} className="tableForm" >
+            <div className="form-group">
+          <input
+            type="submit"
+            value="Back"
+            className="btn btn-lg btnStyle"/>
+          </div>
+          </form>
+
           <BootstrapTable
             data={this.state.data}
             bordered={ false }
@@ -243,8 +279,31 @@ class BSTable extends React.Component {
                   confirmButtonColor = "#17a4b1"
                   onConfirm={() => this.setState({ popupError: false })}
                   />
+                  <form>
+                    <div class="form-group">
+                    </div>
+                  </form>
                 <form onSubmit={this.handleSubmit} className="tableForm">
                   <div className="form-group">
+                    <label className="row text-center justify-content-md-center pt-4 pb-3">
+                      Select StoreID Provider:
+                    </label>
+                    <select class="form-control" required>
+                      <option disabled value="" selected hidden>Select an valid StoreID Provider</option>
+                      <option value="storeid.caixamagica.pt">CaixaMagica@StoreID</option>
+                    </select>
+                    <label className="row text-center justify-content-md-center pt-4 pb-3">
+                      Select identity type:
+                    </label>
+                    <select class="form-control"
+                      required
+                      name="idt"
+                      onChange={this.handleChangeIdt}>
+                      <option disabled value="" selected hidden>Select an valid identity</option>
+                      <option value="CC_PT">Cartão de Cidadão - República Portuguesa</option>
+                      <option value="CC_PT_TST">Cartão de Cidadão TST - República Portuguesa</option>
+                    </select>
+                    <br />
                     <label>
                       WalliD Encryption Password
                     </label>
