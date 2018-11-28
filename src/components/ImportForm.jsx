@@ -5,10 +5,9 @@ import { Link } from 'react-router-dom';
 import { withSwalInstance } from 'sweetalert2-react';
 import swal from 'sweetalert2';
 import Switch from "react-switch";
-
+import * as WallidConst from '../wallid/const.js';
 
 const SweetAlert = withSwalInstance(swal);
-const PASSWORD = '20THIS_WILL_USE_METAMASK_SECURITY18';
 
 var CryptoJS = require("crypto-js");
 var Spinner = require('react-spinkit');
@@ -39,13 +38,13 @@ class ImportForm extends React.Component {
       popupCancel: false,
       timeoutID: '',
       walletAddress: '',
-      password: PASSWORD,
-      passwordCheck: PASSWORD,
+      password: WallidConst.DEFAULT_PASSWORD,
+      passwordCheck: WallidConst.DEFAULT_PASSWORD,
       data: '',
-      ContractAddress : '0x787e5fc4773cad0c45f287bf00daca402845b1b7',
+      ContractAddress : WallidConst.CONTRACT_ADDRESS,
       ContractInstance : null,
       isManualPassword : true,
-      chiperPassword  : PASSWORD,
+      chiperPassword  : WallidConst.DEFAULT_PASSWORD,
       userWaMetamask: ''
     };
 
@@ -172,7 +171,7 @@ handleSucess(response) {
       console.log('add info result is ', data);
       if(data){
         self.state.addinfoSuccess = state['STATE_TRANSACTION_PROCESSING'];
-        self.state.timeoutID = setInterval(self.timer.bind(self), 5000, data);
+        self.state.timeoutID = setInterval(self.timer.bind(self), WallidConst.INTERVAL_TIME, data);
         self.forceUpdate()
       }else{
         self.state.addinfoSuccess = state['STATE_TRANSACTION_FAIL'];
@@ -205,7 +204,7 @@ handleSubmit(event) {
 
   var userWa = obj.dataID.data.wa;
   var userWaMetamask = this.state.userWaMetamask;
-  var userWaTest = "0x6Ff539fDE26ec962cC22B2e74c66c774fd38B1D2"
+  var userWaTest = WallidConst.USER_WA_TEST;
   console.log("userWa = " + userWa.toLowerCase())
   console.log("userWaMetamask = " + userWaMetamask.toLowerCase())
 
@@ -240,12 +239,10 @@ handleSubmit(event) {
 
 /* run after component render */
 componentDidMount(){
-
 }
 
 /* run before component render */
 componentWillMount(){
-
 }
 
 render() {
