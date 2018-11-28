@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Web3 from 'web3'
-import BlockIdContract from './blockid/BlockId.js';
+import WallidContract from './wallid/wallid.js';
 import { withSwalInstance } from 'sweetalert2-react';
 import swal from 'sweetalert2';
 import Switch from "react-switch";
@@ -114,7 +114,7 @@ class BSTable extends React.Component {
     this.handleUsePassword = this.handleUsePassword.bind(this);
 
     if(window.web3){
-      const MyContract = window.web3.eth.contract(BlockIdContract.abi)
+      const MyContract = window.web3.eth.contract(WallidContract.abi)
       this.state.ContractInstance = MyContract.at(this.state.ContractAddress)
 
       // this.state.ContractInstance.countItemList( (err, data) => {
