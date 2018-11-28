@@ -45,7 +45,7 @@ class ImportForm extends React.Component {
       ContractInstance : null,
       isManualPassword : true,
       chiperPassword  : PASSWORD,
-      userWa: ''
+      userWaMetamask: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -81,8 +81,8 @@ class ImportForm extends React.Component {
       else {
         console.log("User is logged in to MetaMask");
         self.state.isUserLogged = 1;
-        console.log(accounts[0]);
-        self.state.userWa = accounts[0];
+        console.log("userWaMetamask = " + accounts[0]);
+        self.state.userWaMetamask = accounts[0];
       }
       self.forceUpdate()
     });
@@ -152,12 +152,6 @@ handleSucess(response) {
     var idt = obj.dataID.data.idt;
     var idtName = obj.dataID.data.idtName;
 
-    // TODO: Check if user wa from dataID and MetaMask wa account is the same
-    //var wa = JSON.stringify(obj.dataID.data.wa);
-    // Using Metamask user WA
-    //var wa = this.state.userWa
-    //console.log("wa:" + wa);
-
     console.log('storeId Provider WA :' + storeIdProviderWa);
     console.log('idt :' + idt);
 
@@ -194,7 +188,7 @@ handleSucess(response) {
 }
 
 handleSubmit(event) {
-  console.log("handleSubmit ManualPasswprd",this.state.isManualPassword  );
+  console.log("handleSubmit isManualPassword",this.state.isManualPassword);
   var obj = JSON.parse(this.state.data);
 
   var password = this.state.isManualPassword ? this.state.chiperPassword : this.state.password;
@@ -207,13 +201,18 @@ handleSubmit(event) {
 
   delete obj.dataID.data.identityID;
 
-  obj.dataID.data.wa = this.state.userWa
+  var userWa = obj.dataID.data.wa;
+  var userWaMetamask = this.state.userWaMetamask;
+  var userWaTest = "0x6Ff539fDE26ec962cC22B2e74c66c774fd38B1D2"
+  console.log("userWa = " + userWa.toLowerCase())
+  console.log("userWaMetamask = " + userWaMetamask.toLowerCase())
 
   var storeIdProviderUrl = obj.dataID.storeIDProvider.url;
 
-  /** vviana - remove the check of password  */
-  //if(this.state.password === this.state.passwordCheck){
-
+  if(userWa.toLowerCase() === userWaMetamask.toLowerCase()
+      // Do not validade if using https://wallid.io/identityfortesting.html
+      || userWa.toLowerCase() === userWaTest.toLowerCase())
+  {
     console.log("call storeIdProvider: " + storeIdProviderUrl);
      //this.handleSucess()
       fetch(storeIdProviderUrl, {
@@ -230,12 +229,9 @@ handleSubmit(event) {
         alert("Store Wallid Fail")
       }
     );
-
-  /*
   }else{
-    alert("Password and comfirm password is not the same")
+    alert("Error: The wallet address used to import data and wallet address logged in metamask is not the same")
   }
-  */
 
   event.preventDefault();
 }
