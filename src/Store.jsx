@@ -43,11 +43,34 @@ class Store extends Component {
                 </div>
 
                 <div className="row containerBorderBottom mt-3">
-                    <div className="col text-center">
+                    <div className="row text-center pt-3 justify-content-md-center containerBorderBottom">
+                      <div className="col-md-11">
                         <p>If you haven’t installed Import ID on your computer, you can download it for free.</p>
-                        <a href="/WalliD-ImportID.msi">
-                            <button type="button" class="btn btn-block btn-lg btnStyle">Download here</button>
-                        </a>
+                        </div>
+                          <div className="row col-md-16">
+                              <div className="col-md-4">
+                                <a href="https://github.com/walliDprotocol/wallid-ImportID/releases/download/v0.0.1/ImportID.msi">
+                                    <button type="button" class="btn btn-block btn-lg btnStyle">Download here
+                                    <img src={require('./img/microsoft.png')} height="50" width="50" hspace="20" alt="Microsoft" />
+                                  </button>
+                                </a>
+
+                              </div>
+                              <div className="col-md-4">
+                                <a href="https://github.com/walliDprotocol/wallid-ImportID/releases/download/v0.0.1/ImportID.pkg">
+                                    <button type="button" class="btn btn-block btn-lg btnStyle">Download here
+                                    <img src={require('./img/apple.png')} height="50" width="50" hspace="20"  alt="Apple" />
+                                  </button>
+                                </a>
+                              </div>
+                              <div className="col-md-4">
+                                <a href="">
+                                    <button type="button" class="btn btn-block btn-lg btnStyle" disabled>Download here
+                                    <img src={require('./img/linux.png')} height="50" width="50" hspace="20" alt="Linux" />
+                                  </button>
+                                </a>
+                              </div>
+                          </div>
                     </div>
                 </div>
 
