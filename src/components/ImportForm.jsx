@@ -1,6 +1,6 @@
 import React from "react";
 import Web3 from 'web3'
-import BlockIdContract from '../blockid/BlockId.js';
+import WallidContract from '../wallid/wallid.js';
 import { Link } from 'react-router-dom';
 import { withSwalInstance } from 'sweetalert2-react';
 import swal from 'sweetalert2';
@@ -55,7 +55,7 @@ class ImportForm extends React.Component {
 
 
     if(window.web3){
-      const MyContract = window.web3.eth.contract(BlockIdContract.abi)
+      const MyContract = window.web3.eth.contract(WallidContract.abi)
       this.state.ContractInstance = MyContract.at(this.state.ContractAddress)
 
       // this.state.ContractInstance.countItemList( (err, data) => {

@@ -1,6 +1,6 @@
 
 export default {
-  "contractName": "BlockId",
+  "contractName": "Wallid",
   "abi":  [
       {
           "anonymous": false,
