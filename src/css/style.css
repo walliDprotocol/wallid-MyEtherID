@@ -8,10 +8,12 @@ body {
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    color: #03303a;
 }
 
 main {
-    background-image: linear-gradient(to bottom, #062d36, #1c1c1c);
+    /* background-image: linear-gradient(to bottom, #062d36, #1c1c1c);*/
+    background-color: #e9e9e9;
 }
  
 .test{
@@ -22,7 +24,7 @@ main {
 h1, h2, h3, h4 {
     text-align: center;
     font-weight: 500;
-    color: #fff;
+    color: #29292c;
 }
 
 h1 {
@@ -32,10 +34,17 @@ h1 {
 h2 {
     font-size: 30px;
     margin-top: 75px;
+    font-weight: bold;
 }
 
 h3 {
     font-size: 20px;
+    font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3a5199;
 }
 
 p {
@@ -51,20 +60,58 @@ p {
     font-size: 14px;
 }
 
-a,
-a:active {
-    color: #fff;
+a {
+    color: #f2f2f2;
+    text-decoration: none;
 }
 
-a:hover{
+a:hover {
+    color: #3a5199;
     text-decoration: none;
-    color: #f89722;
 }
+
+a:active {
+    color: #3a5199;
+    text-decoration: none;
+}
+
+.navmenu-item a {
+    color: #29292c;
+    text-decoration: none;
+}
+
+.navmenu-item li:active {
+    color: #993a4f !important;
+    border-bottom: 2px solid #3a5199;
+    font-weight: none
+}
+
+
+.navmenu-item li:hover {
+    
+    border-bottom: 2px solid #3a5199;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #3a5199 !important;
+    
+}
+
+
+/*
+navmenu-item li:hover {
+    border-bottom: 2px solid #3a5199;
+}
+*/
 
 /* Background colors */
 
 .bg-black {
-    background-color: #000000;
+    background-color: #29292c;
 }
 
 
@@ -84,17 +131,9 @@ a:hover{
     background-color: rgba(159, 209, 211, 0.2);
 }
 
-.bg-blue-gradient{
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#064146+0,005b60+100 */
-    background: #064146; /* Old browsers */
-    background: -moz-linear-gradient(top, #064146 0%, #005b60 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #064146 0%,#005b60 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #064146 0%,#005b60 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#064146', endColorstr='#005b60',GradientType=0 ); /* IE6-9 */
-}
 
 .bg-green {
-    background-color: #17a4b1;
+    background-color: #03303a;
 }
 
 .bg-green-menu {
@@ -102,7 +141,7 @@ a:hover{
 }
 
 .bg-green-dark {
-    background-color: #092c33;
+    background-color: #29292c;
 }
 
 .bg-green-gradient-menu {
@@ -152,7 +191,7 @@ a:hover{
 /* General */
 
 .btnStyle{
-    background-image: linear-gradient(to bottom, #f89722, #bb6c0d);
+    background-image: linear-gradient(to bottom, #395099, #04499f);
     box-shadow: 0px 3px 7px 0 rgba(9, 44, 51, 0.35);
     width: auto;
     margin: auto;
@@ -163,19 +202,19 @@ a:hover{
 }
 
 .btnStyle:hover{
-    background-image: linear-gradient(to bottom, #f89722, #bb6c0d);
+    background-image: linear-gradient(to bottom, #04499f, #395099);
     opacity: 0.8;
 }
 
 .jumbotron {
     border-radius: 10px;
-    background-color: #b6bec0;
+    background-color: #ffffff;
     color: #092c33;
     padding: 10px;
 }
 
 .jumbotron-dark {
-    background-color: #8a9091;
+    background-color: #f5f5f5;
 }
 
 .jumbotron h3 {
@@ -193,7 +232,7 @@ main {
 }
 
 .containerBorderBottom{
-    border-bottom: 1px solid #08282f;
+    
     margin: 0 20px;
     padding-bottom: 20px;
 }
@@ -498,4 +537,81 @@ footer p {
 
 .textSection{
     font-size: 14px;
+}
+
+.subnav
+{
+    background-color: #e9e9e9 !important;
+    padding-bottom: 0px;
+   
+}
+
+#navbar2 {
+    margin: 0px;
+    border-bottom: 2px solid #cecece;
+}
+
+.background-body {
+    background-color: #e9e9e9;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.main-bottom {
+    background-color: #dedede;
+    color : #29292c !important;
+    padding-bottom: 50px;
+}
+
+.main-bottom  h3 {
+    margin-top: 41px;
+    color : #29292c !important;
+}
+
+.main-bottom p {
+font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: center;
+  color: #29292c;
+  margin-top: 20px;
+
+}
+
+.text-blue {
+    color : #3a5199
+}
+
+.medium-title {
+    
+    height: 23px;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.bottomBorder {
+    border-bottom: 1px solid #cecece;
+}
+
+.strong {
+    font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: bold;
+}
+
+.select-nav {
+    width: 205px;
+  height: 42px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 7px 0 rgba(9, 46, 51, 0.35);
+  background-color: #cccccc;
 }

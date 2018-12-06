@@ -1,6 +1,7 @@
 body{
     font-family: 'Ubuntu', sans-serif;
-    background-color: #F9F9F9;
+    background-color: #e9e9e9;
+    color: #29292c;
 }
 .logoHeader{
     width: 200px;
@@ -135,4 +136,9 @@ html {
   height: 90px;
   width: 100%;
   background-color: inherit;
+}
+
+.subnav
+{
+    background-color: #e9e9e9;
 }

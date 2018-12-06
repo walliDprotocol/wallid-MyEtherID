@@ -283,7 +283,7 @@ render() {
               />
             <form onSubmit={this.handleSubmit} >
               <div className="form-group pb-2">
-                <label className="mt-3 pb-2">
+                <label className="mt-3 pb-2 strong">
                   ID Data
                 </label>
                 <textarea
@@ -297,7 +297,7 @@ render() {
                 </textarea>
               </div>
 
-              <p className="mt-4">
+              <p className="mt-4 strong">
                 Disclaimer
               </p>
               <p>
@@ -309,22 +309,24 @@ render() {
                 <Switch
                   onChange={this.handleUsePassword}
                   checked={this.state.isManualPassword}
-                  onColor="#fff"
+                  onColor="red"
+                  onTintColor="#00ff00"
                   onHandleColor="#f89722"
                   handleDiameter={34}
                   uncheckedIcon={false}
                   checkedIcon={false}
                   boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-                  activeBoxShadow="0px 3px 7px 0 rgba(9, 44, 51, 0.35)"
+                  activeBoxShadow="0px 3px 7px 0 rgba(9, 46, 51, 0.35)"
                   height={34}
                   width={60}
+                  style={{backgroundColor: '#395099', borderRadius: 17, background: '#395099'}}
                   className="react-switch"
                   id="material-switch"
                 />
               </label>
 
               <div className="form-group pb-2">
-                <label className="mt-3 pb-2">
+                <label className="mt-3 pb-2 strong">
                   Password
                 </label>
 
@@ -382,7 +384,7 @@ render() {
               </a>
             </p>
             <p>
-              <a href="https://metamask.io/">
+              <a href="https://metamask.io/">\
                 What is MetaMask?
               </a>
             </p>
@@ -395,8 +397,11 @@ render() {
       <div class="text-center">
         <form onSubmit={this.handleSubmit} >
           <div className="form-group pb-3">
-            <label className="pb-2">
-              Select Identity Type:
+          <div className="pb-2">
+              Please choose a certified ID document to store in your wallet
+            </div>
+            <label className="pb-2 medium-title">
+              Select Identity
             </label>
             <select className="form-control" required>
               <option value="grapefruit">
@@ -404,17 +409,22 @@ render() {
               </option>
             </select>
           </div>
-          <p>
+          
+          <div className="pb-2  medium-title ">
             Don’t have MetaMask plug in installed?
-          </p>
+          </div>
+          
+         
           <p>
             <a href="https://metamask.io/">
               <button type="button" class="btn btn-block btn-lg btnStyle">Download MetaMask</button>
             </a>
           </p>
           <p>
-            <a href="https://metamask.io/">
+            <a href="https://metamask.io/"  >
+              <div className="text-blue medium-title">
               What is MetaMask?
+              </div>
             </a>
           </p>
         </form>

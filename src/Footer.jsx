@@ -48,7 +48,7 @@ function Footer(/*props*/) {
           </div>
 
           <div class="col-sm-12 col-md-4 col-lg-3 mt-5">
-              <p class="mediumSize">Feel free to donate to MyEtherID</p>
+              <p class="strong">Feel free to donate to MyEtherID</p>
               <div class="footerContent mt-3">
                 <p class="mediumSize"><a href="https://www.MyEtheriD.io/" target="_blank rel=noopener">ETH: 0x012345678901234567890123</a></p>
                 <p class="mediumSize"><a href="https://www.MyEtheriD.io/" target="_blank rel=noopener">WAL: 0x012345678901234567890123</a></p>
@@ -56,7 +56,7 @@ function Footer(/*props*/) {
           </div>
 
           <div class="col-sm-12 col-md-2 col-lg-2 mt-5">
-              <p class="mediumSize">More about MyEtherID</p>
+              <p class="strong">More about MyEtherID</p>
               <div class="footerContent mt-3">
                 <p class="mediumSize"><a href="https://www.MyEtheriD.io/" target="_blank rel=noopener">Disclaimer</a></p>
                 <p class="mediumSize"><a href="https://www.MyEtheriD.io/" target="_blank rel=noopener">Latest Block#: 4t6i31198</a></p>
@@ -64,7 +64,7 @@ function Footer(/*props*/) {
           </div>
 
           <div class="col-sm-12 col-md-1 col-lg-2 mt-5">
-              <p class="mediumSize">Github</p>
+              <p class="strong">Github</p>
               <div class="footerContent mt-3">
                 <p class="mediumSize"><a href="https://github.com/walliDprotocol" target="_blank rel=noopener">WallID project</a></p>
               </div>

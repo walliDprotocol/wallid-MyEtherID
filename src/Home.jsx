@@ -62,7 +62,7 @@ class Home extends Component {
                 <p>Your account has a public and a private key. Whenever requested by third-parties, always supply your public key, which can be used
                   to retrieve your ciphered blockchain information, never your private key. Afterwards, that information shall only be readable by
                   you or entities trusted by yourself, upon you deciphering it with matamask plugin.</p>
-                <p>How to Protect Yourself From Loss:</p>
+                <p>How to Protect Yourself From Loss </p>
                 <ul>
                   <li>If you lose your private key or MetaMask recovery keywords they are gone forever. Don't lose them.</li>
                   <li>Make a backup of your keys. Do NOT just store them on your computer. Print them out on a piece of paper or save them to a USB drive.</li>
@@ -73,6 +73,9 @@ class Home extends Component {
             </div>
           </div>
         </div>
+
+     
+
       </main>
       );
     }
