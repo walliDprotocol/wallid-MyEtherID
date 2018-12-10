@@ -19,7 +19,7 @@ nav ul li a{
 
 nav ul li a:hover, nav ul li a.active{
     color: #0FA3B1;
-    border-bottom: 2px solid #FF971A;
+    border-bottom: 2px solid #3a5199;
 }
 
 h6{
@@ -28,7 +28,7 @@ h6{
 }
 
 .linkButtons{
-    background-color: #FF971A;
+    background-color: #3a5199;
     color: #fff;
 }
 
@@ -44,16 +44,16 @@ a{
 }
 
 a:hover{
-    color:#FF971A;
+    color:#3a5199;
     text-decoration: none;
 }
 
 .navbar-toggler{
-    background-color: #FF971A;
+    background-color: #3a5199;
 }
 
 h1{
-    color: #FF971A;
+    color: #3a5199;
 }
 
 h2{
@@ -94,7 +94,7 @@ ul.meiTopics li{
 }
 
 .biggerLink:hover{
-    color:#FF971A;
+    color:#3a5199;
     font-size: 20px;
 }
 

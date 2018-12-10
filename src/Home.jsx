@@ -7,12 +7,16 @@ class Home extends Component {
       <main role="main">
         <div className="container">
 
-          <div className="row justify-content-md-center pb-2">
-            <div className="col text-center containerBorderBottom">
-              <h2 className="pb-2">About us</h2>
-              <h3 className="orange">Connect your off-chain identity to your Ethereum wallet</h3>
+         <div className="row text-left  pb-4 containerBorderBottom">
+            <div className="text-left">
+                <h2 className="pb-2 align-left">About us</h2>
+                <h3 className="text-blue  align-left">
+                Connect your off-chain identity to your Ethereum wallet
+                </h3>
             </div>
-          </div>
+        </div>
+
+         
 
           <div className="jumbotron">
             <div className="row pt-3 justify-content-md-center pb-2 containerBorderBottom">
@@ -44,8 +48,8 @@ class Home extends Component {
                 <h3 className="pb-2 mt-2">Your ID in your Ethereum Wallet</h3>
                 <p>Encrypt and save your certified identity on the blockchain and associate it with with your Ethereum wallet.
                 If you don’t have an Ethereum wallet, you can create it securely and for free on
-                  <a class="inlineLink" href="https://www.myetherwallet.com/" target="_blank rel=noopener"> MyEtherWallet.com</a>.</p>
-                  <p class="linkP"><Link to="/help#top" className="link">What is MyEtherWallet?</Link></p>
+                  <a class="inlineLink new-blue" href="https://www.myetherwallet.com/" target="_blank rel=noopener"> MyEtherWallet.com</a>.</p>
+                  <p class="linkP"><Link to="/help#top" className="link strong new-blue">What is MyEtherWallet?</Link></p>
 
                 {/* <div className="col-md-4 text-center">
                   <img className="imgBlockChain" src={require('./img/blockchain.svg')} alt="Blockchain" />
@@ -62,7 +66,7 @@ class Home extends Component {
                 <p>Your account has a public and a private key. Whenever requested by third-parties, always supply your public key, which can be used
                   to retrieve your ciphered blockchain information, never your private key. Afterwards, that information shall only be readable by
                   you or entities trusted by yourself, upon you deciphering it with matamask plugin.</p>
-                <p>How to Protect Yourself From Loss </p>
+                <p className="strong">How to Protect Yourself From Loss </p>
                 <ul>
                   <li>If you lose your private key or MetaMask recovery keywords they are gone forever. Don't lose them.</li>
                   <li>Make a backup of your keys. Do NOT just store them on your computer. Print them out on a piece of paper or save them to a USB drive.</li>

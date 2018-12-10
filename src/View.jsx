@@ -48,14 +48,15 @@ class View extends Component {
     return (
       <main role="main">
         <div className="container">
-          <div className="row justify-content-md-center pb-3">
-            <div className="col text-center">
-                  <h2 className="pb-2">View your identities</h2>
-                  <h3 className="orange">
-                    Check Your ID documents within WalliD’s smart contract
-                  </h3>
-              </div>
-          </div>
+        <div className="row text-left  pb-4 containerBorderBottom">
+            <div className="text-left">
+                <h2 className="pb-2 align-left">View your identities</h2>
+                <h3 className="text-blue  align-left">
+                Check Your ID documents within WalliD’s smart contract
+                </h3>
+            </div>
+        </div>
+        
           <div className="jumbotron">
             <div className="row text-center justify-content-md-center pt-4 pb-3">
               <div className="col-md-10">

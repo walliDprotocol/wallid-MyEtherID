@@ -23,18 +23,23 @@ class Transactions extends Component {
     return (
       <main role="main">
         <div className="container">
-          <div className="row justify-content-md-center pb-3 containerBorderBottom">
-            <div className="col text-center">
-              <h2 className="pb-2">Check your identities transactions</h2>
-              <h3 className="orange">
+
+         <div className="row text-left  pb-4 containerBorderBottom">
+            <div className="text-left">
+                <h2 className="pb-2">Check your identities transactions</h2>
+                <h3 className="text-blue  align-left">
                 Confirm ID transactions from your wallet
-              </h3>
+                </h3>
             </div>
-          </div>
+        </div>
+
+         
+
+
           <div className="jumbotron">
             <div className="row text-center justify-content-md-center pt-2 pb-2">
               <div className="col text-center">
-                <div class="pt-2 pb-2">Check the transaction history at Etherscan, pressing <a class="inlineLink" href="https://rinkeby.etherscan.io/address/0x787e5fc4773cad0c45f287bf00daca402845b1b7" target="_blank rel=noopener">here</a>.</div>
+                <div class="pt-2 pb-2">Check the transaction history at Etherscan, pressing <a class="new-blue strong " href="https://rinkeby.etherscan.io/address/0x787e5fc4773cad0c45f287bf00daca402845b1b7" target="_blank rel=noopener">here</a>.</div>
               </div>
             </div>
           </div>

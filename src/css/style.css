@@ -77,18 +77,25 @@ a:active {
 
 .navmenu-item a {
     color: #29292c;
-    text-decoration: none;
+}
+.navmenu-item a:hover {
+    color: #3a5199 ;
+}
+.navmenu-item a:active {
+    color: #3a5199 ;
 }
 
+
 .navmenu-item li:active {
-    color: #993a4f !important;
+    color: #3a5199 !important;
+    border-bottom: 2px solid #3a5199;
     border-bottom: 2px solid #3a5199;
     font-weight: none
 }
 
 
 .navmenu-item li:hover {
-    
+    color: #3a5199 !important;
     border-bottom: 2px solid #3a5199;
     font-family: Montserrat;
     font-size: 14px;
@@ -97,7 +104,9 @@ a:active {
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #3a5199 !important;
+    
+    /*background-color: #3a5199 !important; */
+ 
     
 }
 
@@ -170,6 +179,10 @@ navmenu-item li:hover {
 
 .blue-dark{
     color: #005B60;
+}
+
+.new-blue {
+    color : #3a5199 !important;
 }
 
 .green {
@@ -280,7 +293,7 @@ select.form-control,
 }
 
 .successfullyStored p a {
-    color: #f89722;
+    color: #3a5199;
 }
 
 .importForm {
@@ -358,12 +371,12 @@ li.nav-item {
 
 .page-item.active .page-link,
 #pageDropDown {
-    background-color: #092c33;
-    color: #f89722;
+    background-color: #3a5199;
+    color: white;
     border-radius: 5px;
     border-bottom: 0;
     font-size: 16px;
-    border-color: #092c33;
+    border-color: #3a5199;
 }
 
 .table thead th {
@@ -429,6 +442,7 @@ dl.faq button {
 dl.faq button:active,
 dl.faq button:hover,
 dl.faq button:focus {
+    color: #3a5199 !important;
     background-color: transparent !important;
     font-weight: bold;
     width: 100%;
@@ -442,7 +456,7 @@ dl.faq button[aria-expanded="true"] {
 
 dl.faq .desc {
     background-color: transparent !important;
-    color: #464646 !important;
+    color: #464646 !important; 
     margin-right: 20px !important;
     padding-left: 20px !important;
     padding-right: 25px !important;

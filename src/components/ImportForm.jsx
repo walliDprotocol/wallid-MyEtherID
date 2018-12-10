@@ -250,8 +250,10 @@ render() {
         return (
           <form class="text-center successfullyStored" onSubmit={this.handleSubmit} >
             <p>
-              ID succesfully encrypted and stored on the blockchain. You can check it
-              <Link to="/view" className="inlineLink"> here</Link>.
+              <p className="strong">
+                ID succesfully encrypted and stored on the blockchain. You can check it
+                <Link to="/view" className="inlineLink"> here</Link>.
+              </p>
             </p>
           </form>
         );
@@ -261,7 +263,7 @@ render() {
             <p>
               Storing on the Blockchain. Please wait....
             </p>
-            <Spinner name="ball-beat" color="#17a4b1"/>
+            <Spinner name="ball-beat" color="#3a5199"/>
           </div>
         );
       }else{
@@ -319,7 +321,9 @@ render() {
                   activeBoxShadow="0px 3px 7px 0 rgba(9, 46, 51, 0.35)"
                   height={34}
                   width={60}
-                  style={{backgroundColor: '#395099', borderRadius: 17, background: '#395099'}}
+                  onHandleColor="#3a5199"
+                    onColor="#d8d8d8"
+                    offColor="#d8d8d8"
                   className="react-switch"
                   id="material-switch"
                 />

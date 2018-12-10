@@ -21,18 +21,22 @@ class Help extends Component {
     return (
       <main role="main">
         <div className="container">
-          <div className="row justify-content-md pb-4 containerBorderBottom">
-            <div className="col text-center">
-              <h2 className="pb-2">Help</h2>
-              <h3 className="orange">
-                  Frequently asked questions
-              </h3>
+
+
+         <div className="row text-left  pb-4 containerBorderBottom">
+            <div className="text-left">
+                <h2 className="pb-2 align-left">Help</h2>
+                <h3 className="text-blue  align-left">
+                Frequently asked questions
+                </h3>
             </div>
-          </div>
+        </div>
+
+
           <div className="jumbotron">
             <dl className="faq pt-2 pb-2">
               <dt className="containerBorderBottom">
-                <button aria-expanded="false" aria-controls="faq1_desc">
+                <button aria-expanded="false" aria-controls="faq1_desc" >
                   What is WalliD?
                 </button>
               </dt>
