@@ -306,6 +306,7 @@ select.form-control,
 
 .header {
     min-height: 70px;
+    padding-bottom: 0px;
 }
 
 .nav-link{
@@ -623,9 +624,22 @@ font-family: Montserrat;
 }
 
 .select-nav {
-    width: 205px;
+  width: 205px;
   height: 42px;
   border-radius: 5px;
   box-shadow: 3px 3px 7px 0 rgba(9, 46, 51, 0.35);
   background-color: #cccccc;
+}
+
+.nav-sub-title {
+    text-align: right;
+    color : #f2f2f2;
+
+  font-size: 11px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  padding-bottom: 8px;
 }
