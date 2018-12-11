@@ -26,57 +26,62 @@ return (
 <HashRouter>
   <div>
 
-
     <div class="fixed-top">
       <nav class="navbar navbar-expand-md navbar-dark  header bg-green-dark ">
         <div class="container">
 
-              <a className="navbar-brand" href="index.html">
-                <img className="logoHeader" src={require('./img/myetherid-logo.png')} height="35" width="167" alt="MyEther ID Logo" />
-              </a>
-              <button className="navbar-toggler" type="button" onClick={this.onToggleNav}>
-                <span className="navbar-toggler-icon"></span>
-              </button>
+          <a className="navbar-brand" href="index.html">
+            <img className="logoHeader" src={require('./img/myetherid-logo.png')} height="35" width="167" alt="MyEther ID Logo" />
+          </a>
+          <button className="navbar-toggler" type="button" onClick={this.onToggleNav}>
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-                <div className={(this.state.navCollapsed ? 'collapse' : '' ) + ' navbar-collapse' }>
-                  <ul className="navbar-nav ml-auto">
-                    <li className="nav-link">
-                      <NavLink exact to="/" onClick={this.closeNav}>3.27.0</NavLink>
-                    </li>
-                    <li className="nav-link">
-                      <NavLink to="/view" onClick={this.closeNav}>English</NavLink>
-                    </li>
-                    <li className="nav-link">
-                      <img className="logoHeader" src={require('./img/ethereum-logo-branco@2x.png')} height="35" width="20"
-                        alt="MyEther ID Logo" />
-                    </li>
+          <div className={(this.state.navCollapsed ? 'collapse' : '' ) + ' navbar-collapse' }>
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-link">
+                <NavLink exact to="/" onClick={this.closeNav}>3.27.0</NavLink>
+              </li>
+              <li className="nav-link">
+                <NavLink to="/view" onClick={this.closeNav}>English</NavLink>
+              </li>
+              <li className="nav-link">
+                <img className="logoHeader" src={require('./img/ethereum-logo-branco@2x.png')} height="35" width="20"
+                  alt="MyEther ID Logo" />
+              </li>
 
-                    <li className="nav-link">
+              <li className="nav-link">
 
-                      <select class="select-nav">
-                        <option value="grapefruit">
-                          Gas Price 51 Gwei
-                        </option>
-                      </select>
+                <select class="select-nav">
+                  <option value="grapefruit">
+                    Gas Price 51 Gwei
+                  </option>
+                </select>
 
-                    </li>
-                    <li className="nav-link">
-                      <select class="select-nav">
-                        <option value="grapefruit">
-                          Ethereum (ETH)
-                        </option>
-                      </select>
-                    </li>
+              </li>
+              <li className="nav-link">
+                <select class="select-nav">
+                  <option value="grapefruit">
+                    Ethereum (ETH)
+                  </option>
+                </select>
+              </li>
 
-                  </ul>
-                </div>
-
+            </ul>
+          </div>
 
         </div>
 
 
-
       </nav>
+
+      <div class="bg-green-dark">
+        <div class="container">
+          <div class="nav-sub-title">
+          The network is really full right now. Check <strong > Eth Gas Station</strong>  for gas price to use.
+          </div>
+        </div>
+      </div>
 
       <div class="navbar subnav navbar-expand-md bg-light navbar-light ">
         <div class="container">
