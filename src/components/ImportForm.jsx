@@ -368,17 +368,6 @@ render() {
             text="Please login your account at MetaMask and try again!"
             confirmButtonColor = "#17a4b1"
             />
-          <form onSubmit={this.handleSubmit} >
-            <div className="form-group pb-3">
-              <label className="pb-2">
-                Select Identity Type:
-              </label>
-              <select className="form-control" required>
-                <option value="grapefruit">
-                  Cartão do Cidadão - República Portuguesa
-                </option>
-              </select>
-            </div>
             <p>
               Login to your MetaMask to associate your Ethereum Wallet and refresh the page.
             </p>
@@ -388,11 +377,10 @@ render() {
               </a>
             </p>
             <p>
-              <a href="https://metamask.io/">\
+              <a href="https://metamask.io/">
                 What is MetaMask?
               </a>
             </p>
-          </form>
         </div>
       );
     }
@@ -400,25 +388,10 @@ render() {
     return (
       <div class="text-center">
         <form onSubmit={this.handleSubmit} >
-          <div className="form-group pb-3">
-          <div className="pb-2">
-              Please choose a certified ID document to store in your wallet
-            </div>
-            <label className="pb-2 medium-title">
-              Select Identity
-            </label>
-            <select className="form-control" required>
-              <option value="grapefruit">
-                Cartão do Cidadão - República Portuguesa
-              </option>
-            </select>
-          </div>
-          
           <div className="pb-2  medium-title ">
             Don’t have MetaMask plug in installed?
           </div>
-          
-         
+
           <p>
             <a href="https://metamask.io/">
               <button type="button" class="btn btn-block btn-lg btnStyle">Download MetaMask</button>
