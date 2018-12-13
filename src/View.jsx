@@ -244,8 +244,9 @@ class BSTable extends React.Component {
   render() {
     if (this.state.data) {
       return (
-        <div className="innerBootstrapTable table-responsive">
-          <form onSubmit={this.handleSubmitClose} className="tableForm" >
+
+        <div>
+           <form onSubmit={this.handleSubmitClose} className="tableForm" >
             <div className="form-group">
           <input
             type="submit"
@@ -254,16 +255,21 @@ class BSTable extends React.Component {
           </div>
           </form>
 
-          <BootstrapTable
-            data={this.state.data}
-            bordered={ false }
-            hover
-            responsive
-            >
-            <TableHeaderColumn dataField="item" width='50%' isKey={true}>Item</TableHeaderColumn>
-            <TableHeaderColumn dataField="value" width='50%'>Value</TableHeaderColumn>
-          </BootstrapTable>
+           <div className="innerBootstrapTable table-responsive">
+         
+         <BootstrapTable
+           data={this.state.data}
+           bordered={ false }
+           hover
+           responsive
+           >
+           <TableHeaderColumn dataField="item" width='50%' isKey={true}>Item</TableHeaderColumn>
+           <TableHeaderColumn dataField="value" width='50%'>Value</TableHeaderColumn>
+         </BootstrapTable>
+       </div>
+
         </div>
+       
       );
       } else {
         if(this.state.isUserLogged){
@@ -319,9 +325,12 @@ class BSTable extends React.Component {
                       uncheckedIcon={false}
                       checkedIcon={false}
                       boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-                      activeBoxShadow="0px 3px 7px 0 rgba(9, 44, 51, 0.35)"
+                      activeBoxShadow="0px 3px 7px 0 rgba(9, 46, 51, 0.35)"
                       height={34}
                       width={60}
+                      onHandleColor="#3a5199"
+                      onColor="#d8d8d8"
+                      offColor="#d8d8d8"
                       className="react-switch"
                       id="material-switch"
                     />
