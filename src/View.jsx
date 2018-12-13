@@ -56,7 +56,7 @@ class View extends Component {
                 </h3>
             </div>
         </div>
-        
+
           <div className="jumbotron">
             <div className="row text-center justify-content-md-center pt-4 pb-3">
               <div className="col-md-10">
@@ -287,7 +287,7 @@ class BSTable extends React.Component {
                     </label>
                     <select class="form-control" required>
                       <option disabled value="" selected hidden>Select an valid StoreID Provider</option>
-                      <option value="storeid.caixamagica.pt">CaixaMagica@StoreID</option>
+                      <option value="storeid.caixamagica.pt">WalliD@StoreID</option>
                     </select>
                     <label className="row text-center justify-content-md-center pt-4 pb-3">
                       Select identity type:
