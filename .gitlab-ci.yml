@@ -1,0 +1,18 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  TAG: $CI_PIPELINE_ID
+  FILES_PATH: /mnt/build-images/k8s/myether-web
+
+build:
+  stage: build
+  environment: development
+  only:
+  - master
+  tags:
+  - myetherid
+  - docker image
+  script:
+  - $FILES_PATH/build-image.sh
