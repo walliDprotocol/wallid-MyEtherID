@@ -25,26 +25,68 @@ window.addEventListener('reload', function () {
 
 var products = [
 {
+  id: 1,
   Entity: "Portuguese Republic",
   IDCertificate: "x509",
   Card: "Cartão de Cidadão",
   Attributes: "Identity, Address"
+},
+{
+  id: 2,
+  Entity: "Portuguese Republic",
+  IDCertificate: "x509",
+  Card: "Chave Móvel Digital",
+  Attributes: "Identity, BirthDate"
 }
 ];
 
 class View extends Component {
+  constructor(props) {
+  super(props);
+  this.handleExpand = this.handleExpand.bind(this);
+  this.state = {
+    // Default expanding row
+    expanding: [ 0 ]
+  };
+}
 
-  isExpandableRow(row) {
-    return true;
-  }
+isExpandableRow() {
+  return true;
+}
 
-  expandComponent(row) {
-    return (
-      <BSTable data={ row.expand } />
-    );
+handleExpand(rowKey, isExpand) {
+  if (isExpand) {
+    console.log(`row: ${rowKey} is ready to expand`);
+  } else {
+    console.log(`row: ${rowKey} is ready to collapse`);
   }
+}
+
+expandComponent(rowKey, isExpand) {
+  var values = []
+  if(rowKey.id == 1){
+    values = [
+      { name: 'Select an valid identity', id: '' },
+      { name: 'Cartão de Cidadão - República Portuguesa', id: 'CC_PT' },
+      { name: 'Cartão de Cidadão TST - República Portuguesa', id: 'CC_PT_TST' }
+    ];
+  } else if (rowKey.id == 2) {
+    values = [
+      { name: 'Select an valid identity', id: '' },
+      { name: 'Chave Móvel Digital - República Portuguesa', id: 'CMD_PT' }
+    ];
+  }
+  return (
+    <BSTable dataIDT={ values }/>
+  );
+}
 
   render() {
+    const options = {
+      expandRowBgColor: 'rgb(0xff, 0xff, 0xff)',
+      expanding: this.state.expanding,
+      onExpand: this.handleExpand
+    };
     return (
       <main role="main">
         <div className="container">
@@ -76,9 +118,10 @@ class View extends Component {
                 pagination
                 expandableRow={ this.isExpandableRow }
                 expandComponent={ this.expandComponent }
+                options={ options }
                 >
-
-                <TableHeaderColumn dataField="Entity" isKey={true}>Entity</TableHeaderColumn>
+                <TableHeaderColumn dataField="id" hidden={true} isKey={true}>Entity</TableHeaderColumn>
+                <TableHeaderColumn dataField="Entity">Entity</TableHeaderColumn>
                 <TableHeaderColumn dataField="IDCertificate">ID Certificate</TableHeaderColumn>
                 <TableHeaderColumn dataField="Card">Card</TableHeaderColumn>
                 <TableHeaderColumn dataField="Attributes">Attributes</TableHeaderColumn>
@@ -105,7 +148,8 @@ class BSTable extends React.Component {
       password: PASSWORD,
       isManualPassword : true,
       chiperPassword  : PASSWORD,
-      idt: ''
+      idt: '',
+      dataIDT: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -240,8 +284,10 @@ class BSTable extends React.Component {
     });
   }
 
-
   render() {
+    let optionTemplate = this.props.dataIDT.map(v => (
+      <option value={v.id}>{v.name}</option>
+    ));
     if (this.state.data) {
       return (
 
@@ -302,10 +348,7 @@ class BSTable extends React.Component {
                       required
                       name="idt"
                       onChange={this.handleChangeIdt}>
-                      <option disabled value="" selected hidden>Select an valid identity</option>
-                      <option value="CC_PT">Cartão de Cidadão - República Portuguesa</option>
-                      <option value="CC_PT_TST">Cartão de Cidadão TST - República Portuguesa</option>
-                      <option value="CMD_PT">Chave Móvel Digital - República Portuguesa</option>
+                      {optionTemplate}
                     </select>
                     <br />
                     <label>
