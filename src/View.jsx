@@ -256,7 +256,7 @@ class BSTable extends React.Component {
           </form>
 
            <div className="innerBootstrapTable table-responsive">
-         
+
          <BootstrapTable
            data={this.state.data}
            bordered={ false }
@@ -269,7 +269,7 @@ class BSTable extends React.Component {
        </div>
 
         </div>
-       
+
       );
       } else {
         if(this.state.isUserLogged){
@@ -305,6 +305,7 @@ class BSTable extends React.Component {
                       <option disabled value="" selected hidden>Select an valid identity</option>
                       <option value="CC_PT">Cartão de Cidadão - República Portuguesa</option>
                       <option value="CC_PT_TST">Cartão de Cidadão TST - República Portuguesa</option>
+                      <option value="CMD_PT">Chave Móvel Digital - República Portuguesa</option>
                     </select>
                     <br />
                     <label>
