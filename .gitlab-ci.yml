@@ -16,3 +16,15 @@ build:
   - docker image
   script:
   - $FILES_PATH/build-image.sh
+
+deploy:
+  stage: deploy
+  environment: development
+  only:
+  - master
+  when: manual
+  tags:
+  - myetherid
+  - docker image
+  script:
+  - $FILES_PATH/deploy-image.sh
